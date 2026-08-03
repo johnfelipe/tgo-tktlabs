@@ -448,24 +448,24 @@ const DeleteDialog: React.FC<DeleteDialogProps> = ({
 };
 
 // Default assignment rules prompt
-const DEFAULT_ASSIGNMENT_PROMPT = `你是一个智能客服分配助手。当AI无法解决用户问题时，你需要根据以下规则将对话分配给合适的人工坐席：
+const DEFAULT_ASSIGNMENT_PROMPT = `Eres un asistente de asignación de atención al cliente. Cuando la IA no logra resolver el problema del usuario, debes asignar la conversación al agente humano más adecuado según estas reglas:
 
-## 分配原则
-1. **技能匹配**：根据用户问题类型，优先分配给具有相关专业知识的坐席
-2. **负载均衡**：在技能匹配的前提下，优先分配给当前处理对话较少的坐席
-3. **在线状态**：只分配给在线状态的坐席，忙碌状态的坐席作为备选
-4. **响应速度**：考虑坐席的历史平均响应时间，优先分配给响应较快的坐席
+## Principios de asignación
+1. **Coincidencia de habilidades**: según el tipo de problema, prioriza a los agentes con el conocimiento especializado correspondiente.
+2. **Balance de carga**: entre los agentes con las habilidades adecuadas, prioriza a quienes atienden menos conversaciones en ese momento.
+3. **Estado de conexión**: asigna solo a agentes en línea; los agentes ocupados quedan como alternativa.
+4. **Velocidad de respuesta**: considera el tiempo promedio histórico de respuesta y prioriza a los agentes más rápidos.
 
-## 分配流程
-1. 分析用户对话内容，识别问题类型和紧急程度
-2. 筛选符合条件的可用坐席
-3. 按照优先级排序并选择最合适的坐席
-4. 如果没有合适的坐席，将对话放入等待队列
+## Flujo de asignación
+1. Analiza el contenido de la conversación e identifica el tipo de problema y su urgencia.
+2. Filtra los agentes disponibles que cumplan los criterios.
+3. Ordénalos por prioridad y elige al más adecuado.
+4. Si no hay ningún agente adecuado, coloca la conversación en la cola de espera.
 
-## 特殊情况处理
-- 紧急问题：优先分配给经验丰富的资深坐席
-- VIP用户：可以考虑分配给专属坐席
-- 投诉类问题：分配给具有投诉处理经验的坐席`;
+## Casos especiales
+- Problemas urgentes: prioriza a los agentes con más experiencia.
+- Usuarios VIP: considera asignarlos a un agente dedicado.
+- Reclamos: asigna a agentes con experiencia en manejo de reclamos.`;
 
 const StaffSettings: React.FC = () => {
   const { t } = useTranslation();

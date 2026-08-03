@@ -46,7 +46,7 @@ const ModelStoreModal: React.FC<ModelStoreModalProps> = ({ isOpen, onClose }) =>
         id: 'all', 
         slug: 'all', 
         name_zh: t('tools.store.model.allModels'), 
-        name_en: 'All Models', 
+        name_en: 'Todos los modelos', 
         icon: 'Grid3X3'
       },
       ...data.map((cat: any) => ({

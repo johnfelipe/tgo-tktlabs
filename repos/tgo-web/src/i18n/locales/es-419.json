@@ -3727,7 +3727,7 @@
     },
     "aiSettings": {
       "title": "Configuración de IA",
-      "optional": "Optional",
+      "optional": "(Opcional)",
       "agents": "Agentes de IA",
       "loadingAgents": "Cargando...",
       "selectAgents": "Seleccionar Agente de IA",

@@ -44,7 +44,7 @@ const ToolStoreModal: React.FC<ToolStoreModalProps> = ({ isOpen, onClose }) => {
         id: 'all', 
         slug: 'all', 
         name_zh: 'Todas las herramientas', 
-        name_en: 'All Tools', 
+        name_en: 'Todas las herramientas', 
         icon: 'Grid3X3', 
         label: 'Todas las herramientas' 
       },

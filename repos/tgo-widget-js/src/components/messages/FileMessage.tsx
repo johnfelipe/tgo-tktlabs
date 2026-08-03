@@ -12,7 +12,7 @@ export interface FileMessageProps {
 export default function FileMessage({ url, name, size }: FileMessageProps){
   const icon = getFileIcon(name, undefined, 40)
   const open = ()=>{ try { window.open(url, '_blank') } catch {} }
-  const label = `下载文件：${name}`
+  const label = `Descargar archivo: ${name}`
   return (
     <FileCard onClick={open} role="button" aria-label={label} title={label}>
       <FileIconBox aria-hidden>{icon}</FileIconBox>

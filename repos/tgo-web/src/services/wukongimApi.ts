@@ -699,9 +699,9 @@ export class WuKongIMUtils {
     // In a real implementation, this would look up user info
     // For now, generate a display name based on UID
     if (uid.includes('agent') || uid.includes('staff')) {
-      return '客服';
+      return 'Agente';
     }
-    return `用户${uid.slice(-4)}`;
+    return `Usuario ${uid.slice(-4)}`;
   }
 
   /**

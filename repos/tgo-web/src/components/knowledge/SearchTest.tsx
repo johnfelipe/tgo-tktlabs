@@ -21,12 +21,12 @@ const CONTENT_TYPES: {
     name: string;
     description: string;
 }[] = [
-        { value: 'qa_pair', name: 'QA 问答对', description: '来自 QA 知识库的问答数据' },
-        { value: 'paragraph', name: '文档段落', description: '文档中的正文段落' },
-        { value: 'heading', name: '标题', description: '文档中的章节标题' },
-        { value: 'table', name: '表格', description: '文档中的表格内容' },
-        { value: 'list', name: '列表', description: '文档中的列表项' },
-        { value: 'code', name: '代码块', description: '文档中的代码片段' },
+        { value: 'qa_pair', name: 'QA Preguntas y Respuestas', description: 'Datos de preguntas y respuestas de la base de conocimiento QA' },
+        { value: 'paragraph', name: 'Párrafo del documento', description: 'Párrafos en el documento' },
+        { value: 'heading', name: 'Título', description: 'Títulos de sección en el documento' },
+        { value: 'table', name: 'Tabla', description: 'Contenido de tablas en el documento' },
+        { value: 'list', name: 'Lista', description: 'Elementos de lista en el documento' },
+        { value: 'code', name: 'Bloque de código', description: 'Fragmentos de código en el documento' },
     ];
 
 const SEARCH_MODES: {
@@ -37,20 +37,20 @@ const SEARCH_MODES: {
 }[] = [
         {
             value: 'hybrid',
-            name: '混合检索',
-            description: '结合语义理解与关键词匹配，推荐使用',
+            name: 'Búsqueda híbrida',
+            description: 'Combina comprensión semántica y coincidencia de palabras clave, recomendado para usar',
             icon: <Layers className="w-4 h-4" />
         },
         {
             value: 'embedding',
-            name: '语义检索',
-            description: '基于向量相似度，理解语义含义',
+            name: 'Búsqueda semántica',
+            description: 'Basado en similitud vectorial, comprende el significado semántico',
             icon: <Zap className="w-4 h-4" />
         },
         {
             value: 'fulltext',
-            name: '全文检索',
-            description: '基于关键词匹配，精确查找',
+            name: 'Búsqueda de texto completo',
+            description: 'Búsqueda precisa basada en coincidencia de palabras clave',
             icon: <Type className="w-4 h-4" />
         },
     ];
@@ -128,7 +128,7 @@ export const SearchTest: React.FC<SearchTestProps> = ({ collectionId }) => {
                             <Search className="w-4 h-4 text-blue-500" />
                             {t('knowledge.search.title', '搜索测试')}
                         </h3>
-                        <p className="text-xs text-gray-500 mt-1">测试知识库检索效果，模拟AI回复时的搜索行为</p>
+                        <p className="text-xs text-gray-500 mt-1">Prueba del efecto de búsqueda en la base de conocimiento, simulando el comportamiento de búsqueda en respuestas AI</p>
                     </div>
 
                     <div className="p-4 space-y-4">
@@ -162,19 +162,19 @@ export const SearchTest: React.FC<SearchTestProps> = ({ collectionId }) => {
                             {isLoading ? (
                                 <>
                                     <Loader className="w-4 h-4 animate-spin mr-2" />
-                                    搜索中...
+                                    Buscando...
                                 </>
                             ) : (
                                 <>
                                     <Search className="w-4 h-4 mr-2" />
-                                    开始搜索
+                                    Iniciar búsqueda
                                 </>
                             )}
                         </Button>
 
                         {/* Limit */}
                         <div className="flex items-center justify-between pt-2 border-t border-gray-100 dark:border-gray-700">
-                            <span className="text-sm text-gray-600 dark:text-gray-400">返回数量</span>
+                            <span className="text-sm text-gray-600 dark:text-gray-400">Cantidad de resultados</span>
                             <input
                                 type="number"
                                 value={limit}
@@ -225,7 +225,7 @@ export const SearchTest: React.FC<SearchTestProps> = ({ collectionId }) => {
                                         </span>
                                         {mode.value === 'hybrid' && (
                                             <Badge variant="info" className="text-[10px] py-0 px-1.5 h-4">
-                                                推荐
+                                                Recomendado
                                             </Badge>
                                         )}
                                     </div>
@@ -242,7 +242,7 @@ export const SearchTest: React.FC<SearchTestProps> = ({ collectionId }) => {
                 <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
                     <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
                         <h3 className="font-semibold text-gray-900 dark:text-white text-sm">
-                            内容类型
+                            Tipo de contenido
                         </h3>
                         <button
                             onClick={() => {
@@ -254,7 +254,7 @@ export const SearchTest: React.FC<SearchTestProps> = ({ collectionId }) => {
                             }}
                             className="text-xs text-blue-600 hover:text-blue-700 font-medium"
                         >
-                            {contentTypes.length === CONTENT_TYPES.length ? '取消全选' : '全选'}
+                            {contentTypes.length === CONTENT_TYPES.length ? 'Quitar selección' : 'Seleccionar todo'}
                         </button>
                     </div>
 
@@ -277,7 +277,7 @@ export const SearchTest: React.FC<SearchTestProps> = ({ collectionId }) => {
                                             if (contentTypes.length > 1) {
                                                 setContentTypes(contentTypes.filter(t => t !== type.value));
                                             } else {
-                                                showToast('warning', '请至少选择一种内容类型');
+                                                showToast('warning', 'Por favor selecciona al menos un tipo de contenido');
                                             }
                                         }
                                     }}
@@ -303,23 +303,23 @@ export const SearchTest: React.FC<SearchTestProps> = ({ collectionId }) => {
                         <div className="group relative">
                             <HelpCircle className="w-4 h-4 text-gray-400 cursor-help" />
                             <div className="absolute left-0 top-6 z-50 w-72 p-3 bg-gray-900 dark:bg-gray-700 text-white text-xs rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                                <div className="font-semibold mb-2">关于 Score 分数</div>
+                                <div className="font-semibold mb-2">Acerca de la puntuación Score</div>
                                 <ul className="space-y-1.5 text-gray-300">
-                                    <li><span className="text-green-400">1.0</span>：最相关，排名第一</li>
-                                    <li><span className="text-yellow-400">0.5-1.0</span>：相关性较高</li>
-                                    <li><span className="text-gray-400">&lt;0.5</span>：相关性一般</li>
+                                    <li><span className="text-green-400">1.0</span>: Más relevante, primer lugar</li>
+                                    <li><span className="text-yellow-400">0.5-1.0</span>: Alta relevancia</li>
+                                    <li><span className="text-gray-400">&lt;0.5</span>: Relevancia media</li>
                                 </ul>
                                 <div className="mt-2 pt-2 border-t border-gray-700 text-gray-400">
-                                    分数已归一化到0-1范围。混合检索综合语义相似度和关键词匹配度，由RRF算法融合排序。
+                                    La puntuación se ha normalizado en un rango de 0 a 1. La búsqueda híbrida combina similitud semántica y coincidencia de palabras clave, fusionada y ordenada mediante el algoritmo RRF.
                                 </div>
                             </div>
                         </div>
                     </div>
                     {searchInfo && (
                         <div className="flex items-center gap-3 text-xs text-gray-500">
-                            <span>耗时 <b className="text-gray-900 dark:text-white">{searchInfo.time}ms</b></span>
+                            <span>Tiempo consumido <b className="text-gray-900 dark:text-white">{searchInfo.time}ms</b></span>
                             <span className="w-px h-3 bg-gray-200 dark:bg-gray-700" />
-                            <span>共 <b className="text-gray-900 dark:text-white">{searchInfo.total}</b> 条</span>
+                            <span>Total <b className="text-gray-900 dark:text-white">{searchInfo.total}</b> elementos</span>
                             <span className="w-px h-3 bg-gray-200 dark:bg-gray-700" />
                             <Badge variant="secondary" className="text-[10px]">{searchInfo.mode}</Badge>
                         </div>
@@ -333,10 +333,10 @@ export const SearchTest: React.FC<SearchTestProps> = ({ collectionId }) => {
                                 <Info className="w-8 h-8 opacity-40" />
                             </div>
                             <h4 className="text-base font-medium text-gray-900 dark:text-gray-100 mb-1">
-                                {query ? '未找到匹配结果' : '准备就绪'}
+                                {query ? 'No se encontraron resultados coincidentes' : 'Listo'}
                             </h4>
                             <p className="text-sm text-gray-500 text-center max-w-sm">
-                                {query ? '建议尝试更换搜索关键词或调整检索模式' : '在左侧输入问题开始测试'}
+                                {query ? 'Se recomienda intentar cambiar las palabras clave de búsqueda o ajustar el modo de búsqueda' : 'Ingresa una pregunta a la izquierda para comenzar la prueba'}
                             </p>
                         </div>
                     ) : (
@@ -359,16 +359,16 @@ export const SearchTest: React.FC<SearchTestProps> = ({ collectionId }) => {
                                                             </Badge>
                                                         ) : (
                                                             <Badge variant="secondary" className="text-[10px] py-0 px-1.5 h-4">
-                                                                文档
+                                                                Documento
                                                             </Badge>
                                                         )}
                                                         <span className="text-xs text-gray-400">
-                                                            {result.metadata?.filename || result.metadata?.source || '未知来源'}
+                                                            {result.metadata?.filename || result.metadata?.source || 'Fuente desconocida'}
                                                         </span>
                                                     </div>
                                                     <h4 className="text-sm font-medium text-gray-900 dark:text-gray-100 mt-0.5 flex items-center gap-1.5">
                                                         <FileText className="w-3.5 h-3.5 text-gray-400" />
-                                                        {result.document_title || result.metadata?.filename || '无标题'}
+                                                        {result.document_title || result.metadata?.filename || 'Sin título'}
                                                     </h4>
                                                 </div>
                                             </div>
@@ -390,10 +390,10 @@ export const SearchTest: React.FC<SearchTestProps> = ({ collectionId }) => {
                                         {result.metadata && (result.metadata.semantic_rank || result.metadata.keyword_rank) && (
                                             <div className="mt-2 flex items-center gap-3 text-[10px] text-gray-400">
                                                 {result.metadata.semantic_rank && (
-                                                    <span>语义排名: #{result.metadata.semantic_rank}</span>
+                                                    <span>Ranking semántico: #{result.metadata.semantic_rank}</span>
                                                 )}
                                                 {result.metadata.keyword_rank && (
-                                                    <span>关键词排名: #{result.metadata.keyword_rank}</span>
+                                                    <span>Ranking por palabra clave: #{result.metadata.keyword_rank}</span>
                                                 )}
                                                 {result.metadata.rrf_score && (
                                                     <span>RRF: {result.metadata.rrf_score}</span>

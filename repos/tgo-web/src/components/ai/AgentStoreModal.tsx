@@ -54,7 +54,7 @@ const AgentStoreModal: React.FC<AgentStoreModalProps> = ({ isOpen, onClose, onIn
         id: 'all', 
         slug: 'all', 
         name_zh: 'Todo el personal', 
-        name_en: 'All Agents', 
+        name_en: 'Todo el personal', 
         icon: 'Grid3X3'
       },
       ...data

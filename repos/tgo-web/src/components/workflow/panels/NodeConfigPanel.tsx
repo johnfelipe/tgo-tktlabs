@@ -1023,7 +1023,7 @@ const LLMNodeConfig: React.FC<{
       <div className="relative">
         <div className={`space-y-5 ${activeTab === 'prompt' ? '' : 'hidden'}`}>
           <div className="space-y-2">
-            <label className="text-[11px] uppercase font-bold text-gray-400 tracking-wider">{t('workflow.fields.system_prompt', '系统提示词')} (Optional)</label>
+            <label className="text-[11px] uppercase font-bold text-gray-400 tracking-wider">{t('workflow.fields.system_prompt', 'Prompt del sistema')} ({t('common.optional', 'Opcional')})</label>
             <VariableInput
               multiline
               rows={3}
