@@ -199,11 +199,14 @@ export const formatFileSize = (bytes: number): string => {
  */
 const extractFileType = (contentType: string, filename: string): string => {
   // First try to extract from content type
+  // Order matters: the OOXML MIME types all contain "officedocument", so the
+  // spreadsheet/presentation checks must run before the Word one
   if (contentType.includes('pdf')) return 'pdf';
-  if (contentType.includes('word') || contentType.includes('document')) return 'doc';
-  if (contentType.includes('text')) return 'txt';
   if (contentType.includes('spreadsheet') || contentType.includes('excel')) return 'xlsx';
   if (contentType.includes('presentation') || contentType.includes('powerpoint')) return 'ppt';
+  if (contentType.includes('csv')) return 'csv';
+  if (contentType.includes('word') || contentType.includes('wordprocessingml')) return 'doc';
+  if (contentType.includes('text')) return 'txt';
 
   // Fallback to file extension
   const extension = filename.split('.').pop()?.toLowerCase();
@@ -213,6 +216,7 @@ const extractFileType = (contentType: string, filename: string): string => {
     'docx': 'doc',
     'txt': 'txt',
     'md': 'txt',
+    'csv': 'csv',
     'xls': 'xlsx',
     'xlsx': 'xlsx',
     'ppt': 'ppt',

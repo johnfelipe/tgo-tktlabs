@@ -53,6 +53,7 @@ export const DocumentList: React.FC<DocumentListProps> = ({
       case 'pdf': return '📄';
       case 'doc': return '📝';
       case 'txt': return '📃';
+      case 'csv': return '📈';
       case 'xlsx': return '📊';
       case 'ppt': return '📊';
       default: return '📄';
