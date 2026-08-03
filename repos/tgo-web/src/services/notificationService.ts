@@ -449,7 +449,7 @@ class NotificationService {
   updatePageTitle(unreadCount: number, originalTitle?: string): void {
     if (typeof document === 'undefined') return;
     
-    const baseTitle = originalTitle || 'TGO 客服';
+    const baseTitle = originalTitle || 'TKTLABS';
     
     if (unreadCount > 0) {
       document.title = `(${unreadCount}) ${baseTitle}`;

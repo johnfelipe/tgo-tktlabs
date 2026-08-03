@@ -2955,10 +2955,10 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 Tgo CS. 保留所有权利。"
+    "copyright": "© 2025 TKTLABS. 保留所有权利。"
   },
   "brand": {
-    "name": "Tgo CS"
+    "name": "TKTLABS"
   },
   "chat": {
     "title": "对话管理",
@@ -3557,7 +3557,7 @@
   },
   "setup": {
     "title": "系统设置向导",
-    "subtitle": "欢迎使用 Tgo CS，让我们开始配置您的系统",
+    "subtitle": "欢迎使用 TKTLABS，让我们开始配置您的系统",
     "steps": {
       "admin": "管理员账户",
       "staff": "人工坐席",
@@ -3702,7 +3702,7 @@
     "dismiss": "关闭",
     "dismissButton": "不再显示",
     "welcome": {
-      "title": "欢迎使用 TGO",
+      "title": "欢迎使用 TKTLABS",
       "subtitle": "完成以下步骤，开启您的 AI 客服之旅",
       "progress": "当前进度",
       "estimatedTime": "约 2 分钟",

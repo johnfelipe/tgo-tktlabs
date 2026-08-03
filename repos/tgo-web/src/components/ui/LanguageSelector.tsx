@@ -13,7 +13,8 @@ interface Language {
 const languages: Language[] = [
   { code: 'system', name: 'Auto', nativeName: 'Auto', flag: '🌐' },
   { code: 'zh', name: 'Chinese', nativeName: '中文', flag: '🇨🇳' },
-  { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' }
+  { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
+  { code: 'es', name: 'Spanish (Latin America)', nativeName: 'Español (LatAm)', flag: '🌎' }
 ];
 
 type Placement = 'bottom' | 'right';
@@ -39,22 +40,23 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'icon', p
     try { return localStorage.getItem('tgo-language') || 'system'; } catch { return 'system'; }
   });
 
-  const mapToSupportedLang = (lng?: string | null): 'zh' | 'en' => {
+  const mapToSupportedLang = (lng?: string | null): 'zh' | 'en' | 'es' => {
     const code = (lng || '').toLowerCase();
     if (code.startsWith('zh')) return 'zh';
-    return 'en';
+    if (code.startsWith('en')) return 'en';
+    return 'es';
   };
 
-  const detectSystemLanguage = (): 'zh' | 'en' => {
+  const detectSystemLanguage = (): 'zh' | 'en' | 'es' => {
     if (typeof navigator !== 'undefined') {
       const cand = (Array.isArray((navigator as any).languages) && (navigator as any).languages[0]) || (navigator as any).language;
       return mapToSupportedLang(cand);
     }
-    return 'zh';
+    return 'es';
   };
 
-  const normalizedCode = useMemo(() => (i18n.language || 'zh').split('-')[0], [i18n.language]);
-  const selectedCode = (pref === 'system' || pref === 'auto') ? 'system' : (normalizedCode as 'zh' | 'en');
+  const normalizedCode = useMemo(() => (i18n.language || 'es').split('-')[0], [i18n.language]);
+  const selectedCode = (pref === 'system' || pref === 'auto') ? 'system' : (normalizedCode as 'zh' | 'en' | 'es');
   const currentLanguage = languages.find(lang => lang.code === selectedCode) || languages[0];
 
   const currentNativeName = selectedCode === 'system'

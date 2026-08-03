@@ -88,7 +88,7 @@ export default function App(){
         window.parent?.postMessage({ 
           type: 'TGO_SHOW_TOAST', 
           payload: { 
-            title: pConfig.widget_title || 'Tgo',
+            title: pConfig.widget_title || 'TKTLABS',
             body: content,
             icon: pConfig.logo_url || undefined,
             id: lastMsg.id
@@ -145,7 +145,7 @@ export default function App(){
 
   const onSend = (text: string)=>{ void sendMessage(text) }
 
-  const title = useMemo(()=> pConfig?.widget_title || 'Tgo', [pConfig?.widget_title])
+  const title = useMemo(()=> pConfig?.widget_title || 'TKTLABS', [pConfig?.widget_title])
 
   const theme = useMemo(()=>{
     const c = pConfig?.theme_color || '#2f80ed'

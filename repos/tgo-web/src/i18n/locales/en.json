@@ -1762,10 +1762,10 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 Tgo CS. All rights reserved."
+    "copyright": "© 2025 TKTLABS. All rights reserved."
   },
   "brand": {
-    "name": "Tgo CS"
+    "name": "TKTLABS"
   },
   "comingSoon": {
     "title": "Coming soon",
@@ -3546,7 +3546,7 @@
   },
   "setup": {
     "title": "System Setup Wizard",
-    "subtitle": "Welcome to Tgo CS, let's configure your system",
+    "subtitle": "Welcome to TKTLABS, let's configure your system",
     "steps": {
       "admin": "Admin Account",
       "staff": "Human Agents",
@@ -3691,7 +3691,7 @@
     "dismiss": "Close",
     "dismissButton": "Don't Show Again",
     "welcome": {
-      "title": "Welcome to TGO",
+      "title": "Welcome to TKTLABS",
       "subtitle": "Complete the following steps to start your AI customer service journey",
       "progress": "Progress",
       "estimatedTime": "~2 min",

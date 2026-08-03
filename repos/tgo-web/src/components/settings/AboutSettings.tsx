@@ -162,7 +162,7 @@ const AboutSettings: React.FC = () => {
 
           {/* Copyright */}
           <div className="text-center text-xs text-gray-500 dark:text-gray-400 pt-2">
-            © {new Date().getFullYear()} TGO Web. {t('about.copyright', 'All rights reserved.')}
+            © {new Date().getFullYear()} TKTLABS. {t('about.copyright', 'All rights reserved.')}
           </div>
         </div>
       )}

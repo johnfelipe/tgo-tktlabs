@@ -1,0 +1,52 @@
+{
+  "common": {
+    "retry": "Reintentar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "loading": "Cargando...",
+    "message": "Mensaje"
+  },
+  "header": {
+    "switchToLight": "Cambiar a modo claro",
+    "switchToDark": "Cambiar a modo oscuro",
+    "collapse": "Colapsar ventana",
+    "expand": "Expandir ventana"
+  },
+  "messageInput": {
+    "placeholder": "Haz una pregunta...",
+    "send": "Enviar",
+    "interrupt": "Detener",
+    "attach": "Adjuntar archivo",
+    "emoji": "Emoji",
+    "fileTooLarge": "Archivo demasiado grande (>{{size}}MB): {{name}}",
+    "typing": "está escribiendo..."
+  },
+  "messageList": {
+    "loadingHistory": "Cargando...",
+    "loadHistoryFailed": "Error al cargar el historial de mensajes",
+    "noMoreMessages": "No hay más mensajes",
+    "sending": "Enviando...",
+    "uploading": "Subiendo..."
+  },
+  "errors": {
+    "authFail": "Autenticación fallida, no se puede enviar el mensaje",
+    "subscriberNotExist": "No eres suscriptor, no se puede enviar el mensaje",
+    "notAllowSend": "No tienes permiso para enviar mensajes",
+    "notInWhitelist": "No estás en la lista blanca, no se puede enviar",
+    "rateLimit": "Envías mensajes con demasiada frecuencia, por favor intenta más tarde",
+    "banned": "Estás prohibido de enviar mensajes",
+    "channelNotExist": "La sesión no existe o ha expirado",
+    "disbanded": "La sesión ha sido disuelta",
+    "systemError": "Error del sistema, por favor intenta más tarde",
+    "networkError": "Error de red o tiempo de espera agotado, por favor verifica tu conexión"
+  },
+  "file": {
+    "download": "Descargar"
+  },
+  "system": {
+    "staffAssigned": "Has sido conectado con servicio al cliente. El agente {{name0}} te asistirá.",
+    "sessionTransferred": "Sesión transferida. El agente {{name0}} te ha transferido al agente {{name1}}.",
+    "sessionClosed": "Sesión finalizada. El agente {{name0}} ha completado el servicio.",
+    "sessionClosedNoAgent": "Sesión finalizada."
+  }
+}

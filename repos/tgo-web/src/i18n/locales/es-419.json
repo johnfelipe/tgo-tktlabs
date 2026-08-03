@@ -1,0 +1,3919 @@
+{
+  "common": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "create": "Crear",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "add": "Agregar",
+    "done": "Hecho",
+    "remove": "Quitar",
+    "search": "Buscar",
+    "loading": "Cargando...",
+    "loadingMore": "Cargando...",
+    "noMore": "No hay más",
+    "saving": "Guardando...",
+    "saveFailed": "Error al guardar",
+    "success": "Éxito",
+    "error": "Error",
+    "warning": "Advertencia",
+    "info": "Información",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "reset": "Restablecer",
+    "clear": "Limpiar",
+    "select": "Seleccionar",
+    "upload": "Subir",
+    "download": "Descargar",
+    "copy": "Copiar",
+    "settings": "Configuración",
+    "help": "Ayuda",
+    "about": "Acerca de",
+    "characters": "caracteres",
+    "creating": "Creando...",
+    "updating": "Actualizando...",
+    "clearSearch": "Borrar búsqueda",
+    "or": "o",
+    "loadFailed": "Carga fallida",
+    "retry": "Reintentar",
+    "retryFailed": "Reintento fallido",
+    "details": "Detalles",
+    "selectAll": "Seleccionar todo",
+    "all": "Todo",
+    "connected": "Conectado",
+    "connectionFailed": "Conexión fallida",
+    "notConnected": "No conectado",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "copied": "Copiado",
+    "copyFailed": "Error al copiar",
+    "enable": "Habilitar",
+    "more": "más",
+    "optional": "Opcional",
+    "duplicate": "Duplicar",
+    "view": "Ver",
+    "refresh": "Actualizar",
+    "notice": "Aviso",
+    "install": "Instalar",
+    "installing": "Instalando...",
+    "installed": "Instalado",
+    "complete": "Completo",
+    "action": "Acción",
+    "separator": ", ",
+    "debug_mode": "Modo de depuración",
+    "true": "Verdadero",
+    "false": "Falso",
+    "please_input": "Por favor ingresa",
+    "unsaved_changes": "Cambios no guardados",
+    "more_errors": "y {{count}} errores más",
+    "unknown": "Desconocido",
+    "required": "Requerido",
+    "yes": "Sí",
+    "no": "No",
+    "enabled": "Habilitado",
+    "advancedOptions": "Opciones avanzadas"
+  },
+  "config": {
+    "respondDirectly": "Responder directamente",
+    "respondDirectlyDesc": "Omitir la agregación de respuestas de miembros y devolver la respuesta directamente",
+    "markdown": "Formato Markdown",
+    "markdownDesc": "Usar Markdown para formatear el contenido de salida",
+    "addDatetime": "Agregar fecha y hora",
+    "addDatetimeDesc": "Incluir la fecha y hora actual en el contexto",
+    "numHistoryRuns": "Ejecuciones de sesión de historial",
+    "toolCallLimit": "Límite de llamadas a herramientas",
+    "skillsEnabled": "Habilitar habilidades",
+    "skillsEnabledDesc": "Permitir que los agentes de IA descubran y usen habilidades del proyecto"
+  },
+  "tagInput": {
+    "placeholder": "Ingresa etiqueta y presiona Enter para agregar",
+    "removeTag": "Eliminar etiqueta",
+    "count": "{{current}}/{{max}} etiquetas",
+    "currentInput": "Entrada actual: {{current}}/{{max}} caracteres",
+    "hint": "Presiona Enter o coma para agregar etiqueta",
+    "errors": {
+      "empty": "El nombre de la etiqueta no puede estar vacío",
+      "tooLong": "El nombre de la etiqueta no puede exceder de {{max}} caracteres",
+      "duplicate": "Esta etiqueta ya existe",
+      "maxReached": "Se permite un máximo de {{max}} etiquetas"
+    }
+  },
+  "settings": {
+    "title": "Configuración",
+    "subtitle": "Personaliza tus preferencias y la configuración de la aplicación",
+    "menu": {
+      "profile": "Perfil",
+      "general": "General",
+      "staff": "Agentes Humanos",
+      "notifications": "Notificaciones",
+      "providers": "Proveedores de Modelos",
+      "plugins": "Plugins",
+      "about": "Acerca de",
+      "logout": "Cerrar sesión"
+    },
+    "plugins": {
+      "title": "Plugins",
+      "subtitle": "Ver y administrar los plugins conectados a TGO",
+      "empty": {
+        "title": "No hay plugins conectados",
+        "description": "Los plugins pueden conectarse a la API de TGO vía Unix Socket o TCP."
+      },
+      "viewDocs": "Ver Guía para Desarrolladores de Plugins",
+      "status": {
+        "connected": "Conectado",
+        "disconnected": "Desconectado",
+        "label": "Estado Actual",
+        "running": "En ejecución",
+        "error": "Error",
+        "installing": "Instalando",
+        "stopped": "Detenido"
+      },
+      "capabilities": "Capacidades",
+      "author": "Autor",
+      "connectedAt": "Conectado en",
+      "debug": {
+        "title": "Sugerencia de depuración",
+        "description": "En modo de desarrollo, puedes conectar plugins locales a través del puerto 8005 (TCP) o /var/run/tgo/tgo.sock (Unix Socket).",
+        "badge": "Depurar",
+        "autoManaged": "Modo de Depuración - Gestión Automática"
+      },
+      "token": {
+        "generate": "Token de Depuración",
+        "error": "Error al generar el token",
+        "modal": {
+          "title": "Token de Depuración del Proyecto",
+          "warning": "El token es válido por 24 horas. Los plugins de depuración locales se asociarán automáticamente con el proyecto actual después de conectarse con este token.",
+          "tokenLabel": "Tu Token de Depuración",
+          "usage": "Uso",
+          "goSDK": "Go SDK:",
+          "pythonSDK": "Python SDK:"
+        }
+      },
+      "install": {
+        "button": "Instalar Plugin",
+        "now": "Instalar Ahora",
+        "modal": {
+          "title": "Instalar Nuevo Plugin",
+          "yamlLabel": "Configuración del Plugin (YAML)"
+        },
+        "url": {
+          "title": "Instalar vía URL",
+          "description": "Ingresa la URL remota del plugin, el sistema obtendrá automáticamente la configuración y preparará la instalación.",
+          "label": "URL del Plugin",
+          "github": {
+            "desc": "Soporta URL de repositorio y ruta de rama"
+          },
+          "gitee": {
+            "desc": "Aceleración nacional, soporta Gitee"
+          },
+          "custom": {
+            "desc": "Soporta YAML directo o URL de directorio"
+          }
+        },
+        "fetch": "Obtener Información",
+        "useManual": "Usar modo de pegado manual de YAML",
+        "backToUrl": "Volver al modo URL",
+        "preview": {
+          "success": "Configuración del plugin analizada con éxito"
+        },
+        "confirm": "Confirmar e Instalar",
+        "preparing": "Preparando instalación...",
+        "processing": "Instalando plugin...",
+        "success": "Instalación exitosa",
+        "error": "Instalación fallida",
+        "enjoy": "¡Todo está listo, comienza a explorar!",
+        "source": "Fuente",
+        "back": "Atrás",
+        "stage": {
+          "preparing": "Preparar entorno",
+          "cloning": "Clonar código",
+          "downloading": "Descargar artefacto",
+          "copying": "Desplegar archivos",
+          "building": "Compilar y construir",
+          "starting": "Iniciar servicio"
+        }
+      },
+      "actions": {
+        "detail": "Ver detalles",
+        "checkUpdate": "Buscar actualizaciones",
+        "logs": "Ver registros",
+        "stop": "Detener",
+        "start": "Iniciar",
+        "restart": "Reiniciar",
+        "uninstall": "Desinstalar",
+        "uninstallConfirm": "¿Estás seguro de que deseas desinstalar este plugin? Esta acción no se puede deshacer."
+      },
+      "installed": {
+        "empty": {
+          "title": "Aún no hay plugins",
+          "description": "Puedes instalar desde la fuente de GitHub, mediante archivos binarios o conectar plugins locales usando tokens de depuración."
+        }
+      },
+      "updateAvailable": "Actualización disponible",
+      "checkUpdate": "Buscar actualización",
+      "checkUpdateError": "Error al buscar actualizaciones",
+      "noUpdate": "Ya tienes la última versión",
+      "installedAt": "Instalado en",
+      "installedAtTime": "Hora de instalación",
+      "installType": "Tipo de instalación",
+      "logs": {
+        "title": "Registros del plugin",
+        "empty": "Aún no hay salida de registros"
+      },
+      "detail": {
+        "basicInfo": "Información básica",
+        "noCapabilities": "Este plugin no declara capacidades especiales"
+      },
+      "details": {
+        "description": "Descripción"
+      },
+      "upgrade": {
+        "title": "Actualización del Plugin",
+        "pluginName": "Nombre del Plugin",
+        "currentVersion": "Versión Actual",
+        "latestVersion": "Última Versión",
+        "preparing": "Preparando actualización...",
+        "confirm": "Actualizar Ahora",
+        "error": "Error en la actualización"
+      }
+    },
+    "profile": {
+      "title": "Perfil",
+      "subtitle": "Ver y administrar tu información personal",
+      "loadError": "Error al cargar el perfil",
+      "username": "Nombre de usuario",
+      "status": "Estado",
+      "description": "Biografía",
+      "serviceStatus": "Estado del Servicio",
+      "servicePaused": "Servicio pausado",
+      "serviceResumed": "Servicio reanudado",
+      "toggleError": "Error al cambiar el estado del servicio",
+      "servicePausedLabel": "Servicio Pausado",
+      "serviceActiveLabel": "Activo",
+      "servicePausedDesc": "No se te asignarán nuevos visitantes mientras estés en pausa, las conversaciones existentes no se ven afectadas",
+      "serviceActiveDesc": "El sistema te asignará nuevos visitantes según las reglas de asignación",
+      "resumeService": "Reanudar Servicio",
+      "pauseService": "Pausar Servicio",
+      "accountInfo": "Información de la Cuenta",
+      "createdAt": "Creado el",
+      "updatedAt": "Actualizado el",
+      "roles": {
+        "admin": "Administrador",
+        "user": "Agente",
+        "agent": "Agente AI"
+      },
+      "statuses": {
+        "online": "En línea",
+        "offline": "Desconectado",
+        "busy": "Ocupado"
+      }
+    },
+    "staff": {
+      "title": "Agentes Humanos",
+      "addStaff": "Agregar Personal",
+      "editStaff": "Editar Personal",
+      "searchPlaceholder": "Buscar nombre de usuario o apodo...",
+      "allRoles": "Todos los Roles",
+      "allStatuses": "Todos los Estados",
+      "tableUser": "Usuario",
+      "tableRole": "Rol",
+      "tableStatus": "Estado",
+      "tableDescription": "Descripción",
+      "tableCreated": "Creado el",
+      "tableServiceActive": "Servicio",
+      "tableActions": "Acciones",
+      "noResults": "No se encontró personal coincidente",
+      "empty": "Aún no hay personal, haz clic en \"Agregar Personal\" para crear",
+      "username": "Nombre de usuario",
+      "usernamePlaceholder": "Ingresa nombre de usuario",
+      "nickname": "Apodo",
+      "nicknamePlaceholder": "Ingresa apodo (opcional)",
+      "name": "Nombre",
+      "namePlaceholder": "Ingresa nombre",
+      "descriptionLabel": "Descripción",
+      "descriptionPlaceholder": "Ingresa descripción del personal (opcional)",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Ingresa contraseña (al menos 8 caracteres)",
+      "passwordPlaceholderEdit": "Deja vacío para mantener la contraseña actual",
+      "confirmPassword": "Confirmar Contraseña",
+      "confirmPasswordPlaceholder": "Reingresa la contraseña",
+      "role": "Rol",
+      "roleHint": "El personal regular puede manejar conversaciones con clientes, el agente AI puede vincularse a agentes AI",
+      "status": "Estado",
+      "deleteConfirmTitle": "Confirmar eliminación",
+      "deleteConfirmMessage": "¿Estás seguro de que deseas eliminar al personal \"{{name}}\"? Esta acción no se puede deshacer.",
+      "fetchError": "Error al obtener la lista de personal",
+      "createSuccess": "Personal creado con éxito",
+      "updateSuccess": "Personal actualizado con éxito",
+      "deleteSuccess": "Personal eliminado con éxito",
+      "saveError": "Error al guardar",
+      "deleteError": "Error al eliminar",
+      "roles": {
+        "admin": "Administrador",
+        "user": "Agente",
+        "agent": "Agente AI"
+      },
+      "statuses": {
+        "online": "En línea",
+        "offline": "Desconectado",
+        "busy": "Ocupado"
+      },
+      "serviceStopped": "Servicio detenido para este agente",
+      "serviceStarted": "Servicio iniciado para este agente",
+      "toggleActiveError": "Error al cambiar el estado del servicio",
+      "clickToStop": "Haz clic para detener el servicio",
+      "clickToStart": "Haz clic para iniciar el servicio",
+      "description": "Acerca de los agentes humanos",
+      "descriptionText": "Cuando los agentes AI no pueden resolver los problemas del usuario, el sistema asigna automáticamente las conversaciones a agentes humanos. Los agentes humanos pueden tomar el control de las conversaciones para brindar un soporte humano más profesional.",
+      "assignmentRules": "Reglas de asignación",
+      "assignmentRulesHint": "Configura las reglas de asignación para agentes humanos. El sistema utiliza un LLM con este prompt para asignar inteligentemente las conversaciones al agente más adecuado.",
+      "serviceTime": "Horario de servicio",
+      "serviceWeekdays": "Días de servicio",
+      "serviceStartTime": "Hora de inicio",
+      "serviceEndTime": "Hora de finalización",
+      "timezone": "Zona horaria",
+      "weekday": {
+        "mon": "Lun",
+        "tue": "Mar",
+        "wed": "Mié",
+        "thu": "Jue",
+        "fri": "Vie",
+        "sat": "Sáb",
+        "sun": "Dom"
+      },
+      "chatSettings": "Configuración de chat",
+      "maxConcurrentChats": "Chats concurrentes máximos",
+      "maxConcurrentChatsHint": "Número máximo de conversaciones que cada agente puede manejar simultáneamente",
+      "autoCloseHours": "Tiempo de cierre automático",
+      "autoCloseHoursHint": "Tiempo después del cual las conversaciones inactivas se cierran automáticamente",
+      "hours": "horas",
+      "llmAssignment": "Asignación inteligente",
+      "llmAssignmentHint": "Cuando está habilitado, el sistema usa un LLM con este prompt para asignar inteligentemente las conversaciones al agente más adecuado.",
+      "assignmentModel": "Modelo de asignación",
+      "selectModel": "Selecciona un modelo",
+      "assignmentModelHint": "Selecciona el LLM para la asignación inteligente de conversaciones, los modelos provienen de la configuración de Proveedores de Modelos",
+      "assignmentPrompt": "Prompt de asignación",
+      "assignmentRulesPlaceholder": "Ingresa las reglas de asignación...",
+      "resetToDefault": "Restablecer a predeterminado",
+      "saveRules": "Guardar reglas",
+      "rulesSaved": "Reglas de asignación guardadas con éxito",
+      "rulesSaveError": "Error al guardar las reglas de asignación",
+      "promptTooLong": "El prompt no puede exceder los 1000 caracteres",
+      "errors": {
+        "usernameRequired": "Por favor ingresa el nombre de usuario",
+        "usernameLength": "El nombre de usuario debe tener entre 1 y 50 caracteres",
+        "nameRequired": "Por favor ingresa el nombre",
+        "passwordRequired": "Por favor ingresa la contraseña",
+        "passwordLength": "La contraseña debe tener al menos 8 caracteres",
+        "passwordMismatch": "Las contraseñas no coinciden"
+      }
+    },
+    "account": {
+      "title": "Información de la cuenta"
+    },
+    "language": {
+      "title": "Configuración de idioma",
+      "description": "Elige tu idioma de interfaz preferido. Los cambios se aplicarán inmediatamente.",
+      "persistence": "La preferencia de idioma se guardará automáticamente en el almacenamiento local",
+      "followSystem": "Automático"
+    },
+    "appearance": {
+      "title": "Configuración de apariencia",
+      "comingSoon": "Próximamente más opciones de apariencia y temas..."
+    },
+    "theme": {
+      "title": "Modo de tema",
+      "description": "Elige tu modo de tema preferido. Los cambios se aplicarán inmediatamente",
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Seguir sistema"
+    },
+    "general": {
+      "title": "General",
+      "login": "Iniciar sesión",
+      "autoLogin": "Habilitar inicio de sesión automático en backend de WeCom",
+      "features": "Funciones",
+      "emojiToText": "Convertir emojis automáticamente a texto",
+      "codeMessage": "Mensajes de código",
+      "speechToText": "Convertir automáticamente mensajes de voz a texto",
+      "privacy": "Privacidad",
+      "readReceipts": "Confirmaciones de lectura",
+      "readReceiptsDesc": "Cuando está desactivado, otros no pueden ver si has leído los mensajes.",
+      "timezonePrivacy": "Mostrar hora local",
+      "timezonePrivacyDesc": "Cuando está desactivado, otros no pueden ver tu información de zona horaria.",
+      "conversationDisplay": "Modo de visualización de conversación",
+      "normal": "Normal",
+      "bubbleLeft": "Burbujas alineadas a la izquierda"
+    },
+    "storage": {
+      "title": "Almacenamiento",
+      "comingSoon": "Gestión de caché, estadísticas de uso de almacenamiento, etc. Próximamente..."
+    },
+    "notifications": {
+      "title": "Notificaciones",
+      "notSupported": "Tu navegador no soporta notificaciones de escritorio",
+      "permission": {
+        "title": "Permiso de Notificación",
+        "granted": "Autorizado",
+        "denied": "Denegado",
+        "default": "No Configurado",
+        "grantedDesc": "Puedes recibir notificaciones de escritorio",
+        "deniedDesc": "Por favor permite el permiso de notificación en la configuración del navegador",
+        "defaultDesc": "Haz clic en el botón para solicitar permiso de notificación",
+        "request": "Solicitar Permiso",
+        "requesting": "Solicitando..."
+      },
+      "toggles": {
+        "title": "Configuración de Notificaciones",
+        "desktop": {
+          "title": "Notificaciones de Escritorio",
+          "description": "Mostrar notificaciones en el centro de notificaciones del sistema cuando lleguen mensajes nuevos"
+        },
+        "sound": {
+          "title": "Alertas Sonoras",
+          "description": "Reproducir sonido de notificación cuando lleguen mensajes nuevos"
+        }
+      },
+      "scenarios": {
+        "title": "Escenarios de Notificación",
+        "background": {
+          "title": "Notificaciones en Segundo Plano",
+          "description": "Enviar notificaciones cuando la página no esté visible (pestaña cambiada o minimizada)"
+        },
+        "otherConversation": {
+          "title": "Mensajes de Otras Conversaciones",
+          "description": "Enviar notificaciones al recibir mensajes de conversaciones distintas a la actual"
+        },
+        "newVisitor": {
+          "title": "Notificaciones de Nuevos Visitantes",
+          "description": "Enviar notificaciones cuando nuevos visitantes entren a la fila"
+        }
+      },
+      "test": {
+        "title": "Notificación de Prueba",
+        "description": "Enviar una notificación de prueba para verificar que la función funciona correctamente",
+        "button": "Enviar Prueba"
+      },
+      "tip": "Consejo: La función de notificaciones requiere permiso del navegador. Si negaste la solicitud de permiso, necesitas permitir manualmente las notificaciones para este sitio en la configuración de tu navegador."
+    },
+    "models": {
+      "modelStore": "Tienda de Modelos",
+      "store": {
+        "title": "Tienda de Modelos",
+        "subtitle": "Descubre e instala modelos de IA de clase mundial",
+        "searchPlaceholder": "Buscar modelos, proveedores o características...",
+        "categories": {
+          "all": "Todos los Modelos",
+          "chat": "Chat",
+          "embedding": "Embedding",
+          "image": "Imagen",
+          "audio": "Audio"
+        },
+        "install": "Comenzar",
+        "installing": "Instalando...",
+        "installed": "Instalado",
+        "uninstall": "Dejar de Usar",
+        "details": "Detalles del Modelo",
+        "provider": "Proveedor",
+        "price": "Precio",
+        "inputPrice": "Precio de Entrada (por 1M de tokens)",
+        "outputPrice": "Precio de Salida (por 1M de tokens)",
+        "contextWindow": "Ventana de Contexto",
+        "noResults": "No se encontraron modelos",
+        "noResultsDesc": "Intenta buscar con diferentes palabras clave o cambia de categoría",
+        "installSuccess": "Modelo sincronizado con éxito",
+        "installSuccessMessage": "El modelo \"{{name}}\" ha sido sincronizado con tu proyecto",
+        "fetchFailed": "Error al obtener modelos de la tienda"
+      },
+      "defaults": {
+        "title": "Modelos Predeterminados",
+        "description": "Selecciona los modelos predeterminados globales requeridos para LLM y Embedding.",
+        "llmLabel": "LLM Predeterminado",
+        "embeddingLabel": "Embedding Predeterminado",
+        "selectPlaceholder": "Por favor selecciona un modelo",
+        "none": "No Establecido",
+        "embeddingHelp": {
+          "title": "Modelos de Embedding Recomendados",
+          "providers": {
+            "openai": {
+              "name": "OpenAI",
+              "models": [
+                "text-embedding-3-small",
+                "text-embedding-3-large",
+                "text-embedding-ada-002"
+              ]
+            },
+            "qwen": {
+              "name": "Qwen/DashScope",
+              "models": [
+                "text-embedding-v4"
+              ]
+            }
+          }
+        },
+        "noModels": "No hay modelos disponibles",
+        "noEmbeddingModels": "No hay modelos de embedding disponibles",
+        "addProvider": "Agregar Proveedor"
+      },
+      "toast": {
+        "saved": "Modelos predeterminados guardados",
+        "required": "Por favor, configura tanto el modelo LLM predeterminado como el modelo de Embedding predeterminado",
+        "atLeastOneRequired": "Por favor, selecciona al menos un modelo predeterminado"
+      }
+    },
+    "providers": {
+      "title": "Proveedores de Modelos",
+      "subtitle": "Gestiona las configuraciones de acceso para proveedores de IA: claves, proxy seguro, listas de modelos y predeterminados.",
+      "docs": "Ver Documentación",
+      "add": "Agregar Proveedor",
+      "addCustom": "Configuración Personalizada",
+      "fromStore": "Obtener de la Tienda",
+      "addModelTo": "Agregar Modelo a",
+      "addTitle": "Agregar Proveedor",
+      "edit": "Editar Proveedor",
+      "storeModel": "Modelo de Tienda",
+      "emptyTitle": "Inicia tu viaje con IA",
+      "enableButton": "Habilitar",
+      "updateButton": "Actualizar",
+      "defaultName": "Nuevo Proveedor",
+      "baseUrl": "URL Base",
+      "provider": {
+        "openai": "OpenAI",
+        "azure": "Azure OpenAI",
+        "qwen": "Qwen (DashScope)",
+        "moonshot": "Moonshot (Kimi)",
+        "deepseek": "DeepSeek",
+        "baichuan": "Baichuan",
+        "ollama": "Ollama",
+        "custom": "Personalizado"
+      },
+      "groups": {
+        "connection": "Autenticación y Conexión",
+        "models": "",
+        "modelsTitle": "Modelos y Predeterminados"
+      },
+      "fields": {
+        "kind": "Proveedor",
+        "name": "Nombre/Alias",
+        "apiKey": "Clave API",
+        "baseUrl": "URL Base de API",
+        "models": "Modelos Disponibles",
+        "defaultModel": "Modelo Predeterminado",
+        "modelType": "Tipo de Modelo",
+        "embeddingModel": "Modelo de Embedding",
+        "modelId": "ID del Modelo"
+      },
+      "suggestedModels": "Modelos Sugeridos",
+      "noStoreModels": "No hay modelos disponibles en la tienda",
+      "modelType": {
+        "chat": "Modelo de Chat",
+        "embedding": "Modelo de Embedding"
+      },
+      "modelTypes": {
+        "chat": "Chat",
+        "embedding": "Embedding"
+      },
+      "azure": {
+        "deployment": "Nombre de Despliegue",
+        "resource": "Recurso",
+        "apiVersion": "Versión de API"
+      },
+      "help": {
+        "azure": {
+          "deployment": "Nombre de despliegue en Azure, diferente del ID del modelo",
+          "resource": "Nombre del recurso de Azure, por ejemplo, tu recurso de servicio OpenAI",
+          "apiVersion": "Versión de API de Azure OpenAI, por ejemplo, 2024-02-15-preview"
+        },
+        "modelsCustom": "Si la lista está vacía o no encuentras el modelo que necesitas, puedes ingresar manualmente un nombre de modelo personalizado",
+        "embeddingModel": "Ingresa el nombre del modelo de embedding, por ejemplo, text-embedding-3-small, text-embedding-ada-002"
+      },
+      "placeholders": {
+        "apiKeyMasked": "Configurado: {{mask}}, deja vacío para mantener",
+        "apiKey": "Pegar clave API",
+        "modelsSearch": "Buscar o ingresar ID del modelo...",
+        "manualModelId": "Ingresa el ID manualmente o selecciona abajo",
+        "baseUrl": {
+          "custom": "URL base personalizada",
+          "default": "URL predeterminada"
+        },
+        "embeddingModel": "ej., text-embedding-3-small"
+      },
+      "fetchModels": {
+        "failed": "Error al obtener modelos",
+        "empty": "No hay modelos disponibles"
+      },
+      "selectDefaultModel": "Por favor, agrega modelos primero",
+      "test": {
+        "ok": "Conexión exitosa",
+        "failed": "Conexión fallida",
+        "saveFirst": "Por favor guarda antes de probar"
+      },
+      "testButton": "Probar",
+      "badges": {
+        "default": "Predeterminado"
+      },
+      "toast": {
+        "added": "Proveedor agregado",
+        "saved": "Cambios guardados",
+        "deleted": "Proveedor eliminado",
+        "modelAdded": "Modelo agregado",
+        "modelDeleted": "Modelo eliminado",
+        "addedWithDefaults": "Proveedor agregado y se inicializaron {{count}} modelos comunes"
+      },
+      "confirmDeleteModel": "¿Estás seguro de que deseas eliminar el modelo {{model}}?",
+      "validate": {
+        "apiKey": "Por favor ingresa la clave API",
+        "azureDeployment": "Por favor ingresa el nombre de despliegue de Azure"
+      },
+      "createModelOption": "Crear",
+      "confirmDeleteTitle": "Eliminar proveedor",
+      "confirmDeleteMsg": "¿Estás seguro de que deseas eliminar esta configuración de proveedor? Esta acción no se puede deshacer.",
+      "empty": "No hay proveedores configurados aún. Haz clic en \"Obtener de la tienda\" o \"Configuración personalizada\" para comenzar."
+    }
+  },
+  "about": {
+    "title": "Información del sistema",
+    "version": "Versión",
+    "environment": "Entorno",
+    "apiVersion": "Versión de API",
+    "pythonVersion": "Versión de Python",
+    "buildTime": "Hora de compilación",
+    "gitCommit": "Commit de Git",
+    "github": "Repositorio de GitHub",
+    "website": "Sitio web oficial",
+    "copyright": "Todos los derechos reservados.",
+    "loading": "Cargando...",
+    "loadError": "Error al cargar la información del sistema",
+    "systemInfo": "Información del sistema",
+    "technicalDetails": "Detalles técnicos",
+    "links": "Enlaces"
+  },
+  "agents": {
+    "title": "Gestión del equipo de agentes",
+    "subtitle": "Gestiona tus agentes de IA",
+    "config": {
+      "advanced": "Configuración avanzada"
+    },
+    "actions": {
+      "create": "Crear agente",
+      "edit": "Editar",
+      "copy": "Copiar",
+      "delete": "Eliminar",
+      "enable": "Habilitar",
+      "disable": "Detener",
+      "refresh": "Actualizar",
+      "retry": "Reintentar",
+      "view": "Ver detalles",
+      "viewMore": "Ver más",
+      "collapse": "Colapsar",
+      "teamChat": "Chat de equipo",
+      "teamChatTooltip": "Chatear con el equipo de agentes",
+      "teamChatNoAgents": "Por favor crea un agente primero",
+      "teamInfo": "Información del equipo"
+    },
+    "form": {
+      "name": "Nombre del agente",
+      "description": "Descripción",
+      "detailedDescription": "Descripción detallada",
+      "profession": "Profesión",
+      "llmModel": "Modelo LLM",
+      "tools": "Herramientas",
+      "knowledge_bases": "Bases de conocimiento",
+      "avatar": "Avatar"
+    },
+    "validation": {
+      "nameRequired": "El nombre del agente es obligatorio",
+      "professionRequired": "La profesión/rol es obligatorio",
+      "descriptionRequired": "La descripción del agente es obligatoria",
+      "modelRequired": "Por favor selecciona un modelo LLM"
+    },
+    "status": {
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "online": "En línea",
+      "offline": "Fuera de línea"
+    },
+    "messages": {
+      "loadFailed": "Error al cargar",
+      "loadFailedDesc": "No se pudo cargar la lista de agentes, por favor intenta de nuevo más tarde",
+      "refreshSuccess": "Actualización exitosa",
+      "refreshSuccessDesc": "La lista de agentes ha sido actualizada",
+      "refreshFailed": "Error al actualizar",
+      "refreshFailedDesc": "No se pudo actualizar la lista de agentes, por favor intenta de nuevo más tarde",
+      "retryFailed": "Reintento fallido",
+      "retryFailedDesc": "No se pudo cargar la lista de agentes, por favor intenta de nuevo más tarde",
+      "createSuccess": "Creación exitosa",
+      "createSuccessDesc": "El agente \"{{name}}\" ha sido creado exitosamente",
+      "createFailed": "Error al crear",
+      "updateSuccess": "Actualización exitosa",
+      "updateSuccessDesc": "El agente \"{{name}}\" se ha actualizado correctamente",
+      "updateFailed": "Actualización fallida",
+      "deleteSuccess": "Eliminación exitosa",
+      "deleteSuccessDesc": "El agente \"{{name}}\" ha sido eliminado",
+      "deleteFailed": "Eliminación fallida",
+      "deleteFailedDesc": "Ocurrió un error al eliminar el agente",
+      "copySuccess": "Copia exitosa",
+      "copySuccessDesc": "El agente \"{{name}}\" se ha copiado correctamente",
+      "copyFailed": "Copia fallida",
+      "copyFailedDesc": "Ocurrió un error al copiar el agente",
+      "statusUpdateSuccess": "Actualización exitosa",
+      "statusUpdateSuccessDesc": "El estado del agente \"{{name}}\" ha sido actualizado",
+      "statusUpdateFailed": "Actualización fallida",
+      "statusUpdateFailedDesc": "Ocurrió un error al actualizar el estado del agente",
+      "noTeam": "Equipo no cargado",
+      "noTeamDesc": "Por favor, inténtalo de nuevo más tarde",
+      "noAgentsForTeamChat": "No se puede iniciar el chat del equipo",
+      "noAgentsForTeamChatDesc": "Por favor, crea al menos un agente primero"
+    },
+    "teamChat": {
+      "defaultName": "Equipo de agentes"
+    },
+    "teamDescription": "A través de la colaboración en equipo, puedes llamar simultáneamente a múltiples agentes de IA equipados con capacidades de llamada de herramientas, ejecución de flujos de trabajo y recuperación de bases de conocimiento para lograr una lógica de negocio más compleja y un procesamiento de tareas más eficiente.",
+    "listTitle": "Lista de agentes",
+    "stats": {
+      "total": "Total de agentes",
+      "active": "En ejecución",
+      "error": "Problemas",
+      "team": "Miembros del equipo"
+    },
+    "empty": {
+      "title": "Sin agentes",
+      "description": "Haz clic en el botón \"Crear agente\" para comenzar a crear tu primer agente"
+    },
+    "error": {
+      "title": "Carga fallida",
+      "retry": "Reintentar"
+    },
+    "card": {
+      "defaultRole": "Agente",
+      "noDescription": "No hay descripción disponible",
+      "chatAction": "Iniciar Chat",
+      "noTools": "No hay herramientas asociadas",
+      "noKnowledgeBases": "No hay bases de conocimiento asociadas",
+      "noWorkflows": "No hay flujos de trabajo asociados",
+      "chatTooltip": "Chatear con el Agente",
+      "editTooltip": "Editar Agente",
+      "deleteTooltip": "Eliminar Agente",
+      "llmLabel": "LLM",
+      "status": {
+        "active": "Activo",
+        "inactive": "Inactivo",
+        "error": "Error",
+        "unknown": "Desconocido"
+      }
+    },
+    "copy": {
+      "suffix": " (Copiar)",
+      "defaultProfession": "Experto"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente"
+    },
+    "modal": {
+      "create": {
+        "title": "Crear Agente",
+        "subtitle": "Define un agente digital virtual con habilidades profesionales"
+      },
+      "edit": {
+        "title": "Editar Agente",
+        "subtitle": "Optimizar el comportamiento y configuración del agente"
+      },
+      "detail": {
+        "title": "Detalles del Agente"
+      },
+      "delete": {
+        "title": "Eliminar Agente",
+        "message": "¿Estás seguro de que deseas eliminar el agente \"{{name}}\"? Esta acción no se puede deshacer.",
+        "confirm": "Eliminar",
+        "cancel": "Cancelar"
+      }
+    },
+    "create": {
+      "sections": {
+        "modelConfig": "Configuración del Modelo",
+        "description": "Descripción de Capacidades",
+        "tools": "Herramientas",
+        "skills": "Habilidades",
+        "resources": "Asociación de Recursos"
+      },
+      "placeholders": {
+        "name": "Por favor ingresa el nombre del agente",
+        "profession": "p.ej. Soporte al Cliente, Soporte Técnico, Consultor de Ventas",
+        "description": "Por favor describe las funciones, responsabilidades y características del agente, p.ej., manejo de consultas de clientes, proporcionar información de productos y soporte técnico..."
+      },
+      "models": {
+        "loading": "Cargando modelos...",
+        "error": "Error al cargar modelos",
+        "empty": "No hay modelos disponibles",
+        "selectPlaceholder": "Por favor selecciona un modelo",
+        "loadFailedTitle": "Carga fallida",
+        "loadFailedDesc": "No se pudo cargar la lista de modelos, por favor intenta de nuevo más tarde",
+        "loadFailedInline": "Error al cargar modelo: {{error}}"
+      },
+      "tools": {
+        "shortNoMissingTitle": "Falta Tool Short No",
+        "shortNoMissingDesc": "Las siguientes herramientas carecen de short_no o nombre: {{names}}, por favor actualiza la tienda de herramientas o vuelve a seleccionar e intenta de nuevo"
+      }
+    },
+    "edit": {
+      "loading": "Cargando detalles del agente...",
+      "loadAgentError": "No se pudieron cargar los detalles del agente, por favor intenta de nuevo más tarde",
+      "updateFailedUnknown": "Ocurrió un error desconocido al actualizar el agente",
+      "saveButton": "Guardar Cambios",
+      "tools": {
+        "pendingNewTool": "Nueva herramienta pendiente",
+        "missingTitle": "Información de la herramienta faltante",
+        "missingDesc": "Las siguientes herramientas carecen de nombre: {{names}}, por favor vuelve a seleccionar e intenta de nuevo"
+      }
+    },
+    "detail": {
+      "basicInfo": "Información Básica",
+      "performanceStats": "Estadísticas de Rendimiento",
+      "tools": "Herramientas Asociadas",
+      "knowledge_bases": "Bases de Conocimiento Asociadas",
+      "workflows": "Flujos de Trabajo Asociados",
+      "tags": "Etiquetas",
+      "fields": {
+        "description": "Descripción",
+        "agent_id": "ID del Agente",
+        "llmModel": "Modelo LLM",
+        "endpoint": "Endpoint",
+        "lastActive": "Última actividad"
+      },
+      "metrics": {
+        "conversationCount": "Conversaciones",
+        "successRate": "Tasa de éxito",
+        "avgResponseTime": "Tiempo promedio de respuesta"
+      },
+      "noKnowledgeBases": "No hay bases de conocimiento asociadas",
+      "noWorkflows": "No hay flujos de trabajo asociados",
+      "knowledgeBasePrefix": "KB {{id}}",
+      "closeButton": "Cerrar"
+    },
+    "toolsSection": {
+      "selectedTitle": "Herramientas seleccionadas",
+      "selectedCount": "{{count}} seleccionadas",
+      "addButton": "Agregar herramienta",
+      "emptyTitle": "No se agregaron herramientas",
+      "emptyDescription": "Haz clic en \"Agregar herramienta\" para seleccionar herramientas"
+    },
+    "skillsSection": {
+      "selectedTitle": "Habilidades seleccionadas",
+      "selectedCount": "{{count}} seleccionadas",
+      "addButton": "Agregar habilidad",
+      "selectTitle": "Seleccionar habilidades",
+      "selectSubtitle": "Agrega habilidades profesionales a los agentes de IA",
+      "emptyTitle": "No se agregaron habilidades",
+      "emptyDescription": "Haz clic en \"Agregar habilidad\" para seleccionar habilidades"
+    },
+    "knowledge_basesSection": {
+      "selectedTitle": "Bases de conocimiento seleccionadas",
+      "selectedCount": "{{count}} seleccionadas",
+      "addButton": "Agregar base de conocimiento",
+      "emptyTitle": "No se agregaron bases de conocimiento",
+      "emptyDescription": "Haz clic en \"Agregar base de conocimiento\" para seleccionar bases de conocimiento"
+    },
+    "deviceSection": {
+      "title": "Dispositivo vinculado",
+      "addButton": "Seleccionar dispositivo",
+      "boundCount": "1 vinculado",
+      "emptyTitle": "Ningún dispositivo vinculado",
+      "emptyDescription": "Haz clic en \"Seleccionar dispositivo\" para vincular un dispositivo remoto",
+      "unbind": "Desvincular dispositivo"
+    },
+    "deviceSelectModal": {
+      "title": "Seleccionar dispositivo",
+      "searchPlaceholder": "Buscar dispositivos...",
+      "noDevices": "No hay dispositivos disponibles",
+      "confirmSelection": "Confirmar selección",
+      "manageDevices": "Administrar dispositivos",
+      "statusOnline": "En línea",
+      "statusOffline": "Desconectado",
+      "totalDevices": "{{count}} dispositivos en total",
+      "selectedOne": "1 seleccionado",
+      "selectedNone": "Ninguno seleccionado",
+      "loading": "Cargando dispositivos...",
+      "loadFailedDesc": "Error al cargar la lista de dispositivos. Por favor, inténtalo de nuevo más tarde.",
+      "retryFailedDesc": "Error al cargar la lista de dispositivos. Por favor, verifica tu conexión de red."
+    },
+    "toolsList": {
+      "label": "Herramientas asociadas"
+    },
+    "apiTest": {
+      "title": "Probar {{name}}",
+      "authMethod": "Método de autenticación",
+      "autoDetected": "Detectado automáticamente",
+      "autoDetectedTitle": "Detectado automáticamente desde OpenAPI ({{level}})",
+      "autoLevel": {
+        "operation": "nivel de operación",
+        "global": "nivel global"
+      },
+      "authDisplay": {
+        "none": "Ninguno",
+        "header": "Encabezado",
+        "headerWithPrefix": "Encabezado ({{prefix}})",
+        "query": "Consulta",
+        "autoDetected": "Detectado automáticamente: {{type}}"
+      },
+      "paramsAndValues": "Parámetros y valores",
+      "param": "Parámetro",
+      "value": "Valor",
+      "type": "Tipo",
+      "format": "Formato",
+      "min": "Mín",
+      "max": "Máx",
+      "minLength": "Longitud mínima",
+      "maxLength": "Longitud máxima",
+      "pattern": "Patrón",
+      "selectPlaceholder": "Por favor selecciona",
+      "inputPlaceholder": "Por favor ingresa",
+      "examplePrefix": "Ejemplo: {{value}}",
+      "defaultPrefix": "Por defecto: {{value}}",
+      "noParams": "Este endpoint no tiene parámetros",
+      "button": {
+        "testing": "Probando...",
+        "test": "Probar"
+      },
+      "results": "Resultados de la prueba",
+      "corsHint": "Sugerencia CORS",
+      "corsNote": "Nota: Debido a las restricciones CORS del navegador, algunas APIs pueden no ser directamente testeables",
+      "errorLabel": "Error:",
+      "responseHeaders": "Encabezados de respuesta:",
+      "responseData": "Datos de respuesta:",
+      "resultsPlaceholder": "Los resultados de la prueba aparecerán aquí",
+      "requestFailed": "La solicitud falló",
+      "networkFailed": "Fallo en la conexión de red. Verifica la URL o posibles problemas de CORS"
+    },
+    "authMethod": {
+      "title": "Método de autenticación",
+      "type": "Tipo de autenticación",
+      "types": {
+        "none": "Ninguno",
+        "header": "Encabezado",
+        "query": "Consulta"
+      },
+      "headerPrefix": "Prefijo del encabezado de autenticación",
+      "headerPrefixes": {
+        "basic": "Básico",
+        "bearer": "Bearer",
+        "custom": "Personalizado"
+      },
+      "keyLabel": "Clave",
+      "valueLabel": "Valor",
+      "keyPlaceholder": {
+        "header": "Autorización",
+        "query": "api_key"
+      },
+      "valuePlaceholder": {
+        "header": {
+          "basic": "Básico <credentials>",
+          "bearer": "Portador <token>"
+        },
+        "default": "Ingresa la clave API"
+      },
+      "cancel": "Cancelar",
+      "save": "Guardar"
+    }
+  },
+  "team": {
+    "modal": {
+      "title": "Información del equipo",
+      "subtitle": "Configura tu equipo de colaboración AI, integrando herramientas, flujos de trabajo y bases de conocimiento para mejorar las capacidades colectivas",
+      "name": "Nombre del equipo",
+      "namePlaceholder": "Ingresa el nombre del equipo",
+      "model": "Modelo LLM",
+      "modelHint": "Selecciona el modelo LLM predeterminado para el equipo",
+      "instruction": "Instrucciones del equipo",
+      "instructionPlaceholder": "Ingresa el prompt o instrucciones del sistema del equipo...",
+      "instructionHint": "💡 Esta instrucción sirve como el contexto global del equipo, integrando llamadas a herramientas, ejecución de flujos de trabajo y capacidades de bases de conocimiento para todos los miembros, facilitando la colaboración eficiente.",
+      "noTeam": "No se encontró el equipo predeterminado",
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "saveSuccess": "Guardado exitoso",
+      "saveSuccessDesc": "La información del equipo ha sido actualizada",
+      "saveFailed": "Error al guardar",
+      "saveFailedDesc": "Ocurrió un error al actualizar la información del equipo",
+      "models": {
+        "loading": "Cargando modelos...",
+        "error": "Error al cargar modelos",
+        "empty": "No hay modelos disponibles",
+        "selectPlaceholder": "Selecciona un modelo"
+      }
+    },
+    "config": {
+      "advanced": "Configuración avanzada"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Inicia sesión en tu cuenta",
+      "email": "Dirección de correo electrónico",
+      "emailOrUsername": "Correo electrónico o nombre de usuario",
+      "password": "Contraseña",
+      "rememberMe": "Recuérdame",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "loginButton": "Iniciar sesión",
+      "loggingIn": "Iniciando sesión...",
+      "noAccount": "¿No tienes una cuenta?",
+      "registerLink": "Regístrate ahora",
+      "emailPlaceholder": "tú@ejemplo.com",
+      "emailOrUsernamePlaceholder": "Ingresa correo electrónico o nombre de usuario",
+      "passwordPlaceholder": "Ingresa tu contraseña"
+    },
+    "register": {
+      "title": "Crear nueva cuenta",
+      "email": "Dirección de correo electrónico",
+      "password": "Establecer contraseña",
+      "passwordConfirmation": "Confirmar contraseña",
+      "registerButton": "Registrarse",
+      "registering": "Registrando...",
+      "hasAccount": "¿Ya tienes una cuenta?",
+      "loginLink": "Iniciar sesión",
+      "emailPlaceholder": "tú@ejemplo.com",
+      "passwordPlaceholder": "Al menos 8 caracteres",
+      "passwordConfirmationPlaceholder": "Ingresa la contraseña nuevamente"
+    },
+    "validation": {
+      "emailRequired": "Por favor ingresa la dirección de correo electrónico",
+      "emailOrUsernameRequired": "Por favor ingresa correo electrónico o nombre de usuario",
+      "emailInvalid": "Por favor ingresa una dirección de correo electrónico válida",
+      "passwordRequired": "Por favor ingresa la contraseña",
+      "passwordMinLength": "La contraseña debe tener al menos {{min}} caracteres",
+      "passwordConfirmationRequired": "Por favor confirma la contraseña",
+      "passwordMismatch": "Las contraseñas no coinciden",
+      "loginFailed": "Error de inicio de sesión, por favor verifica tu correo electrónico y contraseña",
+      "registerFailed": "Error en el registro, por favor intenta de nuevo",
+      "networkError": "Fallo en la conexión de red, por favor verifica la configuración de tu red",
+      "serverError": "Error del servidor, por favor intenta más tarde",
+      "invalidCredentials": "Nombre de usuario o contraseña inválidos",
+      "userExists": "El usuario ya existe, por favor usa un correo electrónico diferente",
+      "weakPassword": "La contraseña es demasiado débil, por favor usa una contraseña más compleja"
+    },
+    "notLoggedIn": "No has iniciado sesión",
+    "agent": "Agente",
+    "user": "Usuario",
+    "logout": "Cerrar sesión",
+    "sessionExpiredTitle": "Sesión expirada",
+    "sessionExpiredMessage": "Por favor inicia sesión de nuevo",
+    "verify": {
+      "title": "Verificación de correo electrónico",
+      "verifying": "Verificando tu correo electrónico...",
+      "success": "¡Tu correo electrónico ha sido verificado con éxito! Ahora puedes iniciar sesión.",
+      "error": "Fallo en la verificación del correo electrónico",
+      "noToken": "Falta el token de verificación. Por favor verifica tu enlace de verificación.",
+      "goToLogin": "Ir a Iniciar Sesión"
+    }
+  },
+  "navigation": {
+    "chat": "Chat",
+    "ai": "Asistente de IA",
+    "aiFeatures": "Funciones de IA",
+    "agents": "Equipos de Agentes",
+    "tools": "Herramientas",
+    "deviceControl": "Control de Dispositivo",
+    "workflows": "Flujos de trabajo",
+    "skills": "Habilidades",
+    "visitors": "Visitantes",
+    "knowledge": "Base de Conocimiento",
+    "channels": "Gestión de Plataforma",
+    "settings": "Configuraciones",
+    "store": "App Store"
+  },
+  "workflow": {
+    "title": "Flujos de Trabajo",
+    "management": {
+      "title": "Gestión de Flujos de Trabajo",
+      "subtitle": "Orquestar flujos complejos de tareas de IA"
+    },
+    "banner": {
+      "title": "Flujos de Trabajo Automatizados",
+      "description": "Orquesta nodos de IA, ramas condicionales y herramientas personalizadas a través de una interfaz gráfica para lograr procesamiento automatizado desde conversaciones simples hasta lógica empresarial compleja."
+    },
+    "empty": {
+      "title": "Sin Flujos de Trabajo",
+      "description": "Haz clic en el botón \"Crear Flujo de Trabajo\" para construir tu primer proceso automatizado",
+      "noResults": "No se encontraron flujos de trabajo coincidentes",
+      "noResultsDesc": "Intenta ajustar tus palabras clave o filtros de búsqueda"
+    },
+    "addWorkflow": "Agregar Flujo de Trabajo",
+    "viewWorkflow": "Ver Flujo de Trabajo",
+    "listTitle": "Lista de Flujos de Trabajo",
+    "nodes": "nodos",
+    "lastUpdated": "Actualizado",
+    "searchPlaceholder": "Buscar flujos de trabajo...",
+    "noDescription": "Sin descripción",
+    "palette": {
+      "title": "Componentes",
+      "search": "Buscar componentes...",
+      "noMatch": "No se encontraron componentes",
+      "underDevelopment": "En Desarrollo",
+      "insertVariable": "Insertar Variable",
+      "searchVariables": "Buscar variables...",
+      "noUpstreamVariables": "No hay variables ascendentes",
+      "noMatchingVariables": "No hay variables coincidentes",
+      "variableTip": "Selecciona una variable para referenciar en la entrada actual."
+    },
+    "categories": {
+      "trigger": "Disparador",
+      "ai": "Capacidades de IA",
+      "logic": "Control Lógico",
+      "external": "Integración Externa",
+      "output": "Salida"
+    },
+    "node_types": {
+      "input": {
+        "label": "Entrada del Usuario",
+        "description": "Activado por mensajes de conversación del usuario"
+      },
+      "timer": {
+        "label": "Disparador de Temporizador",
+        "description": "Ejecutar según un horario establecido"
+      },
+      "webhook": {
+        "label": "Webhook",
+        "description": "Activado mediante solicitudes HTTP externas"
+      },
+      "event": {
+        "label": "Disparador de Evento",
+        "description": "Activado mediante eventos internos del sistema"
+      },
+      "answer": {
+        "label": "Respuesta",
+        "description": "Devolver resultados al usuario o llamador"
+      },
+      "agent": {
+        "label": "Agente de IA",
+        "description": "Llamar a otros agentes de IA"
+      },
+      "tool": {
+        "label": "Herramienta",
+        "description": "Ejecutar herramientas"
+      },
+      "condition": {
+        "label": "Condición",
+        "description": "Rama basada en condiciones"
+      },
+      "llm": {
+        "label": "Llamada LLM",
+        "description": "Llamar directamente a modelos de lenguaje grandes"
+      },
+      "parallel": {
+        "label": "Paralelo",
+        "description": "Ejecutar múltiples ramas en paralelo"
+      },
+      "api": {
+        "label": "Llamada API",
+        "description": "Ejecutar solicitudes HTTP externas"
+      },
+      "classifier": {
+        "label": "Clasificador de Preguntas",
+        "description": "Categorizar entrada usando LLM"
+      }
+    },
+    "status": {
+      "active": "Activo",
+      "draft": "Borrador",
+      "archived": "Archivado"
+    },
+    "actions": {
+      "create": "Crear Flujo de Trabajo",
+      "new_workflow": "Nuevo Flujo de Trabajo",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "deleteNode": "Eliminar Nodo",
+      "save": "Guardar",
+      "undo": "Deshacer",
+      "redo": "Rehacer",
+      "validate": "Validar",
+      "debug": "Depurar"
+    },
+    "debug": {
+      "title": "Depuración en Línea",
+      "input_variables": "Variables de Entrada",
+      "execution_status": "Estado de Ejecución",
+      "final_output": "Salida Final",
+      "run": "Ejecutar Flujo de Trabajo",
+      "stop": "Detener",
+      "clear": "Borrar Resultado",
+      "reset": "Restablecer",
+      "running": "Ejecutando...",
+      "success": "Éxito",
+      "failed": "Fallido",
+      "error": "Error de Ejecución",
+      "pending": "Pendiente",
+      "waiting": "Esperando ejecución...",
+      "starting": "Iniciando...",
+      "no_input_variables": "Sin variables de entrada",
+      "timeline": "Cronología",
+      "duration": "Duración",
+      "input": "Entrada",
+      "output": "Salida",
+      "copy_json": "Copiar JSON",
+      "persistence_note": "Los resultados de la ejecución en modo de depuración son solo para vista previa y no afectarán la versión del flujo de trabajo en línea."
+    },
+    "fields": {
+      "name": "Nombre",
+      "label": "Nombre del Nodo",
+      "description": "Descripción",
+      "description_placeholder": "Describe lo que hace este flujo de trabajo...",
+      "status": "Estado",
+      "tags": "Etiquetas",
+      "selectAgent": "Seleccionar Agente de IA",
+      "selectTool": "Seleccionar Herramienta",
+      "output_variable": "Variable de Salida",
+      "condition_type": "Tipo de Condición",
+      "expression": "Expresión",
+      "variable": "Nombre de Variable",
+      "operator": "Operador",
+      "compare_value": "Valor de Comparación",
+      "llm_prompt": "Prompt LLM",
+      "system_prompt": "Prompt del Sistema",
+      "user_prompt": "Prompt del Usuario",
+      "branches": "Ramas Paralelas",
+      "wait_for_all": "Esperar a Todas las Ramas",
+      "timeout": "Tiempo de Espera (segundos)",
+      "cron_expression": "Expresión Cron",
+      "path_suffix": "Sufijo de Ruta",
+      "method": "Método",
+      "event_type": "Tipo de Evento",
+      "output_mode": "Modo de Salida",
+      "select_variable": "Seleccionar Variable",
+      "reply_template": "Plantilla de Respuesta",
+      "field_definition": "Definición de Campo (JSON)",
+      "request_settings": "Configuración de Solicitud",
+      "headers": "Encabezados",
+      "query_params": "Parámetros de Consulta",
+      "body": "Cuerpo",
+      "text_to_classify": "Texto para Clasificar",
+      "category_definition": "Definición de Categoría",
+      "llm_model": "Modelo LLM",
+      "temperature": "Temperatura",
+      "max_tokens": "Máximo de Tokens",
+      "workflow_info": "Información del Flujo de Trabajo",
+      "version": "Versión",
+      "total_nodes": "Total de Nodos"
+    },
+    "placeholders": {
+      "selectAgent": "Por favor selecciona un Agente de IA",
+      "selectTool": "Por favor selecciona una Herramienta",
+      "cron_hint": "0 * * * * (Cada hora)",
+      "custom_path": "ruta-personalizada",
+      "event_hint": "ej. user_registered",
+      "variable_hint": "respuesta_final",
+      "template_hint": "Hola, el resultado es: {{api_1.body}}",
+      "expression_hint": "{{variable}} === 'value'",
+      "raw_hint": "Ingresa contenido sin formato...",
+      "api_hint": "https://api.example.com",
+      "input_name": "Nombre",
+      "input_type": "Tipo",
+      "input_description": "Descripción",
+      "input_placeholder": "¿Para qué es esta entrada?",
+      "input_query_desc": "El contenido del mensaje de entrada del usuario",
+      "classifier_hint": "Selecciona variable upstream, ej. {{input_1.query}}",
+      "classifier_category_name": "Categoría {{index}}",
+      "llm_condition_hint": "Describe las condiciones semánticas que satisfacen la rama 'Sí'..."
+    },
+    "classifier": {
+      "default_category_1": "Categoría 1",
+      "default_category_2": "Categoría 2",
+      "default_category_desc": "Describe las condiciones de activación para esta categoría"
+    },
+    "output_types": {
+      "variable": "Referencia de Variable",
+      "variable_desc": "Referencia una variable de salida de etapas anteriores",
+      "template": "Plantilla de Texto",
+      "template_desc": "Combina texto personalizado y variables",
+      "structured": "Datos Estructurados",
+      "structured_desc": "Devuelve objeto Clave-Valor"
+    },
+    "operators": {
+      "equals": "Igual (==)",
+      "notEquals": "No Igual (!=)",
+      "contains": "Contiene",
+      "greaterThan": "Mayor Que (>)",
+      "lessThan": "Menor Que (<)",
+      "isEmpty": "Está Vacío (null/vacío)",
+      "isNotEmpty": "No Está Vacío"
+    },
+    "tabs": {
+      "prompt": "Prompt",
+      "model": "Modelo",
+      "capabilities": "Capacidades",
+      "config": "Configuración",
+      "inference_model": "Modelo de Inferencia"
+    },
+    "api": {
+      "default_output": "Salida Predeterminada:",
+      "available_variables": "Variables Disponibles"
+    },
+    "condition_types": {
+      "expression": "Expresión",
+      "variable": "Comparación de Variables",
+      "llm": "Evaluación LLM"
+    },
+    "node_display": {
+      "input_label": "En",
+      "input_trigger_label": "Disparador de Entrada de Usuario",
+      "inputs_defined": "{{count}} Entradas definidas",
+      "not_configured_tool": "Herramienta No Configurada",
+      "prompt_preview": "Vista Previa del Prompt",
+      "not_configured_prompt": "Prompt No Configurado",
+      "branches_count": "{{count}} Ramas",
+      "wait_for_all": "Esperar a todos",
+      "scheduled": "Programado",
+      "not_configured_variable": "Variable No Configurada",
+      "template_output": "Plantilla de Texto",
+      "fields_count": "{{count}} Campos",
+      "output_label": "Salida del Flujo de Trabajo",
+      "classifier_categories_count": "{{count}} Categorías",
+      "classifier_output": "Salida del Clasificador",
+      "input_required": "Entrada Requerida",
+      "llm_evaluation": "Evaluación LLM",
+      "not_configured_condition": "Condición No Configurada",
+      "custom_event": "Evento Personalizado",
+      "not_configured_agent": "Agente No Configurado"
+    },
+    "panel": {
+      "nodeConfig": "Configuración del Nodo",
+      "properties": "Propiedades"
+    },
+    "messages": {
+      "saveSuccess": "Guardado",
+      "saveSuccessDesc": "Flujo de trabajo guardado exitosamente",
+      "saveFailed": "Error al Guardar",
+      "saveFailedDesc": "Ocurrió un error al guardar",
+      "createFailed": "Error al Crear",
+      "validateSuccess": "Validación Exitosa",
+      "validateSuccessDesc": "La configuración del flujo de trabajo es válida",
+      "validateFailed": "Validación Fallida",
+      "validateFailedDesc": "Por favor verifica la configuración del flujo de trabajo",
+      "deleteSuccess": "Eliminado",
+      "deleteFailed": "Error al Eliminar",
+      "duplicateSuccess": "Duplicado",
+      "duplicateFailed": "Error al duplicar",
+      "unsavedChanges": "Tienes cambios sin guardar. ¿Estás seguro de que quieres cerrar?"
+    },
+    "selectModal": {
+      "title": "Seleccionar flujo de trabajo",
+      "searchPlaceholder": "Buscar flujos de trabajo...",
+      "loading": "Cargando flujos de trabajo...",
+      "loadFailedDesc": "Error al cargar flujos de trabajo",
+      "retryFailedDesc": "Error al cargar flujos de trabajo",
+      "noMatch": "No se encontraron flujos de trabajo coincidentes",
+      "createNew": "Crear nuevo flujo de trabajo",
+      "manageWorkflows": "Administrar flujos de trabajo",
+      "confirmSelection": "Confirmar selección ({{count}})"
+    },
+    "modal": {
+      "delete": {
+        "title": "Eliminar flujo de trabajo",
+        "message": "¿Estás seguro de que quieres eliminar el flujo de trabajo \"{{name}}\"? Esta acción no se puede deshacer."
+      }
+    },
+    "empty_state": {
+      "title": "Sin flujos de trabajo",
+      "description": "Crea tu primer flujo de trabajo de IA"
+    },
+    "noMatch": "No se encontraron flujos de trabajo coincidentes",
+    "noMatch.description": "Intenta ajustar tus criterios de búsqueda"
+  },
+  "ai": {
+    "menu": {
+      "title": "Funciones de IA"
+    }
+  },
+  "knowledge": {
+    "title": "Base de Conocimiento",
+    "subtitle": "Administra las fuentes de conocimiento disponibles para los agentes.",
+    "create": "Crear Base de Conocimiento",
+    "createDesc": "Selecciona el tipo de base de conocimiento y completa la información básica",
+    "edit": "Editar Base de Conocimiento",
+    "editDesc": "Modificar la información básica de la base de conocimiento",
+    "delete": "Eliminar Base de Conocimiento",
+    "name": "Nombre",
+    "description": "Descripción",
+    "category": "Categoría",
+    "namePlaceholder": "Ingresa el nombre de la base de conocimiento",
+    "descriptionPlaceholder": "Describe el contenido y propósito de la base de conocimiento",
+    "descriptionHelper": "Cuanto más precisa sea la descripción, más fácil será para la IA usar correctamente esta base de conocimiento",
+    "icon": "Icono",
+    "iconHelper": "Elige un icono para identificar tu base de conocimiento",
+    "tags": "Etiquetas",
+    "tagsPlaceholder": "Ingresa etiquetas y presiona Enter para agregar",
+    "tagsHelper": "Agregar etiquetas te ayuda a organizar y encontrar bases de conocimiento",
+    "filesCount": "{{count}} archivos",
+    "manage": "Administrar Base de Conocimiento",
+    "basicInfo": "Información Básica",
+    "selectType": "Seleccionar Tipo",
+    "typeFileShort": "Archivo",
+    "typeWebsiteShort": "Sitio web",
+    "typeQAShort": "QA",
+    "typeTmall": "Tmall",
+    "typeTmallShort": "Productos Tmall",
+    "typeTaobao": "Taobao",
+    "typeTaobaoShort": "Productos Taobao",
+    "typeJD": "JD.com",
+    "typeJDShort": "Productos JD",
+    "comingSoon": "Próximamente",
+    "comingSoonBadge": "Próximamente",
+    "selectModal": {
+      "title": "Seleccionar Base de Conocimiento",
+      "searchPlaceholder": "Buscar bases de conocimiento...",
+      "selectedSummary": "Seleccionados {{selected}} / Total {{total}}",
+      "loading": "Cargando bases de conocimiento...",
+      "noMatch": "No se encontró ninguna base de conocimiento que coincida",
+      "confirmSelection": "Confirmar selección ({{count}})",
+      "loadFailedDesc": "No se pudo cargar la lista de bases de conocimiento, por favor intenta más tarde",
+      "retryFailedDesc": "No se pudo cargar la lista de bases de conocimiento, por favor verifica tu conexión de red"
+    },
+    "validation": {
+      "nameRequired": "El nombre es obligatorio",
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "nameMax": "El nombre no puede exceder los 50 caracteres",
+      "descRequired": "La descripción es obligatoria",
+      "descMin": "La descripción debe tener al menos 5 caracteres",
+      "descMax": "La descripción no puede exceder los 500 caracteres",
+      "urlRequired": "La URL del sitio web es obligatoria",
+      "urlInvalid": "Por favor ingresa una URL válida"
+    },
+    "type": "Tipo",
+    "typeFile": "Archivo",
+    "typeWebsite": "Sitio web",
+    "typeQA": "Pares de preguntas y respuestas",
+    "typeFileDesc": "Sube archivos de documentos para construir la base de conocimiento",
+    "typeWebsiteDesc": "Rastrear contenido del sitio web para construir la base de conocimiento",
+    "typeQADesc": "Crear pares de preguntas y respuestas para construir la base de conocimiento",
+    "typeReadonly": "El tipo de base de conocimiento no puede cambiarse después de la creación",
+    "advancedSettings": "Configuraciones avanzadas",
+    "metadata": {
+      "fetch": "Obtener información",
+      "fetching": "Obteniendo información...",
+      "fetchSuccess": "Información del sitio web obtenida",
+      "fetchFailed": "Error al obtener información del sitio web",
+      "hint": "El título y la descripción del sitio web se obtendrán automáticamente después de ingresar la URL",
+      "defaultDescription": "Base de conocimiento de {{domain}}"
+    },
+    "crawl": {
+      "title": "Configuración de rastreo",
+      "info": "Configuración de rastreo",
+      "urlSection": "URL del sitio web",
+      "startUrl": "URL del sitio web",
+      "startUrlPlaceholder": "https://example.com",
+      "maxPages": "Máximo de páginas",
+      "maxPagesHint": "1-10000, por defecto 100",
+      "maxDepth": "Profundidad Máxima",
+      "maxDepthHint": "1-10, por defecto 3",
+      "advancedOptions": "Opciones Avanzadas",
+      "includePatterns": "Incluir Patrones",
+      "includePatternsPlaceholder": "/docs/*, /blog/*",
+      "includePatternsHint": "Patrones de URL separados por comas, solo rastrear páginas que coincidan",
+      "excludePatterns": "Excluir Patrones",
+      "excludePatternsPlaceholder": "/admin/*, /login/*",
+      "excludePatternsHint": "Patrones de URL separados por comas, omitir páginas que coincidan",
+      "renderJs": "Renderizar JavaScript",
+      "renderJsHint": "Habilitar para ejecutar JavaScript de la página, adecuado para sitios web con contenido dinámico",
+      "followExternal": "Seguir Enlaces Externos",
+      "respectRobots": "Respetar robots.txt",
+      "waitTime": "Tiempo de Espera (segundos)",
+      "waitTimeHint": "Tiempo para esperar después de cargar la página, para contenido dinámico",
+      "start": "Iniciar Rastreo",
+      "cancel": "Cancelar Rastreo",
+      "started": "Rastreo Iniciado",
+      "startedDesc": "El trabajo de rastreo del sitio web ha sido iniciado",
+      "startFailed": "Error al Iniciar Rastreo",
+      "startFailedDesc": "Ocurrió un error al iniciar el trabajo de rastreo",
+      "cancelled": "Rastreo Cancelado",
+      "cancelledDesc": "El trabajo de rastreo del sitio web ha sido cancelado",
+      "cancelFailed": "Error al Cancelar",
+      "cancelFailedDesc": "Ocurrió un error al cancelar el trabajo de rastreo",
+      "noConfig": "Sin Configuración de Rastreo",
+      "noConfigDesc": "Esta base de conocimiento no tiene configuración de rastreo",
+      "status": {
+        "pending": "Pendiente",
+        "crawling": "Rastreando",
+        "processing": "Procesando",
+        "completed": "Completado",
+        "failed": "Fallido",
+        "cancelled": "Cancelado"
+      }
+    },
+    "website": {
+      "loading": "Cargando...",
+      "loadFailed": "Error al cargar la base de conocimiento",
+      "loadPagesFailed": "Error al cargar las páginas",
+      "noPages": "Aún no hay páginas rastreadas",
+      "tabs": {
+        "pages": "Páginas"
+      },
+      "columns": {
+        "url": "URL",
+        "title": "Título",
+        "status": "Estado",
+        "depth": "Profundidad",
+        "crawledAt": "Rastreado en",
+        "actions": "Acciones"
+      },
+      "pageStatus": {
+        "pending": "Pendiente",
+        "crawling": "Rastreando",
+        "fetched": "Obtenido",
+        "extracted": "Extraído",
+        "processing": "Procesando",
+        "processed": "Procesado",
+        "failed": "Fallido",
+        "skipped": "Omitido"
+      },
+      "progress": {
+        "title": "Progreso del rastreo",
+        "crawling": "Rastreando",
+        "completed": "Completado",
+        "total": "Total de páginas",
+        "pending": "Pendiente",
+        "crawled": "Rastreado",
+        "processing": "Procesando",
+        "processed": "Procesado",
+        "failed": "Fallido"
+      },
+      "addPage": {
+        "button": "Agregar página",
+        "title": "Agregar página manualmente",
+        "urlLabel": "URL de la página",
+        "urlPlaceholder": "Ingresa la URL de la página para agregar",
+        "parentPageLabel": "Página padre",
+        "noParent": "Ninguna (Agregar como página raíz)",
+        "parentPageHint": "Selecciona una página padre, la nueva página se agregará como su hija",
+        "maxDepthLabel": "Profundidad de rastreo",
+        "depthOption0": "Solo esta página (Profundidad 0)",
+        "depthOption1": "Incluir enlaces directos (Profundidad 1)",
+        "depthOption2": "Profundidad 2",
+        "depthOption3": "Profundidad 3",
+        "depthOption5": "Profundidad 5",
+        "depthOption10": "Profundidad 10 (Máximo)",
+        "hint": "Ingresa una URL válida, la página se agregará a la cola de rastreo",
+        "submit": "Agregar",
+        "success": "Página agregada con éxito",
+        "skipped": "La página ya existe",
+        "failed": "Error al agregar la página"
+      },
+      "deletePage": {
+        "button": "Eliminar",
+        "success": "Página eliminada con éxito",
+        "failed": "Error al eliminar la página"
+      },
+      "recrawlPage": {
+        "button": "Rastrear de nuevo",
+        "success": "Rastreo iniciado de nuevo",
+        "skipped": "La página ya está siendo rastreada",
+        "failed": "Error al rastrear la página de nuevo"
+      },
+      "crawlDeeper": {
+        "button": "Rastrear más profundo",
+        "notReady": "La página aún no ha sido procesada, no se puede rastrear más profundo",
+        "success": "Rastreo profundo iniciado",
+        "successDesc": "Se agregaron {{added}} páginas, se encontraron {{found}} enlaces",
+        "noNewPages": "No se encontraron páginas nuevas",
+        "failed": "Fallo en el rastreo profundo"
+      }
+    },
+    "qa": {
+      "loading": "Cargando...",
+      "loadFailed": "Error al cargar la base de conocimiento",
+      "loadPairsFailed": "Error al cargar pares de preguntas y respuestas",
+      "noPairs": "Aún no hay pares de preguntas y respuestas",
+      "add": "Agregar par de preguntas y respuestas",
+      "addTitle": "Agregar par de preguntas y respuestas",
+      "addSuccess": "Par de preguntas y respuestas agregado con éxito",
+      "addFailed": "Error al agregar par de preguntas y respuestas",
+      "editTitle": "Editar par de preguntas y respuestas",
+      "editSuccess": "Par de preguntas y respuestas actualizado con éxito",
+      "editFailed": "Error al actualizar par de preguntas y respuestas",
+      "deleteSuccess": "Par de preguntas y respuestas eliminado con éxito",
+      "deleteFailed": "Error al eliminar par de preguntas y respuestas",
+      "import": "Importar",
+      "importTitle": "Importar pares de preguntas y respuestas",
+      "importFormat": "Seleccionar formato",
+      "importData": "Pegar datos",
+      "importButton": "Iniciar importación",
+      "importSuccess": "Se importaron correctamente {{count}} pares de preguntas y respuestas",
+      "importFailed": "Error en la importación",
+      "importJsonPlaceholder": "Pega datos en formato arreglo JSON...",
+      "importCsvPlaceholder": "Pega datos en formato CSV...",
+      "importJsonFormat": "Ejemplo de formato JSON:",
+      "importCsvFormat": "Ejemplo de formato CSV:",
+      "searchPlaceholder": "Buscar preguntas o respuestas...",
+      "allCategories": "Todas las categorías",
+      "allStatuses": "Todos los estados",
+      "pagination": "Página {{current}} / {{total}}",
+      "stats": {
+        "total": "Total de pares de preguntas y respuestas",
+        "pending": "Pendiente",
+        "processed": "Procesado",
+        "failed": "Fallido"
+      },
+      "status": {
+        "pending": "Pendiente",
+        "processing": "Procesando",
+        "processed": "Procesado",
+        "failed": "Fallido"
+      },
+      "form": {
+        "question": "Pregunta",
+        "questionPlaceholder": "Ingresa la pregunta...",
+        "answer": "Respuesta",
+        "answerPlaceholder": "Ingresa la respuesta...",
+        "category": "Categoría",
+        "categoryPlaceholder": "Ingresa la categoría (opcional)",
+        "tags": "Etiquetas",
+        "tagsPlaceholder": "Ingresa etiquetas, separadas por comas",
+        "tagsHint": "Separa múltiples etiquetas con comas"
+      }
+    },
+    "icons": {
+      "book": "Libro",
+      "fileText": "Documento",
+      "database": "Base de datos",
+      "brain": "Inteligencia",
+      "lightbulb": "Idea",
+      "bookOpen": "Libro abierto",
+      "library": "Biblioteca",
+      "graduationCap": "Aprendizaje",
+      "bookmark": "Marcador",
+      "archive": "Archivo",
+      "folderOpen": "Carpeta",
+      "hardDrive": "Almacenamiento",
+      "layers": "Capas",
+      "package": "Paquete",
+      "briefcase": "Portafolio",
+      "target": "Objetivo",
+      "zap": "Rayo",
+      "star": "Estrella",
+      "heart": "Corazón",
+      "globe": "Global"
+    },
+    "list": {
+      "columns": {
+        "name": "Nombre",
+        "type": "Tipo",
+        "documents": "Documentos",
+        "lastUpdated": "Última actualización",
+        "actions": "Acciones"
+      },
+      "loadFailedDesc": "Ocurrió un error al obtener las bases de conocimiento"
+    },
+    "empty": {
+      "title": "No hay bases de conocimiento",
+      "description": "Crea tu primera base de conocimiento para comenzar"
+    },
+    "error": {
+      "clear": "Borrar error"
+    },
+    "confirmDelete": {
+      "message": "¿Estás seguro de que deseas eliminar la base de conocimiento \"{{name}}\"? Esta acción no se puede deshacer."
+    },
+    "file": {
+      "confirmDelete": {
+        "message": "¿Estás seguro de que deseas eliminar el archivo \"{{name}}\"? Esta acción no se puede deshacer."
+      }
+    },
+    "detail": {
+      "title": "Detalles de la base de conocimiento",
+      "backToList": "Volver a la lista de bases de conocimiento",
+      "refresh": "Actualizar",
+      "uploadDocument": "Subir documento",
+      "searchPlaceholder": "Buscar documentos...",
+      "filter": "Filtrar",
+      "allTypes": "Todos los tipos",
+      "totalDocuments": "Total: {{count}} documentos",
+      "totalSize": "Tamaño: {{size}} MB",
+      "lastUpdated": "Última actualización: {{date}}",
+      "documentName": "Nombre del documento",
+      "fileSize": "Tamaño del archivo",
+      "uploadTime": "Tiempo de carga",
+      "status": "Estado",
+      "actions": "Acciones",
+      "processed": "Procesado",
+      "processing": "Procesando",
+      "chunking": "Dividiendo en partes",
+      "embedding": "Incrustando",
+      "error": "Error",
+      "pending": "Pendiente",
+      "archived": "Archivado",
+      "download": "Descargar",
+      "preview": "Vista previa",
+      "delete": "Eliminar",
+      "noDocuments": "Sin documentos",
+      "noDocumentsDesc": "Esta base de conocimiento no tiene documentos cargados aún",
+      "startUploading": "Comienza a cargar documentos",
+      "loading": "Cargando...",
+      "loadingDetails": "Cargando detalles de la base de conocimiento...",
+      "loadFailedDefault": "Error al cargar detalles de la base de conocimiento",
+      "loadFailedDesc": "Ocurrió un error al cargar los detalles de la base de conocimiento",
+      "notFound": {
+        "title": "Base de conocimiento no encontrada",
+        "description": "Por favor verifica si el enlace es correcto"
+      },
+      "fileServiceNotInitialized": "Servicio de archivos no inicializado"
+    },
+    "upload": {
+      "title": "Arrastra archivos aquí o haz clic para cargar",
+      "supportedFormats": "Soporta archivos PDF, Word, Excel, PowerPoint, Texto, Markdown, HTML",
+      "selectFiles": "Seleccionar archivos",
+      "uploading": "Cargando...",
+      "uploadProgress": "Progreso de carga",
+      "uploadComplete": "Carga completa",
+      "uploadFailed": "Carga fallida",
+      "maxFileSize": "El tamaño del archivo no puede exceder los 10MB",
+      "unsupportedFormat": "Formato de archivo no soportado",
+      "multipleSuccessMessage": "{{count}} archivos cargados con éxito",
+      "partialSuccess": "Carga parcial exitosa",
+      "partialSuccessMessage": "{{success}} archivos cargados con éxito, {{failed}} archivos fallaron",
+      "checkingEmbedding": "Verificando configuración del modelo de embedding...",
+      "noEmbeddingModel": {
+        "title": "⚠️ No se pueden cargar archivos",
+        "description": "No hay un modelo de embedding configurado. Los archivos de la base de conocimiento requieren un modelo de embedding para la vectorización. Por favor, configura un modelo de embedding predeterminado en la Configuración del Proveedor de IA primero.",
+        "goToSettings": "Ir a Configuración"
+      }
+    },
+    "embedding": {
+      "error": "Error",
+      "noProject": "Proyecto actual no encontrado",
+      "checkFailed": "Verificación fallida",
+      "checkFailedDesc": "No se pudo verificar la configuración del modelo de embedding. Por favor, asegúrate de que un modelo de embedding esté configurado.",
+      "requiredTitle": "Modelo de Embedding Requerido",
+      "requiredDesc": "Crear una base de conocimiento requiere que se configure un modelo de embedding predeterminado. El modelo de embedding se usa para convertir el contenido del documento en vectores para la búsqueda semántica.",
+      "configPath": "Ruta de Configuración",
+      "configPathDesc": "Configuración → Proveedores de Modelo → Establecer Modelo de Embedding Predeterminado",
+      "goToConfig": "Ir a Configuración"
+    }
+  },
+  "channels": {
+    "title": "Gestión de Plataforma",
+    "custom": "Plataforma Personalizada",
+    "config": "Configuración",
+    "status": "Estado",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "placeholder": {
+      "selectOrCreate": "Por favor selecciona una plataforma a la izquierda, o haz clic en \"+\" para crear una nueva."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 TKTLABS. Todos los derechos reservados."
+  },
+  "brand": {
+    "name": "TKTLABS"
+  },
+  "comingSoon": {
+    "title": "Próximamente",
+    "description": "Esta función está en desarrollo. Mantente atento..."
+  },
+  "visitor": {
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente"
+    },
+    "management": {
+      "title": "Gestión de Visitantes",
+      "subtitle": "Ver y administrar la información de visitantes de todas las plataformas",
+      "totalVisitors": "Total de Visitantes",
+      "errorTitle": "Error al cargar"
+    },
+    "table": {
+      "visitor": "Visitante",
+      "platform": "Plataforma",
+      "lastVisit": "Última Visita",
+      "lastOnline": "Última Conexión",
+      "tags": "Etiquetas",
+      "actions": "Acciones",
+      "empty": "No hay datos de visitantes"
+    },
+    "filters": {
+      "search": {
+        "placeholder": "Buscar por nombre, correo electrónico o teléfono..."
+      },
+      "platform": {
+        "all": "Todas las Plataformas"
+      },
+      "tags": {
+        "all": "Todas las Etiquetas",
+        "select": "Filtrar por Etiqueta",
+        "selected": "Etiquetas Seleccionadas"
+      },
+      "sort": {
+        "lastVisit": "Última Actividad",
+        "createdAt": "Más Recientes"
+      },
+      "online": {
+        "all": "Todos los Estados",
+        "online": "En línea",
+        "offline": "Desconectado"
+      }
+    },
+    "detail": {
+      "title": "Detalles del Visitante",
+      "basicInfo": "Información Básica",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "company": "Empresa",
+      "jobTitle": "Puesto",
+      "source": "Fuente",
+      "note": "Nota",
+      "systemInfo": "Información del sistema",
+      "platform": "Plataforma",
+      "firstVisit": "Primera visita",
+      "lastVisit": "Última visita"
+    },
+    "unknown": "Visitante desconocido",
+    "fallbackName": "Visitante {{suffix}}",
+    "onlineStatus": {
+      "online": "En línea",
+      "justNow": "Justo ahora",
+      "minutesAgo": "hace {{count}}m",
+      "hoursAgo": "hace {{count}}h",
+      "daysAgo": "hace {{count}}d",
+      "weeksAgo": "hace {{count}}w"
+    },
+    "ai": {
+      "emotion": {
+        "neutral": "Neutral"
+      }
+    },
+    "system": {
+      "defaultSource": "Sitio web oficial",
+      "fields": {
+        "platform": "Plataforma",
+        "sourcePage": "Página de origen",
+        "browser": "Navegador",
+        "os": "Sistema operativo",
+        "language": "Idioma",
+        "timezone": "Zona horaria",
+        "ipAddress": "Dirección IP",
+        "location": "Ubicación",
+        "firstSeen": "Primera vez visto"
+      },
+      "empty": "Sin información del sistema"
+    },
+    "sections": {
+      "basicInfo": "Información básica",
+      "aiInsights": "Perspectivas de IA",
+      "systemInfo": "Información del sistema",
+      "recentActivity": "Actividad reciente",
+      "aiPersona": "Persona de IA",
+      "relatedTickets": "Tickets relacionados"
+    },
+    "aiInsights": {
+      "satisfactionScore": "Puntuación de satisfacción",
+      "emotionScore": "Puntuación de emoción",
+      "intent": "Intención",
+      "insightSummary": "Resumen de información",
+      "currentSatisfaction": "Satisfacción actual",
+      "currentEmotion": "Emoción actual"
+    },
+    "activity": {
+      "noActivity": "Sin actividad aún",
+      "noTickets": "No hay tickets relacionados",
+      "duration": {
+        "seconds": "Duración {{count}}s",
+        "minutes": "Duración {{count}} minutos",
+        "minutesSeconds": "Duración {{m}}m {{s}}s"
+      }
+    },
+    "persona": {
+      "noData": "Sin datos de persona"
+    },
+    "load": {
+      "failedTitle": "Error al cargar la información del visitante",
+      "failedDesc": "Error al cargar los datos del visitante"
+    },
+    "ui": {
+      "loading": "Cargando información del visitante...",
+      "loadFailed": "Error de carga",
+      "selectConversation": "Selecciona un chat para ver la información del visitante",
+      "noInfo": "Sin información del visitante"
+    },
+    "fields": {
+      "name": "Nombre",
+      "nickname": "Apodo",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "note": "Nota",
+      "field": "Campo"
+    },
+    "update": {
+      "successTitle": "Actualizado con éxito",
+      "fieldUpdated": "{{field}} ha sido actualizado",
+      "failedTitle": "Error al actualizar",
+      "failedDesc": "Error al actualizar"
+    },
+    "validation": {
+      "invalidEmail": "Por favor ingresa una dirección de correo electrónico válida",
+      "invalidPhone": "Por favor ingresa un número de teléfono válido"
+    },
+    "avatar": {
+      "uploadTitle": "Haz clic para subir avatar",
+      "cropTitle": "Recortar Avatar",
+      "invalidTypeTitle": "Tipo de archivo inválido",
+      "invalidTypeDesc": "Por favor selecciona una imagen JPEG, PNG, GIF o WebP",
+      "fileTooLargeTitle": "Archivo demasiado grande",
+      "fileTooLargeDesc": "El tamaño de la imagen no debe exceder 5MB",
+      "uploadSuccessTitle": "Carga exitosa",
+      "uploadSuccessDesc": "El avatar del visitante ha sido actualizado",
+      "uploadFailedTitle": "Error en la carga",
+      "uploadFailedDesc": "Error en la carga"
+    },
+    "customAttr": {
+      "addButton": "Agregar Atributo Personalizado",
+      "namePlaceholder": "Nombre del atributo",
+      "valuePlaceholder": "Valor del atributo",
+      "templates": {
+        "company": "Empresa",
+        "jobTitle": "Título del puesto",
+        "department": "Departamento",
+        "industry": "Industria",
+        "sourceChannel": "Canal de origen",
+        "budgetRange": "Rango de presupuesto",
+        "decisionAuthority": "Autoridad de decisión",
+        "urgency": "Urgencia",
+        "note": "Nota"
+      },
+      "addSuccessTitle": "Agregado con éxito",
+      "addSuccessDesc": "Atributo personalizado agregado",
+      "addFailedTitle": "Error al agregar",
+      "addFailedDesc": "Error al agregar",
+      "updateSuccessTitle": "Actualizado con éxito",
+      "updateSuccessDesc": "Atributo personalizado actualizado",
+      "updateFailedTitle": "Error al actualizar",
+      "updateFailedDesc": "Actualización fallida",
+      "deleteSuccessTitle": "Eliminado con éxito",
+      "deleteSuccessDesc": "Atributo personalizado eliminado",
+      "deleteFailedTitle": "Error al eliminar",
+      "deleteFailedDesc": "Error al eliminar"
+    },
+    "tags": {
+      "title": "Etiquetas",
+      "addButton": "Agregar",
+      "editTagTitle": "Editar etiqueta",
+      "deleteTagTitle": "Eliminar etiqueta",
+      "inputPlaceholder": "Ingresa el nombre de la etiqueta",
+      "editPanel": {
+        "weightLabel": "Peso (0-10)",
+        "colorLabel": "Color"
+      },
+      "colorPicker": {
+        "title": "Elige color"
+      },
+      "weightTitle": "Peso: {{weight}}",
+      "limitReached": "Límite de etiquetas alcanzado (máx. {{max}})",
+      "common": {
+        "title": "Etiquetas comunes:",
+        "loading": "Cargando",
+        "loadFailed": "Error al obtener etiquetas comunes",
+        "empty": "No hay etiquetas disponibles"
+      },
+      "colors": {
+        "red": "Rojo",
+        "orange": "Naranja",
+        "yellow": "Amarillo",
+        "green": "Verde",
+        "emerald": "Esmeralda",
+        "teal": "Verde azulado",
+        "blue": "Azul",
+        "indigo": "Índigo",
+        "purple": "Púrpura",
+        "pink": "Rosa",
+        "gray": "Gris"
+      },
+      "addSuccessTitle": "Agregado con éxito",
+      "addSuccessDesc": "Etiqueta agregada",
+      "addFailedTitle": "Error al agregar",
+      "addFailedDesc": "Error al agregar etiqueta",
+      "updateSuccessTitle": "Actualizado con éxito",
+      "updateSuccessDesc": "Etiqueta actualizada",
+      "updateFailedTitle": "Error al actualizar",
+      "updateFailedDesc": "Error al actualizar etiqueta",
+      "removeSuccessTitle": "Eliminado con éxito",
+      "removeSuccessDesc": "Etiqueta eliminada",
+      "removeFailedTitle": "Error al eliminar",
+      "removeFailedDesc": "Error al eliminar etiqueta",
+      "errors": {
+        "notFound": "Etiqueta no encontrada",
+        "noTagId": "Error al obtener ID de etiqueta"
+      }
+    }
+  },
+  "errors": {
+    "incompleteVisitorInfo": "Información del visitante incompleta",
+    "missingVisitorId": "Falta visitor_id"
+  },
+  "search": {
+    "tabs": {
+      "all": "Todos",
+      "visitors": "Visitantes",
+      "messages": "Mensajes"
+    },
+    "placeholder": "Buscar visitantes o mensajes",
+    "clear": "Limpiar",
+    "aria": {
+      "tablist": "Buscar categorías"
+    },
+    "errorGeneric": "Error en la búsqueda, por favor intenta más tarde",
+    "toasts": {
+      "notFoundTitle": "Conversación no encontrada",
+      "noConversationInfo": "Este resultado carece de información de conversación",
+      "notInRecent": "Esta conversación no está en la lista reciente. Intenta actualizar.",
+      "incompleteVisitorInfo": "Información del visitante incompleta",
+      "missingVisitorId": "Falta visitor_id"
+    },
+    "emptyQueryHint": "Ingresa una palabra clave para comenzar la búsqueda",
+    "searching": "Buscando...",
+    "visitorsSectionTitle": "Visitantes ({{count}})",
+    "messagesSectionTitle": "Mensajes ({{count}})",
+    "noVisitorsFound": "No se encontraron visitantes relacionados",
+    "noMessagesFound": "No se encontraron mensajes relacionados",
+    "noPreview": "(Sin vista previa)",
+    "channel": "Conversación",
+    "footer": {
+      "hintPrefix": "Consejo:",
+      "esc": "Esc para cerrar",
+      "enter": "Enter para abrir",
+      "tip": "Consejo:",
+      "escClose": "Esc para cerrar",
+      "enterOpen": "Enter para abrir",
+      "summary": "Buscar visitantes y mensajes"
+    },
+    "footerText": "Buscar visitantes y mensajes",
+    "sections": {
+      "visitors": "Visitantes",
+      "messages": "Mensajes"
+    },
+    "empty": {
+      "visitors": "No se encontraron visitantes relacionados",
+      "messages": "No se encontraron mensajes relacionados"
+    }
+  },
+  "time": {
+    "today": "Hoy",
+    "yesterday": "Ayer",
+    "relative": {
+      "justNow": "Justo ahora",
+      "minutes": "Hace {{count}} minutos",
+      "minutesAgo": "Hace {{count}} minutos",
+      "hours": "Hace {{count}} horas",
+      "hoursAgo": "Hace {{count}} horas",
+      "yesterdayAt": "Ayer {{time}}",
+      "days": "Hace {{count}} días"
+    },
+    "lastSeen": {
+      "justNow": "En línea justo ahora",
+      "justNowShort": "Justo ahora",
+      "minutesAgo": "En línea hace {{mins}} minutos",
+      "minutesShort": "{{mins}} min",
+      "online": "En línea"
+    },
+    "weekdays": {
+      "0": "Domingo",
+      "1": "Lunes",
+      "2": "Martes",
+      "3": "Miércoles",
+      "4": "Jueves",
+      "5": "Viernes",
+      "6": "Sábado"
+    }
+  },
+  "chat": {
+    "title": "Gestión de chat",
+    "openChat": "Abrir chat",
+    "sync": {
+      "syncing": "Sincronizando conversaciones...",
+      "success": "Conversaciones sincronizadas con éxito",
+      "failed": "Error al sincronizar conversaciones",
+      "retry": "Reintentar",
+      "lastSync": "Última sincronización: {{time}}",
+      "refresh": "Actualizar conversaciones",
+      "noConversations": "No hay conversaciones",
+      "loadError": "Error al cargar conversaciones"
+    },
+    "status": {
+      "online": "En línea",
+      "offline": "Desconectado",
+      "connecting": "Conectando...",
+      "connected": "Conectado",
+      "disconnected": "Desconectado",
+      "ai_typing": "IA escribiendo..."
+    },
+    "actions": {
+      "refresh": "Actualizar",
+      "retry": "Reintentar",
+      "delete": "Eliminar conversación",
+      "markRead": "Marcar como leído"
+    },
+    "history": {
+      "loading": "Cargando mensajes históricos...",
+      "loadMore": "Cargar más mensajes históricos",
+      "noMessages": "No hay mensajes históricos",
+      "loadFailed": "Error al cargar mensajes históricos",
+      "loadMoreFailed": "Error al cargar más mensajes",
+      "retry": "Reintentar",
+      "yesterday": "Ayer",
+      "daysAgo": "Hace {{days}} días",
+      "loadingNewer": "Cargando...",
+      "weekday": {
+        "sunday": "Domingo",
+        "monday": "Lunes",
+        "tuesday": "Martes",
+        "wednesday": "Miércoles",
+        "thursday": "Jueves",
+        "friday": "Viernes",
+        "saturday": "Sábado"
+      }
+    },
+    "empty": {
+      "selectConversation": "Selecciona un chat para iniciar la conversación"
+    },
+    "list": {
+      "searchPlaceholder": "Buscar",
+      "searchAria": "Buscar conversaciones",
+      "tagFilter": {
+        "button": "Filtro de etiquetas",
+        "add": "Agregar etiqueta de filtro",
+        "edit": "Editar etiquetas de filtro",
+        "remove": "Eliminar etiqueta",
+        "searchPlaceholder": "Buscar etiquetas",
+        "clear": "Limpiar",
+        "loading": "Cargando etiquetas...",
+        "empty": "No hay etiquetas"
+      },
+      "tabs": {
+        "mine": "Mías",
+        "unassigned": "Sin asignar",
+        "recent": "Recientemente en línea",
+        "all": "Completado",
+        "manual": "Servicio Manual"
+      },
+      "waiting": {
+        "justNow": "Justo ahora",
+        "minutes": "{{count}}m",
+        "hours": "{{count}}h",
+        "hoursMinutes": "{{h}}h {{m}}m",
+        "days": "{{count}}d",
+        "daysHours": "{{d}}d {{h}}h",
+        "status": "Esperando"
+      }
+    },
+    "header": {
+      "staffFallback": "Agente",
+      "visitorFallback": "Visitante {{suffix}}",
+      "agentFallback": "Empleado AI",
+      "teamFallback": "Equipo de Empleados AI",
+      "agentTooltip": "Chat de Empleados AI",
+      "endChat": "Terminar Chat",
+      "transfer": "Transferir",
+      "transferTooltip": "Transferir a otro agente",
+      "transferSuccess": "Transferido a {{name}}",
+      "transferError": "Transferencia fallida",
+      "transferTo": "Transferir a",
+      "noStaffAvailable": "No hay personal disponible",
+      "loadingStaff": "Cargando...",
+      "clearMemory": "Borrar Memoria",
+      "clearMemoryTooltip": "Borrar la memoria de conversación AI y reiniciar",
+      "clearMemoryConfirm": "¿Estás seguro de que deseas borrar la memoria AI para esta sesión? La AI ya no recordará conversaciones previas.",
+      "clearMemorySuccess": "Memoria borrada",
+      "clearMemoryError": "Error al borrar la memoria"
+    },
+    "suggestions": {
+      "label": "✨ Sugerencias:"
+    },
+    "send": {
+      "platformErrorLog": "Error al enviar mensaje en la plataforma",
+      "platformError": "Error al enviar mensaje en la plataforma, por favor intenta de nuevo más tarde",
+      "wsNotConnected": "WebSocket no está conectado, por favor verifica la red",
+      "wsFailed": "Error al enviar WebSocket, por favor verifica la conexión de red",
+      "failedLogPrefix": "Error al enviar mensaje:"
+    },
+    "search": {
+      "locateFailedTitle": "No se pudo localizar el mensaje",
+      "locateFailedDesc": "Este mensaje puede haber sido eliminado o está temporalmente no disponible"
+    },
+    "messages": {
+      "sending": "Enviando...",
+      "sendFailedTitle": "Error al enviar",
+      "image": {
+        "previewAria": "Vista previa de imagen",
+        "alt": "Imagen",
+        "uploading": "Subiendo",
+        "uploadFailed": "Error al subir"
+      },
+      "file": {
+        "aria": "Archivo",
+        "placeholder": "[Archivo]",
+        "uploadFailedRetry": "Error al subir, haz clic para reintentar",
+        "uploadingWithPercent": "Subiendo {{percent}}%",
+        "download": "Descargar"
+      },
+      "stream": {
+        "timeout": "Tiempo de respuesta de AI agotado",
+        "error": "Error en la generación de respuesta de AI",
+        "cancelled": "Respuesta de AI cancelada",
+        "force": "Respuesta de AI terminada forzosamente"
+      },
+      "system": {
+        "staffAssigned": "Has sido conectado con servicio al cliente. El agente {0} te asistirá.",
+        "sessionTransferred": "Sesión transferida. El agente {0} te ha transferido al agente {1}.",
+        "sessionClosed": "Sesión finalizada. El agente {0} ha completado el servicio.",
+        "sessionClosedEmpty": "Sesión finalizada.",
+        "memoryCleared": "Memoria borrada, AI reiniciará la conversación"
+      }
+    },
+    "input": {
+      "placeholder": "Escribe un mensaje...",
+      "disabled": {
+        "placeholder": "Asistente AI habilitado, entrada manual deshabilitada",
+        "tooltip": "Asistente AI habilitado, entrada manual deshabilitada",
+        "cannotSendTooltip": "Asistente AI habilitado, envío manual deshabilitado"
+      },
+      "emoji": {
+        "aria": "Abrir selector de emojis",
+        "title": "Insertar emoji"
+      },
+      "screenshot": {
+        "aria": "Instrucciones para pegar captura de pantalla",
+        "title": "Captura de pantalla"
+      },
+      "image": {
+        "aria": "Subir imagen",
+        "title": "Enviar imagen"
+      },
+      "file": {
+        "aria": "Subir archivo",
+        "title": "Enviar archivo",
+        "remove": "Eliminar archivo"
+      },
+      "ai": {
+        "label": "Asistente de IA",
+        "toggleAria": "Alternar asistente de IA",
+        "enabled": "IA activada",
+        "disabled": "IA desactivada",
+        "enabledTitle": "IA Activada",
+        "enabledMessage": "El asistente de IA para visitantes ha sido activado",
+        "disabledTitle": "IA Desactivada",
+        "disabledMessage": "El asistente de IA para visitantes ha sido desactivado"
+      },
+      "screenshotTip": {
+        "aria": "Consejo para enviar captura de pantalla",
+        "title": "Consejo para enviar captura de pantalla",
+        "line1": "Puedes usar QQ, WeChat o las herramientas de captura de pantalla del sistema para tomar una captura,",
+        "line2": {
+          "prefix": "luego presiona",
+          "suffix": "en el cuadro de entrada de mensaje para pegar y enviar la imagen"
+        }
+      },
+      "preview": {
+        "imageAlt": "Vista previa de imagen {{index}}",
+        "removeAria": "Eliminar vista previa"
+      },
+      "upload": {
+        "failed": "Error al subir"
+      },
+      "errors": {
+        "images": {
+          "unsupportedTypeTitle": "Tipo de archivo no soportado",
+          "unsupportedTypeDesc": "Solo se admiten archivos de imagen (jpg/png/gif/webp)",
+          "limitReachedTitle": "Límite de imágenes alcanzado (9 imágenes)",
+          "limitReachedDesc": "Máximo 9 imágenes permitidas",
+          "tooManyTitle": "Máximo 9 imágenes permitidas",
+          "tooManyDesc": "Se excedió el número de imágenes que se pueden agregar",
+          "limitReachedTitleSimple": "Límite de imágenes alcanzado",
+          "limitReachedAddNine": "Se pueden agregar un máximo de 9 imágenes",
+          "partialNotAddedTitle": "Algunas imágenes no fueron agregadas",
+          "partialNotAddedDesc": "Se agregaron {{added}} imágenes, se omitieron {{skipped}} (excede el límite de 9 imágenes)"
+        },
+        "files": {
+          "onlyOne": "Solo se admite un archivo",
+          "removeCurrent": "Por favor elimina el archivo actual primero",
+          "skippedOther": "Se agregó \"{{name}}\", se omitieron {{count}} otros archivos"
+        },
+        "noConversationTitle": "Por favor selecciona una conversación",
+        "noConversationDesc": {
+          "image": "Por favor selecciona una conversación antes de enviar imágenes",
+          "file": "Por favor selecciona una conversación antes de enviar archivos",
+          "message": "Por favor selecciona una conversación antes de enviar mensajes"
+        },
+        "platformFailed": "Error al enviar mensaje en la plataforma, por favor intenta de nuevo más tarde",
+        "websocketFailed": "Error al enviar por WebSocket, por favor verifica la conexión de red",
+        "websocketNotConnected": {
+          "image": "WebSocket no conectado, no se puede enviar mensaje de imagen",
+          "file": "WebSocket no conectado, no se puede enviar mensaje de archivo",
+          "message": "WebSocket no conectado, no se puede enviar mensaje",
+          "richText": "WebSocket no conectado, no se puede enviar mensaje de texto enriquecido"
+        }
+      },
+      "shortcuts": {
+        "sendWithHint": "Enter para enviar • {{hint}}",
+        "newline": {
+          "mac": "⌘ + Enter para nueva línea",
+          "windows": "Ctrl + Enter para nueva línea"
+        }
+      },
+      "send": {
+        "label": "Enviar",
+        "sending": "Enviando..."
+      },
+      "closed": "Conversación finalizada",
+      "notMyVisitor": "Este visitante está asignado a {{name}}",
+      "otherAgent": "otro agente"
+    }
+  },
+  "tools": {
+    "title": "Herramientas",
+    "subtitle": "Configura y extiende las capacidades de los agentes de IA",
+    "copyEndpoint": "Copiar Endpoint",
+    "editTool": "Editar Herramienta",
+    "banner": {
+      "title": "Mejorar Capacidades de IA",
+      "description": "Al agregar herramientas con protocolo HTTP o MCP, puedes brindar a los agentes de IA posibilidades ilimitadas como buscar, consultar bases de datos y llamar a servicios externos."
+    },
+    "listTitle": "Lista de Herramientas",
+    "addHttpTool": "Agregar Herramienta HTTP",
+    "addMCPTool": "Agregar Herramienta MCP",
+    "toolStore": "Tienda de Herramientas",
+    "store": {
+      "title": "Tienda de Herramientas",
+      "subtitle": "Descubre e instala potentes extensiones de herramientas de IA",
+      "searchPlaceholder": "Buscar herramientas, autores o etiquetas...",
+      "categories": {
+        "all": "Todas las Herramientas",
+        "model": "Modelos",
+        "tool": "Utilidades",
+        "agent": "Estrategias de Agentes",
+        "extension": "Extensiones",
+        "plugin": "Plugins"
+      },
+      "install": "Instalar",
+      "installing": "Instalando...",
+      "installed": "Instalado",
+      "uninstall": "Desinstalar",
+      "details": "Detalles de la Herramienta",
+      "author": "Autor",
+      "version": "Versión",
+      "downloads": "Descargas",
+      "rating": "Calificación",
+      "lastUpdated": "Última Actualización",
+      "requirements": "Requisitos",
+      "changelog": "Registro de Cambios",
+      "featured": "Destacado",
+      "verified": "Verificado",
+      "noResults": "No se encontraron herramientas que coincidan",
+      "backToList": "Volver a la Lista",
+      "price": "Precio",
+      "free": "Gratis",
+      "installSuccess": "Herramienta instalada",
+      "installSuccessMessage": "La herramienta \"{{name}}\" se ha instalado correctamente en tu proyecto",
+      "uninstallSuccess": "Herramienta desinstalada",
+      "uninstallSuccessMessage": "La herramienta \"{{name}}\" ha sido eliminada de tu proyecto",
+      "loginRequired": "Inicio de sesión requerido",
+      "loginRequiredDesc": "Iniciar sesión te permite instalar herramientas con un clic, sincronizar configuraciones y gestionar tu conjunto de herramientas de IA.",
+      "loginTitle": "Iniciar sesión en la Tienda de Herramientas",
+      "loginNow": "Iniciar sesión ahora",
+      "openLoginWindow": "Iniciar sesión en la Tienda",
+      "loginSuccess": "Inicio de sesión exitoso",
+      "loginSuccessDesc": "Ahora puedes instalar y gestionar herramientas de la tienda.",
+      "loginFailed": "Error en el inicio de sesión",
+      "loginSyncDesc": "Una vez que inicies sesión, esta ventana sincronizará automáticamente tu estado.",
+      "loginSecurityDesc": "Para garantizar la seguridad de tu cuenta, abriremos la página de inicio de sesión en una nueva ventana.",
+      "logout": "Cerrar sesión",
+      "recharge": "Recargar saldo",
+      "balance": "Saldo",
+      "popupBlocked": "Ventana emergente bloqueada por el navegador, por favor permite las ventanas emergentes y vuelve a intentarlo",
+      "cancelInstall": "Ahora no",
+      "model": {
+        "title": "Tienda de Modelos",
+        "subtitle": "Accede a los mejores modelos globales, paga por uso, sin necesidad de gestionar múltiples claves API",
+        "searchPlaceholder": "Buscar nombre de modelo, proveedor o capacidades...",
+        "fetchFailed": "Error al obtener modelos de la tienda",
+        "initLoginFailed": "Error al iniciar el proceso de inicio de sesión",
+        "missingVerifier": "Falta la clave de verificación local, por favor intenta de nuevo",
+        "invalidCode": "Código de autorización inválido o expirado",
+        "usageNotice": "Una vez habilitado, estará disponible en la plataforma TGO, con facturación en tiempo real basada en el consumo real de Tokens.",
+        "noResults": "No se encontraron modelos coincidentes",
+        "noResultsDesc": "Intenta buscar con otras palabras clave o cambia de categoría",
+        "allModels": "Todos los Modelos",
+        "types": {
+          "chat": "Modelo de Chat",
+          "embedding": "Modelo de Embedding",
+          "image": "Modelo de Imagen",
+          "audio": "Modelo de Audio"
+        },
+        "installing": "Instalando...",
+        "installStep": {
+          "verify": "Verificando credenciales",
+          "sync": "Sincronizando modelo",
+          "done": "Instalación completa"
+        },
+        "error": {
+          "notBound": "Por favor inicia sesión en la cuenta de la Tienda primero"
+        },
+        "installSuccess": "Instalación del Modelo Exitosa",
+        "installSuccessMessage": "El modelo \"{{name}}\" se ha sincronizado exitosamente con tu proyecto",
+        "uninstallSuccess": "Desactivación del Modelo Exitosa",
+        "uninstallSuccessMessage": "El modelo \"{{name}}\" ha sido removido de tu proyecto",
+        "priceInput": "Precio de Entrada",
+        "priceOutput": "Precio de Salida",
+        "perMillionTokens": "por 1M tokens",
+        "contextWindow": "Ventana de Contexto",
+        "capabilities": "Capacidades",
+        "startUsing": "Comenzar a Usar Ahora",
+        "stopUsing": "Dejar de Usar",
+        "available": "Disponible",
+        "installed": "Habilitado",
+        "notInstalled": "No Habilitado",
+        "backToList": "Volver a la Lista",
+        "details": "Detalles del Modelo",
+        "provider": "Proveedor",
+        "type": "Tipo de Modelo",
+        "documentation": "Documentación API del Proveedor",
+        "loading": "Buscando los modelos de IA más avanzados del mundo..."
+      }
+    },
+    "newTool": "Nueva Herramienta",
+    "selectModal": {
+      "title": "Seleccionar Herramienta",
+      "searchPlaceholder": "Buscar herramientas...",
+      "loading": "Cargando herramientas...",
+      "noMatch": "No se encontraron herramientas coincidentes",
+      "configTool": "Configurar Herramienta",
+      "manageTools": "Administrar Herramientas",
+      "category": {
+        "toolServer": "Servidor de Herramientas",
+        "custom": "Herramienta Personalizada",
+        "plugin": "Herramienta de Plugin",
+        "deviceControl": "Control de Dispositivo"
+      },
+      "confirmSelection": "Confirmar Selección ({{count}})",
+      "loadFailedDesc": "No se pudo cargar la lista de herramientas, por favor intenta más tarde",
+      "retryFailedTitle": "Reintentar Fallido",
+      "retryFailedDesc": "No se pudo cargar la lista de herramientas, por favor verifica tu conexión de red"
+    },
+    "source": {
+      "marketplace": "Mercado de Herramientas",
+      "custom": "Personalizado",
+      "unknown": "Desconocido"
+    },
+    "author": {
+      "marketplace": "Mercado de Herramientas",
+      "customUser": "Personalizado por Usuario",
+      "unknown": "Fuente Desconocida"
+    },
+    "search": {
+      "placeholder": "Buscar herramientas..."
+    },
+    "categories": {
+      "all": "Todas",
+      "productivity": "Productividad",
+      "communication": "Comunicación",
+      "data": "Análisis de Datos",
+      "ai": "Herramientas de IA",
+      "integration": "Integración",
+      "plugin": "Herramienta de Plugin",
+      "unknown": "Categoría Desconocida"
+    },
+    "page": {
+      "customTool": "Herramienta personalizada"
+    },
+    "tools": {
+      "addMcpTool": "Agregar herramienta",
+      "delete": {
+        "successTitle": "Eliminado",
+        "successMessage": "La herramienta \"{{name}}\" ha sido eliminada"
+      },
+      "confirmDelete": {
+        "title": "Confirmar eliminación",
+        "message": "¿Estás seguro de que deseas eliminar la herramienta \"{{name}}\"? Esta acción no se puede deshacer."
+      },
+      "unknownAction": {
+        "title": "Acción desconocida",
+        "message": "Tipo de acción no soportado: {{type}}"
+      },
+      "actionFailed": {
+        "title": "Acción fallida",
+        "message": "Ocurrió un error al realizar la acción {{type}}"
+      },
+      "uninstall": {
+        "successTitle": "Desinstalado",
+        "successMessage": "La herramienta \"{{name}}\" ha sido desinstalada"
+      },
+      "toggle": {
+        "enabledTitle": "Habilitado",
+        "enabledMessage": "La herramienta \"{{name}}\" ha sido habilitada",
+        "disabledTitle": "Deshabilitado",
+        "disabledMessage": "La herramienta \"{{name}}\" ha sido deshabilitada"
+      },
+      "installedEmpty": {
+        "title": "No hay herramientas instaladas",
+        "description": "Haz clic en el botón \"Agregar herramienta\" en la esquina superior derecha para crear tu primera herramienta",
+        "action": "Ir a la Tienda de Herramientas"
+      },
+      "addHttpTool": "Agregar herramienta HTTP",
+      "list": {
+        "emptyTitle": "No hay herramientas",
+        "emptyDescriptionAll": "Haz clic en \"Agregar herramienta\" para añadir tu primera herramienta",
+        "emptyDescriptionCategory": "No hay herramientas en la categoría \"{{category}}\"",
+        "emptyAction": "Comienza a agregar herramientas"
+      },
+      "endpoint": "Endpoint",
+      "noDescription": "Sin descripción",
+      "endpointCopied": "Endpoint copiado al portapapeles",
+      "copyEndpointFailed": "Error al copiar el endpoint",
+      "edit": {
+        "title": "Editar herramienta",
+        "message": "La función de edición para la herramienta \"{{name}}\" estará disponible pronto",
+        "notFound": "Herramienta no encontrada",
+        "notFoundMessage": "No se pudo encontrar información detallada para esta herramienta"
+      }
+    },
+    "addToolModal": {
+      "title": "Agregar herramienta MCP",
+      "subtitle": "Conectar a servidores de capacidades externas mediante el protocolo MCP",
+      "fields": {
+        "name": "Nombre de la herramienta",
+        "description": "Descripción de la herramienta",
+        "transportType": "Tipo de transporte",
+        "endpoint": "Endpoint",
+        "config": "Configuración"
+      },
+      "placeholders": {
+        "name": "p. ej., weather-api",
+        "description": "Breve descripción de la funcionalidad de la herramienta",
+        "endpoint": "p. ej., https://api.example.com/tool",
+        "config": "{\"key\": \"value\"}"
+      },
+      "hints": {
+        "config": "Por favor ingresa una configuración en formato JSON válido"
+      },
+      "errors": {
+        "nameRequired": "Por favor ingresa el nombre de la herramienta",
+        "invalidName": "El nombre de la herramienta solo puede contener letras, números, guiones bajos y guiones",
+        "endpointRequired": "Por favor ingresa el endpoint",
+        "invalidJson": "La configuración debe estar en formato JSON válido",
+        "noProject": "Ningún proyecto seleccionado"
+      },
+      "success": {
+        "title": "Agregado con éxito",
+        "message": "{{name}} ha sido agregado con éxito"
+      },
+      "confirm": "Confirmar creación",
+      "error": {
+        "title": "Error al agregar",
+        "message": "No se pudo agregar la herramienta, por favor intenta de nuevo más tarde"
+      }
+    },
+    "addHttpToolModal": {
+      "title": "Agregar herramienta HTTP",
+      "subtitle": "Configurar endpoints de API externos como capacidades del agente de IA",
+      "sections": {
+        "basic": "Información básica",
+        "config": "Configuración de API"
+      },
+      "fields": {
+        "name": "Nombre de la herramienta",
+        "description": "Descripción de la herramienta",
+        "endpoint": "Punto de acceso API",
+        "method": "Método HTTP",
+        "headers": "Encabezados de solicitud",
+        "parameters": "Parámetros de entrada"
+      },
+      "placeholders": {
+        "name": "p. ej., search_user",
+        "description": "Describe la función de la herramienta para ayudar a la IA a entender cuándo llamarla",
+        "endpoint": "https://api.example.com/v1/users",
+        "paramDesc": "Descripción del parámetro..."
+      },
+      "params": {
+        "name": "Nombre",
+        "type": "Tipo",
+        "desc": "Descripción",
+        "required": "Requerido",
+        "empty": "Define los parámetros dinámicos necesarios cuando la IA llama al endpoint"
+      },
+      "addHeader": "Agregar encabezado",
+      "addParameter": "Agregar parámetro",
+      "confirm": "Confirmar creación",
+      "errors": {
+        "nameRequired": "Por favor ingresa el nombre de la herramienta",
+        "invalidName": "El nombre de la herramienta solo puede contener letras, números, guiones bajos y guiones",
+        "descriptionRequired": "Por favor ingresa la descripción de la herramienta",
+        "endpointRequired": "Por favor ingresa el punto de acceso API"
+      },
+      "success": {
+        "title": "Agregado con éxito",
+        "message": "La herramienta HTTP {{name}} ha sido agregada"
+      },
+      "error": {
+        "title": "Error al agregar",
+        "message": "No se pudo agregar la herramienta HTTP"
+      }
+    },
+    "editHttpToolModal": {
+      "title": "Editar herramienta HTTP",
+      "subtitle": "Actualizar configuración del punto de acceso API externo",
+      "save": "Guardar cambios",
+      "success": {
+        "title": "Actualizado con éxito",
+        "message": "La herramienta HTTP {{name}} ha sido actualizada"
+      },
+      "error": {
+        "title": "Error al actualizar",
+        "message": "Error al actualizar la herramienta HTTP"
+      }
+    },
+    "editToolModal": {
+      "title": "Editar herramienta",
+      "subtitle": "Modificar configuración de conexión de la herramienta MCP",
+      "fields": {
+        "name": "Nombre de la herramienta",
+        "description": "Descripción de la herramienta",
+        "transportType": "Tipo de transporte",
+        "endpoint": "Endpoint",
+        "toolType": "Tipo de herramienta"
+      },
+      "placeholders": {
+        "name": "p. ej., weather-api",
+        "description": "Breve descripción de la funcionalidad de la herramienta",
+        "endpoint": "p. ej., https://api.example.com/tool"
+      },
+      "hints": {
+        "toolTypeReadonly": "No se puede modificar el tipo de herramienta"
+      },
+      "errors": {
+        "nameRequired": "Por favor ingresa el nombre de la herramienta",
+        "invalidName": "El nombre de la herramienta solo puede contener letras, números, guiones bajos y guiones",
+        "endpointRequired": "Por favor ingresa el endpoint"
+      },
+      "success": {
+        "title": "Actualizado con éxito",
+        "message": "{{name}} ha sido actualizado con éxito"
+      },
+      "save": "Guardar cambios",
+      "error": {
+        "title": "Error al actualizar",
+        "message": "Error al actualizar la herramienta, por favor intenta más tarde"
+      }
+    },
+    "config": {
+      "title": "Configuración de la herramienta",
+      "info": "Información de la herramienta",
+      "parameters": "Parámetros de configuración",
+      "noParams": "Esta herramienta no tiene parámetros configurables",
+      "placeholders": {
+        "array": "Separa múltiples valores con comas",
+        "required": "Requerido",
+        "optional": "Opcional"
+      },
+      "validation": {
+        "required": "Este campo es obligatorio",
+        "number": "Por favor ingresa un número válido"
+      },
+      "save": "Guardar configuración"
+    }
+  },
+  "platforms": {
+    "list": {
+      "title": "Plataformas",
+      "addPlatform": "Agregar Plataforma",
+      "defaultName": "Nueva Plataforma",
+      "loading": "Cargando lista de plataformas...",
+      "loadFailedTitle": "Error al cargar",
+      "retry": "Reintentar",
+      "retrying": "Reintentando...",
+      "emptyTitle": "Sin Plataformas",
+      "emptyDescription": "Haz clic en el botón de arriba para agregar una plataforma",
+      "status": {
+        "connected": "Conectado",
+        "error": "Error de Conexión",
+        "pending": "Configuración Pendiente",
+        "notConfigured": "No Configurado",
+        "unsupported": "Próximamente"
+      },
+      "toast": {
+        "createSuccessTitle": "Creado con Éxito",
+        "createSuccessMessage": "La plataforma \"{{name}}\" ha sido creada"
+      }
+    },
+    "typeSelector": {
+      "title": "Seleccionar Tipo de Plataforma",
+      "loading": "Cargando tipos de plataforma disponibles...",
+      "loadError": "Error al cargar tipos de plataforma, por favor intenta más tarde",
+      "loadFailed": "Error al cargar",
+      "emptyTypes": "No hay tipos de plataforma disponibles",
+      "unsupported": "No Soportado"
+    },
+    "config": {
+      "basic": {
+        "title": "Configuración Básica",
+        "platformName": "Nombre de la Plataforma",
+        "platformDesc": "Descripción de la Plataforma (Opcional)",
+        "descPlaceholder": "Describe el propósito de esta plataforma",
+        "platformIcon": "Icono de la Plataforma",
+        "selectUploadIcon": "Seleccionar/Subir Icono",
+        "iconHint": "Elige un icono para mostrar en la lista de plataformas."
+      },
+      "webhookIncoming": {
+        "title": "Integración Webhook (Recibir Mensajes)",
+        "viewDocs": "Ver Documentos de Integración",
+        "copyUrl": "Copiar URL",
+        "urlHint": "Configura esta URL en tu sistema para recibir mensajes desde tu sistema.",
+        "toggleSecret": "Mostrar/Ocultar Secreto",
+        "copySecret": "Copiar Secreto",
+        "regenerateSecret": "Regenerar Secreto",
+        "secretHint": "Se usa para verificar la firma de las solicitudes entrantes por seguridad."
+      },
+      "webhookOutgoing": {
+        "title": "Webhook Push (Enviar Mensajes)",
+        "yourUrl": "Tu URL de Recepción",
+        "urlHint": "Cuando el servicio al cliente responda, enviaremos el mensaje a esta URL mediante POST.",
+        "authToken": "Token de Autenticación (Opcional)",
+        "tokenPlaceholder": "Ej., Bearer tu_token_secreto",
+        "tokenHint": "Si tu URL de recepción requiere autenticación, complétala aquí (ej., valor del encabezado Authorization)."
+      },
+      "apiAccess": {
+        "title": "Acceso API (Opcional)",
+        "placeholder": "[Marcador de posición para gestión de API Key/Secret y enlace a documentación]",
+        "description": "Alternativamente, puedes enviar y recibir mensajes llamando a nuestra API abierta. Consulta la documentación para desarrolladores para más detalles."
+      },
+      "placeholder": {
+        "title": "Seleccionar Plataforma",
+        "description": "Por favor selecciona una plataforma de la lista a la izquierda para configurar"
+      },
+      "header": {
+        "title": "Configuración de {{name}}",
+        "enablePlatform": "Habilitar Plataforma"
+      },
+      "generic": {
+        "title": "Configuración de Plataforma",
+        "comingSoon": "Las opciones específicas de configuración para esta plataforma se proporcionarán en versiones futuras.",
+        "currentStatus": "Estado Actual: {{status}}"
+      }
+    },
+    "website": {
+      "label": "Sitio Oficial",
+      "header": {
+        "title": "Configuración del Widget del Sitio Web",
+        "subtitle": "Ajusta la configuración a la izquierda, la vista previa a la derecha se actualizará en tiempo real"
+      },
+      "buttons": {
+        "delete": "Eliminar",
+        "deleting": "Eliminando...",
+        "enable": "Habilitar",
+        "disable": "Deshabilitar",
+        "enabling": "Habilitando...",
+        "disabling": "Deshabilitando...",
+        "save": "Guardar",
+        "saving": "Guardando...",
+        "show": "Mostrar",
+        "hide": "Ocultar",
+        "copy": "Copiar",
+        "regenerate": "Regenerar",
+        "remove": "Eliminar",
+        "upload": "Haz clic para subir",
+        "testIntegration": "Probar integración",
+        "downloadExample": "Descargar ejemplo"
+      },
+      "download": {
+        "hint": "Descarga un archivo de ejemplo de integración completa con la clave API preconfigurada",
+        "success": "Descarga exitosa",
+        "successDesc": "El archivo de ejemplo ha sido descargado, ábrelo en un navegador para ver el resultado",
+        "demoTitle": "Demostración del widget",
+        "welcomeTitle": "¡Bienvenido!",
+        "welcomeDesc": "Tu widget de chat TGO ya está integrado. Haz clic en el botón de chat en la esquina inferior derecha para iniciar una conversación.",
+        "integrationCode": "Código de integración",
+        "securityWarning": "Aviso de seguridad: Este archivo contiene tu clave API. No lo compartas públicamente ni lo subas a repositorios públicos."
+      },
+      "form": {
+        "name": "Nombre",
+        "namePlaceholder": "Por favor ingresa el nombre de la plataforma",
+        "widgetTitle": "Título de la ventana del visitante",
+        "themeColor": "Color del tema",
+        "logo": "Logo",
+        "logoUploading": "Subiendo...",
+        "logoHint": "Tamaño recomendado: 72x72 píxeles. Soporta PNG/JPG/SVG, máximo 2MB.",
+        "clickUpload": "Haz clic para subir",
+        "welcomeMessage": "Mensaje de bienvenida",
+        "position": "Posición",
+        "positionBottomRight": "Abajo a la derecha",
+        "positionBottomLeft": "Abajo a la izquierda",
+        "positionTopRight": "Arriba a la derecha",
+        "positionTopLeft": "Arriba a la izquierda",
+        "displayMode": "Modo de visualización predeterminado",
+        "displayModeSmall": "Ventana pequeña",
+        "displayModeBig": "Ventana grande",
+        "apiKey": "Clave API",
+        "apiKeyPlaceholder": "Sin clave API",
+        "apiKeyHint": "Identificador de autenticación para el script de integración del sitio web, por favor mantenlo seguro."
+      },
+      "embed": {
+        "title": "Código de integración del sitio web",
+        "description": "Copia y pega el siguiente código en el <code>&lt;head&gt;</code> o <code>&lt;body&gt;</code> de tu sitio web:",
+        "instruction": "Copia y pega el siguiente código en el <code>&lt;head&gt;</code> o <code>&lt;body&gt;</code> de tu sitio web:"
+      },
+      "messages": {
+        "saveSuccess": "Guardado exitosamente",
+        "saveSuccessMessage": "La información de la plataforma ha sido actualizada",
+        "platformDisabled": "Plataforma deshabilitada",
+        "platformEnabled": "Plataforma habilitada",
+        "logoSizeError": "El tamaño de la imagen no puede exceder 2MB",
+        "logoTypeError": "Solo se admiten archivos de imagen",
+        "cropError": "No se pudo abrir el recortador",
+        "logoRemoved": "Eliminado",
+        "logoRemovedMessage": "El logo ha sido borrado",
+        "logoRemoveError": "Actualmente no se admite eliminar el logo, por favor sube una nueva imagen para sobrescribir",
+        "apiKeyCopied": "Copiado",
+        "apiKeyCopiedMessage": "La clave API ha sido copiada al portapapeles",
+        "regenerateConfirm": "¿Estás seguro de que deseas regenerar la clave API? Los scripts de inserción existentes deberán actualizarse.",
+        "apiKeyRegenerated": "Actualizado",
+        "apiKeyRegeneratedMessage": "La clave API ha sido regenerada",
+        "embedCodeCopied": "Copiado",
+        "embedCodeCopiedMessage": "El código de inserción ha sido copiado al portapapeles",
+        "uploadSuccess": "Carga exitosa",
+        "uploadSuccessMessage": "El logo ha sido actualizado",
+        "uploadError": "La carga falló, por favor intenta de nuevo",
+        "deleteSuccess": "Plataforma eliminada",
+        "deleteSuccessMessage": "La plataforma ha sido eliminada"
+      },
+      "confirm": {
+        "deleteTitle": "Eliminar plataforma",
+        "deleteMessage": "¿Estás seguro de que deseas eliminar esta plataforma?",
+        "confirmText": "Eliminar",
+        "cancelText": "Cancelar"
+      },
+      "defaults": {
+        "widgetTitle": "Bienvenido",
+        "welcomeMessage": "¡Hola! ¿Cómo puedo ayudarte?",
+        "displayMode": "pequeño"
+      }
+    },
+    "wechat": {
+      "label": "WeChat OA"
+    },
+    "whatsapp": {
+      "label": "WhatsApp"
+    },
+    "telegram": {
+      "label": "Telegram",
+      "header": {
+        "title": "{{name}} Configuración",
+        "subtitle": "Configura las credenciales y callbacks para Telegram Bot."
+      },
+      "buttons": {
+        "delete": "Eliminar",
+        "deleting": "Eliminando...",
+        "enable": "Habilitar",
+        "disable": "Deshabilitar",
+        "enabling": "Habilitando...",
+        "disabling": "Deshabilitando...",
+        "save": "Guardar",
+        "saving": "Guardando...",
+        "copy": "Copiar"
+      },
+      "form": {
+        "name": "Nombre de la plataforma",
+        "namePlaceholder": "Por favor ingresa el nombre de la plataforma",
+        "callbackUrl": "URL del webhook",
+        "callbackUrlPlaceholder": "La URL del webhook se generará después de la creación",
+        "callbackUrlHint": "Usa la API setWebhook para establecer esta URL como la dirección Webhook de tu Bot.",
+        "botToken": "Token del Bot",
+        "botTokenPlaceholder": "Ej.: 123456789:ABCdefGHIjklMNOpqrsTUVwxyz",
+        "botTokenHint": "Obtén el Token después de crear tu Bot vía @BotFather y guárdalo de forma segura.",
+        "webhookSecret": "Secreto del Webhook (Opcional)",
+        "webhookSecretPlaceholder": "Se usa para verificar la fuente de la solicitud webhook",
+        "webhookSecretHint": "Establece el mismo valor mediante el parámetro secret_token al llamar a setWebhook para verificar la autenticidad de la solicitud."
+      },
+      "guide": {
+        "title": "Guía de Configuración del Bot de Telegram",
+        "overview": "✨ Inicio Rápido",
+        "overviewText": "Pasos: ①Crear Bot y obtener Token → ②Ingresar Token → ③Hacer clic en 'Habilitar'. ¡El sistema configura el Webhook automáticamente!",
+        "step1Title": "1️⃣ Crear Bot de Telegram",
+        "step1Item1": "Busca <a class=\"text-blue-600 hover:underline\" href=\"https://t.me/BotFather\" target=\"_blank\" rel=\"noreferrer\">@BotFather</a> en Telegram y comienza un chat.",
+        "step1Item2": "Envía el comando /newbot para iniciar la creación de tu robot.",
+        "step1Item3": "Ingresa un nombre para mostrar y un nombre de usuario único (terminando en _bot) según se te indique.",
+        "step1Item4": "BotFather devolverá un Token del Bot. Cópialo para el siguiente paso.",
+        "step2Title": "2️⃣ Configurar y Habilitar",
+        "step2Item1": "Pega el Token en el campo 'Token del Bot' a la izquierda.",
+        "step2Item2": "(Opcional) Ingresa un 'Secreto del Webhook' para mayor seguridad.",
+        "step2Item3": "Haz clic en 'Guardar', luego en el botón 'Habilitar' en la esquina superior derecha.",
+        "step2AutoConfigTitle": "💡 Configuración Automática",
+        "step2AutoConfig": "Después de habilitar, el sistema registra automáticamente la dirección Webhook con Telegram. No se requiere configuración manual.",
+        "step3Title": "3️⃣ Prueba tu Bot",
+        "step3Item1": "Busca el nombre de usuario de tu Bot en Telegram y comienza una conversación.",
+        "step3Item2": "Envía cualquier mensaje y la IA responderá automáticamente.",
+        "step3Item3": "Para agregar tu Bot a grupos, asegúrate de que 'Permitir Grupos' esté habilitado en BotFather.",
+        "docsLink": "Documentación de la API de Telegram Bot"
+      },
+      "dialog": {
+        "deleteTitle": "Confirmar Eliminación",
+        "deleteMessage": "¿Estás seguro de que deseas eliminar esta plataforma de Bot de Telegram? Esta acción no se puede deshacer.",
+        "confirmDelete": "Eliminar",
+        "cancel": "Cancelar"
+      },
+      "messages": {
+        "saveSuccess": "Guardado exitosamente",
+        "saveSuccessMessage": "La configuración de Telegram ha sido actualizada",
+        "deleteSuccess": "Eliminado exitosamente",
+        "deleteSuccessMessage": "La plataforma Telegram Bot ha sido eliminada",
+        "urlCopied": "URL del webhook copiada",
+        "disabled": "Plataforma deshabilitada",
+        "enabled": "Plataforma habilitada"
+      }
+    },
+    "sms": {
+      "label": "SMS"
+    },
+    "facebook": {
+      "label": "Facebook"
+    },
+    "instagram": {
+      "label": "Instagram"
+    },
+    "twitter": {
+      "label": "Twitter"
+    },
+    "linkedin": {
+      "label": "LinkedIn"
+    },
+    "discord": {
+      "label": "Discord"
+    },
+    "slack": {
+      "label": "Slack",
+      "header": {
+        "title": "{{name}} Configuración",
+        "subtitle": "Configura las credenciales y ajustes de seguridad del Bot de Slack."
+      },
+      "buttons": {
+        "delete": "Eliminar",
+        "deleting": "Eliminando...",
+        "enable": "Habilitar",
+        "disable": "Deshabilitar",
+        "enabling": "Habilitando...",
+        "disabling": "Deshabilitando...",
+        "save": "Guardar",
+        "saving": "Guardando..."
+      },
+      "form": {
+        "name": "Nombre de la plataforma",
+        "namePlaceholder": "Ingresa el nombre de la plataforma",
+        "botToken": "Token del Bot",
+        "botTokenPlaceholder": "xoxb-...",
+        "botTokenHint": "Obtén el Token OAuth de usuario del Bot desde la página 'OAuth & Permissions' de tu aplicación Slack.",
+        "appToken": "Token de la aplicación (Modo Socket)",
+        "appTokenPlaceholder": "xapp-...",
+        "appTokenHint": "Genera en 'Basic Information' -> 'App-Level Tokens' (requiere el alcance connections:write).",
+        "signingSecret": "Signing Secret (Opcional)",
+        "signingSecretPlaceholder": "Secreto para verificar el origen de la solicitud",
+        "signingSecretHint": "Obténlo en 'Basic Information' -> 'App Credentials' para mejorar la seguridad."
+      },
+      "guide": {
+        "title": "Guía de Configuración de Slack Bot",
+        "overview": "Resumen Rápido",
+        "overviewText": "Completa estos pasos: ① Crea Slack App -> ② Activa Socket Mode y obtén App Token -> ③ Configura permisos de Bot y suscripciones a eventos -> ④ Instala en el workspace y obtén Bot Token.",
+        "step1Title": "1️⃣ Crea Slack App",
+        "step1Item1": "Visita <a class=\"text-blue-600 hover:underline\" href=\"https://api.slack.com/apps\" target=\"_blank\" rel=\"noreferrer\">api.slack.com/apps</a> y haz clic en 'Create New App'.",
+        "step1Item2": "Selecciona 'From scratch', ingresa el nombre de la App y selecciona el workspace objetivo.",
+        "step1Item3": "Configura el nombre para mostrar en 'App Home' y asegúrate de que 'Messages Tab' esté habilitado.",
+        "step2Title": "2️⃣ Activa Socket Mode",
+        "step2Item1": "Haz clic en 'Socket Mode' en el menú izquierdo y actívalo.",
+        "step2Item2": "Genera un App-Level Token según se indique, asegurándote de que incluya el alcance <code>connections:write</code>.",
+        "step2Item3": "Copia el Token generado <code>xapp-...</code> y pégalo en el campo 'App Token' a la izquierda.",
+        "step3Title": "3️⃣ Configura Permisos y Eventos",
+        "step3Item1": "Agrega los alcances requeridos (por ejemplo, chat:write, im:history) en 'Bot Token Scopes' dentro de 'OAuth & Permissions'.",
+        "step3Item2": "Habilita eventos en 'Event Subscriptions' y añade <code>message.im</code> y <code>app_mention</code>.",
+        "step4Title": "4️⃣ Instalación e Integración",
+        "step4Item1": "Haz clic en 'Install to Workspace' y completa la autorización.",
+        "step4Item2": "Copia el 'Bot User OAuth Token' (xoxb-...) y pégalo en el campo 'Bot Token' a la izquierda.",
+        "step4Item3": "Una vez guardado, tu asistente AI estará listo para responder en Slack.",
+        "docsLink": "Documentación Oficial de la API de Slack"
+      },
+      "dialog": {
+        "deleteTitle": "Confirmar Eliminación",
+        "deleteMessage": "¿Estás seguro de que deseas eliminar esta plataforma Slack Bot? Esta acción no se puede deshacer.",
+        "confirmDelete": "Eliminar",
+        "cancel": "Cancelar"
+      },
+      "messages": {
+        "saveSuccess": "Guardado exitosamente",
+        "saveSuccessMessage": "Configuración de Slack Bot actualizada",
+        "deleteSuccess": "Eliminado con éxito",
+        "deleteSuccessMessage": "Plataforma Slack Bot eliminada",
+        "disabled": "Plataforma deshabilitada",
+        "enabled": "Plataforma habilitada"
+      }
+    },
+    "teams": {
+      "label": "Microsoft Teams"
+    },
+    "webchat": {
+      "label": "Chat web"
+    },
+    "phone": {
+      "label": "Teléfono"
+    },
+    "tiktok": {
+      "label": "TikTok"
+    },
+    "unknown": {
+      "label": "Plataforma desconocida"
+    },
+    "wecom": {
+      "label": "WeCom",
+      "header": {
+        "title": "Configuración de {{name}}",
+        "subtitle": "Configura las credenciales y callbacks para la integración con WeCom."
+      },
+      "buttons": {
+        "delete": "Eliminar",
+        "deleting": "Eliminando...",
+        "enable": "Habilitar",
+        "disable": "Deshabilitar",
+        "enabling": "Habilitando...",
+        "disabling": "Deshabilitando...",
+        "save": "Guardar",
+        "saving": "Guardando...",
+        "show": "Mostrar",
+        "hide": "Ocultar",
+        "copy": "Copiar"
+      },
+      "form": {
+        "name": "Nombre de la plataforma",
+        "namePlaceholder": "Por favor ingresa el nombre de la plataforma",
+        "corpId": "CorpID",
+        "corpIdPlaceholder": "ej.: ww1234567890abcdef",
+        "corpIdHint": "Se puede encontrar en 'Mi empresa' - 'Información de la empresa'.",
+        "agentId": "AgentId",
+        "agentIdPlaceholder": "ej.: 1000002",
+        "agentIdHint": "Obténlo desde la página de detalles de la aplicación en el backend de gestión de WeCom.",
+        "appSecret": "App Secret",
+        "appSecretPlaceholder": "Por favor ingresa App Secret",
+        "appSecretHint": "Se usa como credenciales para llamar a las interfaces de WeCom, mantenlo seguro.",
+        "token": "Token",
+        "tokenPlaceholder": "Token para la verificación de callback",
+        "tokenHint": "Debe coincidir con el Token en la configuración de callback de WeCom.",
+        "encodingAESKey": "EncodingAESKey",
+        "encodingAESKeyPlaceholder": "Clave de cifrado de mensajes de 43 caracteres",
+        "encodingAESKeyHint": "Se usa cuando el método de cifrado de mensajes es modo compatible/seguro.",
+        "callbackUrl": "URL de Callback",
+        "callbackUrlPlaceholder": "La URL de Callback se generará después de la creación",
+        "callbackUrlHint": "Configura esta URL como la dirección de callback en la 'Configuración del Servidor' de WeCom."
+      },
+      "guide": {
+        "title": "Guía de Configuración de WeCom",
+        "overview": "Resumen Rápido",
+        "overviewText": "Completa estos cuatro pasos: ① Encuentra CorpID → ② Obtén AgentId/Secret → ③ Configura callback del servidor (URL/Token/EncodingAESKey) → ④ Guarda y prueba.",
+        "step1Title": "1️⃣ Encuentra CorpID",
+        "step1Item1": "Inicia sesión en el <a class=\"text-blue-600 hover:underline\" href=\"https://work.weixin.qq.com/wework_admin/frame\" target=\"_blank\" rel=\"noreferrer\">backend de gestión de WeCom</a>.",
+        "step1Item2": "Ve a 'Mi Empresa' → 'Información de la Empresa'.",
+        "step1Item3": "Copia el 'CorpID' y pégalo en el campo 'CorpID' a la izquierda.",
+        "step1Example": "Ejemplo: ww1234567890abcdef",
+        "step2Title": "2️⃣ Obtén AgentId y App Secret",
+        "step2Item1": "Selecciona 'Gestión de Apps' a la izquierda y abre tu app personalizada.",
+        "step2Item2": "Puedes ver el 'AgentId' en la página de detalles de la app.",
+        "step2Item3": "Haz clic en 'Secret' para mostrar o restablecer, copia y llena el campo 'App Secret' a la izquierda.",
+        "step2SecurityTitle": "Consejo de Seguridad",
+        "step2SecurityText": "Mantén el Secret seguro y no lo divulgues; usa permisos mínimos y rota regularmente en producción.",
+        "step3Title": "3️⃣ Configura Callback del Servidor (URL / Token / EncodingAESKey)",
+        "step3Item1": "En 'Gestión de Apps' → tu app → 'Recibir Mensajes', haz clic en 'Configurar' para entrar a 'API Recibir Mensajes'.",
+        "step3Item2": "URL: Copia la URL de Callback (solo lectura) de la izquierda y pégala en la consola;",
+        "step3Item3": "Token: Personaliza cualquier cadena y asegúrate de que coincida con el campo de la izquierda;",
+        "step3Item4": "EncodingAESKey: Haz clic para generar una clave de 43 caracteres y cópiala en el campo de la izquierda;",
+        "step3Item5": "Método de cifrado: Se recomienda el modo 'Compatible' o 'Seguro'.",
+        "step3ExampleTitle": "Ejemplo de marcador de posición (solo para referencia)",
+        "step3Note": "Después de guardar, WeCom realizará la verificación de URL. Asegúrate de que tu servidor devuelva la respuesta de verificación correcta.",
+        "step4Title": "4️⃣ Solución de problemas",
+        "step4Item1": "Fallo en la verificación de URL: Verifica si tu servicio de callback es accesible desde internet público y si el certificado TLS es válido.",
+        "step4Item2": "Fallo en la descifrado: Confirma que el EncodingAESKey es correcto y no contiene espacios adicionales.",
+        "step4Item3": "403/Problemas de permisos: Confirma que la aplicación está habilitada y tiene los permisos requeridos; regenera el Secret si es necesario.",
+        "docsLink": "Documentación de desarrollo de callback de mensajes de WeCom",
+        "bestPracticesTitle": "Mejores prácticas",
+        "bestPracticesItem1": "Almacena los Secrets en un servicio de gestión de claves (como Vault, KMS) en lugar de texto plano en el código.",
+        "bestPracticesItem2": "Usa Token/AESKey diferentes para distintos entornos (Dev/Test/Prod).",
+        "bestPracticesItem3": "Rota los Secrets regularmente y actualiza la configuración del servidor antes de su expiración."
+      },
+      "messages": {
+        "saveSuccess": "Guardado con éxito",
+        "saveSuccessMessage": "La configuración de la plataforma WeCom ha sido actualizada",
+        "disabled": "Plataforma deshabilitada",
+        "enabled": "Plataforma habilitada",
+        "urlCopied": "URL de callback copiada",
+        "deleteSuccess": "Eliminado con éxito",
+        "deleteSuccessMessage": "La plataforma WeCom ha sido eliminada"
+      },
+      "confirm": {
+        "deleteTitle": "Eliminar plataforma",
+        "deleteMessage": "¿Estás seguro de que deseas eliminar esta plataforma?",
+        "confirmText": "Eliminar",
+        "cancelText": "Cancelar"
+      }
+    },
+    "dingtalkBot": {
+      "label": "Bot de DingTalk",
+      "header": {
+        "title": "Configuración de {{name}}",
+        "subtitle": "Configura las credenciales y callbacks para la integración del Bot de DingTalk."
+      },
+      "buttons": {
+        "delete": "Eliminar",
+        "deleting": "Eliminando...",
+        "enable": "Habilitar",
+        "disable": "Deshabilitar",
+        "enabling": "Habilitando...",
+        "disabling": "Deshabilitando...",
+        "save": "Guardar",
+        "saving": "Guardando...",
+        "copy": "Copiar"
+      },
+      "form": {
+        "name": "Nombre de la plataforma",
+        "namePlaceholder": "Por favor ingresa el nombre de la plataforma",
+        "callbackUrl": "URL del receptor de mensajes",
+        "callbackUrlPlaceholder": "La URL del receptor se generará después de la creación",
+        "callbackUrlHint": "Llena esta URL en 'URL del receptor de mensajes' en la configuración del Bot de DingTalk.",
+        "appKey": "App Key",
+        "appKeyPlaceholder": "App Key de DingTalk",
+        "appKeyHint": "Se encuentra en 'Credenciales e Información Básica' de los detalles de la app en DingTalk Open Platform.",
+        "appSecret": "App Secret",
+        "appSecretPlaceholder": "App Secret de DingTalk",
+        "appSecretHint": "Se encuentra en 'Credenciales e Información Básica' en DingTalk Open Platform, mantenlo seguro.",
+        "robotCode": "Código del robot",
+        "robotCodePlaceholder": "Código único para el robot de DingTalk",
+        "robotCodeHint": "Obténlo desde la página de configuración del robot en DingTalk Open Platform.",
+        "aesKey": "Clave AES",
+        "aesKeyPlaceholder": "Clave para cifrado/descifrado de mensajes",
+        "aesKeyHint": "Se usa para descifrar mensajes de eventos de DingTalk, obtenla en Open Platform.",
+        "token": "Token",
+        "tokenPlaceholder": "Token para verificación de firma",
+        "tokenHint": "Se usa para verificar la fuente de la solicitud de suscripción a eventos, obtenlo en Open Platform."
+      },
+      "guide": {
+        "title": "Guía de configuración del Bot de DingTalk",
+        "overview": "Resumen rápido",
+        "overviewText": "Completa tres pasos: ① Crea app/robot en DingTalk Open Platform → ② Configura la URL del receptor y obtén credenciales → ③ Llena la información aquí y guarda.",
+        "step1Title": "1️⃣ Crear App/Robot de DingTalk",
+        "step1Item1": "Visita <a class=\"text-blue-600 hover:underline\" href=\"https://open.dingtalk.com/developer\" target=\"_blank\" rel=\"noreferrer\">DingTalk Open Platform</a>, inicia sesión y entra al backend de desarrollador.",
+        "step1Item2": "Haz clic en 'App Development' → 'Internal Development' → 'Create App'.",
+        "step1Item3": "Completa el nombre de la app, descripción, etc., y confirma la creación.",
+        "step1Item4": "En los detalles de la app, busca 'Robot' y haz clic en 'Create Robot'.",
+        "step2Title": "2️⃣ Configurar Receptor y Seguridad",
+        "step2Item1": "En la configuración del robot, busca 'Message Receiver Mode' y selecciona 'HTTP Mode'.",
+        "step2Item2": "Copia la 'Message Receiver URL' de la izquierda y pégala en DingTalk.",
+        "step2Item3": "En 'Credentials & Basic Info', copia 'AppKey' y 'AppSecret' y complétalos en la izquierda.",
+        "step2Item4": "En la configuración del robot, copia 'RobotCode' y complétalo en 'Robot Code' a la izquierda.",
+        "step2Item5": "En 'Dev Config' → 'Event Subscription', copia 'AES Key' y 'Token' y complétalos en la izquierda.",
+        "step2SecurityTitle": "Consejo de Seguridad",
+        "step2SecurityText": "Mantén seguros AppSecret, AES Key y Token; se usan para verificación y encriptación.",
+        "step3Title": "3️⃣ Publicar App",
+        "step3Item1": "Haz clic en 'Save' en esta plataforma.",
+        "step3Item2": "Regresa a DingTalk, haz clic en 'Version Management & Release' → 'Create Version'.",
+        "step3Item3": "Envía para revisión; estará listo tras la aprobación del administrador.",
+        "docsLink": "Documentación de Desarrollo de DingTalk Bot"
+      },
+      "dialog": {
+        "deleteTitle": "Confirmar Eliminación",
+        "deleteMessage": "¿Estás seguro de que deseas eliminar esta plataforma DingTalk Bot? Esta acción no se puede deshacer.",
+        "confirmDelete": "Eliminar",
+        "cancel": "Cancelar"
+      },
+      "messages": {
+        "saveSuccess": "Guardado Exitosamente",
+        "saveSuccessMessage": "La configuración de DingTalk Bot ha sido actualizada",
+        "deleteSuccess": "Eliminado Exitosamente",
+        "deleteSuccessMessage": "La plataforma DingTalk Bot ha sido eliminada",
+        "urlCopied": "URL del receptor copiada",
+        "disabled": "Plataforma deshabilitada",
+        "enabled": "Plataforma habilitada"
+      }
+    },
+    "feishuBot": {
+      "label": "Feishu Bot",
+      "header": {
+        "title": "Configuración de {{name}}",
+        "subtitle": "Configura credenciales y callbacks para la integración de Feishu Bot."
+      },
+      "buttons": {
+        "delete": "Eliminar",
+        "deleting": "Eliminando...",
+        "enable": "Habilitar",
+        "disable": "Deshabilitar",
+        "enabling": "Habilitando...",
+        "disabling": "Deshabilitando...",
+        "save": "Guardar",
+        "saving": "Guardando...",
+        "copy": "Copiar"
+      },
+      "form": {
+        "name": "Nombre de la plataforma",
+        "namePlaceholder": "Por favor ingresa el nombre de la plataforma",
+        "callbackUrl": "URL de solicitud",
+        "callbackUrlPlaceholder": "La URL de solicitud se generará después de la creación",
+        "callbackUrlHint": "Llena esta URL en el campo 'Request URL' en la configuración de Feishu Bot.",
+        "appId": "ID de la app",
+        "appIdPlaceholder": "ID de la app Feishu",
+        "appIdHint": "Se encuentra en 'Credentials & Basic Info' de los detalles de la app en Feishu Open Platform.",
+        "appSecret": "Secreto de la app",
+        "appSecretPlaceholder": "Secreto de la app Feishu",
+        "appSecretHint": "Se encuentra en 'Credentials & Basic Info' en Feishu Open Platform, mantenlo seguro.",
+        "encryptKey": "Clave de encriptación",
+        "encryptKeyPlaceholder": "Clave de encriptación de Feishu Open Platform",
+        "encryptKeyHint": "Se usa para desencriptar mensajes de eventos de Feishu, obtenla desde Open Platform.",
+        "verificationToken": "Token de verificación",
+        "verificationTokenPlaceholder": "Token de verificación de Feishu Open Platform",
+        "verificationTokenHint": "Se usa para verificar la fuente de la solicitud de suscripción a eventos, obtenlo desde Open Platform."
+      },
+      "guide": {
+        "title": "Guía de configuración de Feishu Bot",
+        "overview": "Resumen rápido",
+        "overviewText": "Completa tres pasos: ① Crea una app/robot en Feishu Open Platform → ② Configura la URL de solicitud y obtén Encrypt Key/Verification Token → ③ Rellena la información aquí y guarda.",
+        "step1Title": "1️⃣ Crea una App/Robot de Feishu",
+        "step1Item1": "Visita <a class=\"text-blue-600 hover:underline\" href=\"https://open.feishu.cn/app\" target=\"_blank\" rel=\"noreferrer\">Feishu Open Platform</a>, inicia sesión y entra al backend de desarrollador.",
+        "step1Item2": "Haz clic en 'Create Custom App', completa el nombre y la descripción.",
+        "step1Item3": "Ve a los detalles de la app, busca 'Robot' en el menú izquierdo y habilita la capacidad de robot.",
+        "step2Title": "2️⃣ Configura la Suscripción de Eventos",
+        "step2Item1": "En los detalles de la app, entra a 'Event Subscription'.",
+        "step2Item2": "Copia la 'Request URL' de la izquierda y pégala en Feishu.",
+        "step2Item3": "Encuentra 'Encrypt Key' y 'Verification Token' en la página, cópialos y complétalos a la izquierda.",
+        "step2Item4": "Agrega los eventos requeridos, por ejemplo, 'Receive Messages' (im.message.receive_v1).",
+        "step2SecurityTitle": "Consejo de Seguridad",
+        "step2SecurityText": "Mantén seguro el Encrypt Key y Verification Token; se usan para verificación y desencriptación.",
+        "step3Title": "3️⃣ Publica la App",
+        "step3Item1": "Haz clic en 'Save' en esta plataforma.",
+        "step3Item2": "Regresa a Feishu, haz clic en 'Version Management & Release' → 'Create Version'.",
+        "step3Item3": "Envía para revisión; estará listo después de la aprobación del administrador.",
+        "docsLink": "Documentación de Desarrollo de Feishu Bot"
+      },
+      "dialog": {
+        "deleteTitle": "Confirmar Eliminación",
+        "deleteMessage": "¿Estás seguro de que deseas eliminar esta plataforma Feishu Bot? Esta acción no se puede deshacer.",
+        "confirmDelete": "Eliminar",
+        "cancel": "Cancelar"
+      },
+      "messages": {
+        "saveSuccess": "Guardado con Éxito",
+        "saveSuccessMessage": "La configuración de Feishu Bot ha sido actualizada",
+        "deleteSuccess": "Eliminado con Éxito",
+        "deleteSuccessMessage": "La plataforma Feishu Bot ha sido eliminada",
+        "urlCopied": "URL de solicitud copiada",
+        "disabled": "Plataforma deshabilitada",
+        "enabled": "Plataforma habilitada"
+      }
+    },
+    "email": {
+      "label": "Correo electrónico",
+      "header": {
+        "title": "Configuración de Plataforma de Correo Electrónico",
+        "subtitle": "Configura la información de IMAP (recepción) y SMTP (envío)."
+      },
+      "buttons": {
+        "delete": "Eliminar",
+        "deleting": "Eliminando...",
+        "enable": "Habilitar",
+        "disable": "Deshabilitar",
+        "enabling": "Habilitando...",
+        "disabling": "Deshabilitando...",
+        "save": "Guardar",
+        "saving": "Guardando...",
+        "show": "Mostrar",
+        "hide": "Ocultar",
+        "testConnection": "Probar conexión",
+        "testing": "Probando..."
+      },
+      "form": {
+        "name": "Nombre de la plataforma",
+        "namePlaceholder": "Ingresa el nombre de la plataforma",
+        "emailAddress": "Dirección de correo electrónico",
+        "emailPlaceholder": "you@example.com",
+        "emailPassword": "Contraseña del correo electrónico",
+        "passwordPlaceholder": "Ingresa la contraseña del correo o código de autorización",
+        "passwordHint": "Gmail/QQ Mail requiere contraseña específica de la app o código de autorización",
+        "autoDetected": "Detectado automáticamente como",
+        "showAdvanced": "Mostrar configuración avanzada",
+        "hideAdvanced": "Ocultar configuración avanzada",
+        "imapSection": "Configuración IMAP (recepción de correos)",
+        "imapHost": "Servidor IMAP",
+        "imapHostPlaceholder": "p. ej., imap.gmail.com",
+        "imapPort": "Puerto IMAP",
+        "imapPortPlaceholder": "Por defecto 993 (SSL) o 143 (sin SSL)",
+        "imapUsername": "Dirección de correo electrónico",
+        "imapUsernamePlaceholder": "you@example.com",
+        "imapPassword": "Contraseña de correo electrónico",
+        "imapPasswordPlaceholder": "Ingresa la contraseña del correo electrónico o el código de autorización",
+        "useSsl": "Usar SSL",
+        "smtpSection": "Configuración SMTP (Envío de correos electrónicos)",
+        "useSameCredentials": "Usar las mismas credenciales para SMTP (Recomendado)",
+        "smtpHost": "Servidor SMTP",
+        "smtpHostPlaceholder": "ej., smtp.gmail.com",
+        "smtpPort": "Puerto SMTP",
+        "smtpPortPlaceholder": "Por defecto 465 (SSL) o 587 (TLS)",
+        "smtpUsername": "Nombre de usuario SMTP",
+        "smtpUsernamePlaceholder": "Generalmente igual que la dirección de correo electrónico",
+        "smtpPassword": "Contraseña SMTP",
+        "smtpPasswordPlaceholder": "Ingresa la contraseña SMTP",
+        "smtpPasswordSame": "Usando contraseña IMAP",
+        "smtpUseSsl": "Usar SSL (Puerto 465)",
+        "smtpUseTls": "Usar TLS/STARTTLS (Puerto 587, Recomendado)"
+      },
+      "guide": {
+        "title": "Guía de configuración de plataforma de correo electrónico (Recepción IMAP + Envío SMTP)",
+        "tipTitle": "Consejo",
+        "tipMessage": "IMAP es para recibir correos electrónicos, SMTP es para enviar correos electrónicos. Puertos comunes: <span class=\"font-mono\">IMAP SSL=993</span>, <span class=\"font-mono\">SMTP SSL=465</span>, <span class=\"font-mono\">SMTP TLS=587</span>.",
+        "section1Title": "1. Obtener credenciales de correo electrónico (Pasos generales)",
+        "section1Step1": "Inicia sesión en la cuenta de tu proveedor de correo electrónico (Gmail / Outlook / QQ Mail, etc.).",
+        "section1Step2": "Ve a la página de 'Configuración de cuenta' o 'Seguridad', habilita el servicio IMAP/SMTP (si es necesario).",
+        "section1Step3": "Si el proveedor lo requiere (como Gmail/QQ), habilita la verificación en dos pasos y crea una 'contraseña específica para la aplicación'.",
+        "section1Step4": "Completa la configuración IMAP y SMTP en el formulario de la izquierda. Si usas las mismas credenciales, marca 'Usar las mismas credenciales para SMTP'.",
+        "section1Step5": "Haz clic en 'Guardar' en la esquina superior derecha, luego prueba enviar y recibir correos electrónicos.",
+        "section2Title": "2. Servidores y puertos comunes de correo electrónico",
+        "tableProvider": "Proveedor",
+        "tableImapServer": "Servidor IMAP",
+        "tableImapPort": "Puerto IMAP",
+        "tableSmtpServer": "Servidor SMTP",
+        "tableSmtpPort": "Puerto SMTP",
+        "tableQQMail": "Correo QQ",
+        "section3Title": "3. Configuración detallada del proveedor",
+        "gmailTitle": "Gmail (Contraseña específica de la aplicación)",
+        "gmailStep1": "Ve al Centro de Seguridad de la Cuenta de Google → Verificación en dos pasos → Contraseña específica de la aplicación; confirma que IMAP/SMTP esté habilitado.",
+        "gmailStep2": "Servidor IMAP: <code class=\"px-1 bg-gray-100 rounded\">imap.gmail.com</code>, puerto: 993 (SSL).",
+        "gmailStep3": "Servidor SMTP: <code class=\"px-1 bg-gray-100 rounded\">smtp.gmail.com</code>, puerto: 465 (SSL) o 587 (TLS).",
+        "gmailStep4": "El nombre de usuario es tu dirección de Gmail; la contraseña usa la contraseña específica de la aplicación (igual para IMAP y SMTP).",
+        "gmailPasswordPlaceholder": "Contraseña específica de la aplicación",
+        "gmailDocs": "Guía oficial de Gmail",
+        "outlookTitle": "Outlook (Office 365)",
+        "outlookStep1": "Servidor IMAP: <code class=\"px-1 bg-gray-100 rounded\">outlook.office365.com</code>, puerto: 993 (SSL).",
+        "outlookStep2": "Servidor SMTP: <code class=\"px-1 bg-gray-100 rounded\">smtp.office365.com</code>, puerto: 587 (TLS).",
+        "outlookStep3": "El nombre de usuario suele ser la dirección de correo electrónico; IMAP y SMTP usan las mismas credenciales.",
+        "outlookDocs": "Documentación de Microsoft",
+        "qqTitle": "Correo QQ (Requiere habilitar IMAP/SMTP)",
+        "qqStep1": "Ve a Configuración de Correo QQ → Cuenta → Habilita 'Servicio IMAP/SMTP'.",
+        "qqStep2": "Obtén el código de autorización como contraseña; servidor IMAP: <code class=\"px-1 bg-gray-100 rounded\">imap.qq.com</code>, puerto: 993.",
+        "qqStep3": "Servidor SMTP: <code class=\"px-1 bg-gray-100 rounded\">smtp.qq.com</code>, puerto: 465 (SSL) o 587 (TLS).",
+        "qqStep4": "IMAP y SMTP usan el mismo código de autorización.",
+        "qqPasswordPlaceholder": "Código de autorización",
+        "qqDocs": "Ayuda de Correo QQ",
+        "troubleshootTitle": "Guía de solución de problemas",
+        "troubleshootItem1": "Confirma que el proveedor de servicio haya habilitado el servicio IMAP/SMTP; Gmail/QQ necesitan habilitarlo en configuración y usar contraseña específica de la aplicación/código de autorización.",
+        "troubleshootItem2": "IMAP: prioriza SSL (puerto 993); SMTP: se recomienda TLS (puerto 587) o SSL (puerto 465).",
+        "troubleshootItem3": "Verifica que la dirección de correo (nombre de usuario) y la contraseña sean correctas, presta atención a mayúsculas, minúsculas y espacios.",
+        "troubleshootItem4": "Si 'Usar mismas credenciales' está marcado, asegúrate que IMAP y SMTP usen el mismo nombre de usuario y contraseña.",
+        "troubleshootItem5": "Si aún falla, verifica si necesitas permitir acceso a clientes de terceros en el backend del proveedor de servicio.",
+        "moreInfo": "Más documentación: Documentación oficial y páginas de soporte de cada proveedor de servicio de correo."
+      },
+      "messages": {
+        "saveSuccess": "Guardado con éxito",
+        "saveSuccessMessage": "La configuración de la plataforma de correo electrónico ha sido guardada",
+        "enabled": "Plataforma habilitada",
+        "disabled": "Plataforma deshabilitada",
+        "deleteSuccess": "Plataforma eliminada",
+        "deleteSuccessMessage": "La plataforma ha sido eliminada",
+        "testSuccess": "Prueba de conexión exitosa",
+        "testSuccessMessage": "Las conexiones IMAP y SMTP están funcionando",
+        "testFailed": "Prueba de conexión fallida",
+        "testValidationError": "Por favor completa todos los campos requeridos de configuración de correo electrónico"
+      },
+      "confirm": {
+        "deleteTitle": "Eliminar plataforma",
+        "deleteMessage": "¿Estás seguro de que deseas eliminar esta plataforma?",
+        "confirmText": "Eliminar",
+        "cancelText": "Cancelar"
+      }
+    },
+    "douyin": {
+      "label": "Douyin",
+      "title": "{{name}} - Configuración de la plataforma Douyin",
+      "subtitle": "Configura las credenciales de la plataforma abierta de Douyin y la información de callback.",
+      "buttons": {
+        "delete": "Eliminar",
+        "deleting": "Eliminando...",
+        "enable": "Habilitar",
+        "disable": "Deshabilitar",
+        "enabling": "Habilitando...",
+        "disabling": "Deshabilitando...",
+        "save": "Guardar",
+        "saving": "Guardando...",
+        "show": "Mostrar",
+        "hide": "Ocultar"
+      },
+      "form": {
+        "platformName": "Nombre de la plataforma",
+        "platformNamePlaceholder": "Por favor ingresa el nombre de la plataforma",
+        "appId": "App ID",
+        "appIdPlaceholder": "ej., tu_app_id",
+        "appSecret": "App Secret",
+        "appSecretPlaceholder": "Por favor ingresa App Secret",
+        "clientKey": "Client Key",
+        "clientKeyPlaceholder": "p. ej., your_client_key",
+        "clientSecret": "Client Secret",
+        "clientSecretPlaceholder": "Por favor ingresa Client Secret",
+        "callbackUrl": "Callback URL",
+        "callbackUrlPlaceholder": "El Callback URL se generará después de crear la plataforma",
+        "callbackUrlHint": "Configura esta URL en los ajustes de 'Callback Address' de Douyin Open Platform.",
+        "authScope": "Authorization Scope",
+        "authScopePlaceholder": "p. ej., user_info,video.list",
+        "authScopeHint": "Separa múltiples permisos con comas, p. ej., user_info,video.list."
+      },
+      "guide": {
+        "title": "Guía de Configuración de Douyin Open Platform",
+        "overview": "Resumen Rápido",
+        "overviewText": "Completa los siguientes cuatro pasos: ① Registra una cuenta en Open Platform → ② Crea una aplicación y obtén credenciales → ③ Configura la dirección de callback → ④ Guarda y prueba.",
+        "step1Title": "1️⃣ Registra una Cuenta en Douyin Open Platform",
+        "step1Item1": "Visita <a class=\"text-blue-600 hover:underline\" href=\"https://developer.open-douyin.com/\" target=\"_blank\" rel=\"noreferrer\">Douyin Open Platform</a> y completa el registro de cuenta y la autenticación de entidad (si es requerida).",
+        "step1Item2": "Inicia sesión en la consola y completa la información del desarrollador.",
+        "step2Title": "2️⃣ Crea la Aplicación y Obtén Credenciales",
+        "step2Item1": "Crea una nueva aplicación en la consola y anota el App ID y App Secret.",
+        "step2Item2": "Obtén Client Key y Client Secret en la configuración de la aplicación.",
+        "step2Item3": "Selecciona y habilita el authorization scope (Scope) requerido según las necesidades del negocio.",
+        "step3Title": "3️⃣ Configura la Dirección de Callback",
+        "step3Item1": "Configura el callback URL en los 'Callback Settings' de Open Platform: usa el callback URL de solo lectura arriba.",
+        "step3Item2": "Asegúrate de que el servidor sea accesible públicamente y maneje correctamente las solicitudes de verificación.",
+        "step4Title": "4️⃣ Problemas Comunes y Solución de Problemas",
+        "step4Item1": "Fallo en la verificación del callback: Verifica si el callback URL es accesible y si el certificado TLS es válido.",
+        "step4Item2": "Permisos insuficientes: Confirma que el Scope requerido ha sido habilitado y autorizado en Open Platform.",
+        "step4Item3": "Error de credenciales: Verifica que App ID/Secret y Client Key/Secret estén ingresados correctamente.",
+        "bestPracticesTitle": "Mejores Prácticas",
+        "bestPracticesItem1": "Almacena las claves en un servicio seguro de gestión de claves (como KMS/Vault) para evitar que aparezcan en el repositorio de código.",
+        "bestPracticesItem2": "Usa diferentes callbacks y credenciales para distintos entornos (desarrollo/pruebas/producción), con la autorización mínima necesaria.",
+        "bestPracticesItem3": "Rota las claves regularmente y minimiza el alcance de los permisos (Scope)."
+      },
+      "messages": {
+        "saveSuccess": "Guardado exitosamente",
+        "saveSuccessMessage": "La configuración de la plataforma Douyin ha sido guardada",
+        "platformDisabled": "Plataforma deshabilitada",
+        "platformEnabled": "Plataforma habilitada",
+        "deleteSuccess": "Plataforma eliminada",
+        "deleteSuccessMessage": "La plataforma ha sido eliminada"
+      },
+      "confirm": {
+        "deleteTitle": "Eliminar plataforma",
+        "deleteMessage": "¿Estás seguro de que deseas eliminar esta plataforma?",
+        "confirmText": "Eliminar",
+        "cancelText": "Cancelar"
+      }
+    },
+    "custom": {
+      "label": "Plataforma personalizada",
+      "title": "Configuración de plataforma personalizada",
+      "subtitle": "Configura la información de la API y la URL de callback para la integración de programas de terceros.",
+      "configSection": "Configuración",
+      "platformName": "Nombre de la plataforma",
+      "platformNamePlaceholder": "Ingresa el nombre de la plataforma",
+      "nameSaved": "Nombre de la plataforma guardado exitosamente",
+      "chatUrl": "Endpoint de la API de chat",
+      "chatUrlHint": "Los programas de terceros llaman a esta dirección para enviar mensajes de conversación.",
+      "apiKeyHint": "Usa X-Platform-API-Key en el encabezado de la solicitud para autenticación.",
+      "apiKey": "Clave API",
+      "callbackUrl": "URL de callback",
+      "callbackUrlHint": "Cuando el servicio al cliente responde a los mensajes, el sistema enviará mensajes a esta dirección",
+      "callbackUrlPlaceholder": "https://your-domain.com/webhook/callback",
+      "callbackSaved": "URL de callback guardada exitosamente",
+      "callbackSaveFailed": "Error al guardar la URL de callback",
+      "invalidUrl": "Formato de URL inválido",
+      "invalidUrlHint": "Por favor ingresa una dirección HTTP/HTTPS válida",
+      "notAvailable": "No disponible",
+      "copied": "{{label}} copiado al portapapeles",
+      "copyFailed": "Error al copiar",
+      "disabled": "Plataforma deshabilitada",
+      "enabled": "Plataforma habilitada",
+      "toggleFailed": "Error al cambiar el estado",
+      "confirmRegenerate": "¿Estás seguro de que deseas regenerar la clave API? La clave antigua se invalidará inmediatamente.",
+      "regenerated": "Clave API regenerada con éxito",
+      "regenerateFailed": "Error al regenerar la clave API",
+      "regenerate": "Regenerar",
+      "deleted": "Plataforma eliminada",
+      "deleteFailed": "Error al eliminar la plataforma",
+      "deleteTitle": "Eliminar plataforma",
+      "deleteMessage": "¿Estás seguro de que deseas eliminar la plataforma \"{{name}}\"? Esta acción no se puede deshacer.",
+      "code": "Código",
+      "saveSuccess": "Guardado con éxito",
+      "integration": {
+        "title": "Información de integración API",
+        "guide": "Guía de integración",
+        "chatApi": "Chat API (Enviar mensajes a TGO)",
+        "endpoint": "Endpoint API",
+        "authentication": "Autenticación",
+        "authDesc": "Agrega la clave API de la plataforma en el encabezado de la solicitud:",
+        "requiredParams": "Parámetros requeridos",
+        "messagesDesc": "Arreglo de mensajes de conversación, compatible con el formato de OpenAI ChatGPT API",
+        "userDesc": "Identificador único del usuario de la plataforma de terceros (requerido)",
+        "optionalFeatures": "Funciones opcionales",
+        "visitorRegisterDesc": "Si necesitas pasar información detallada del usuario (nombre, avatar, etc.), puedes primero llamar a la API de registro de visitante:",
+        "simpleExample": "Ejemplo simple",
+        "responseHandling": "Manejo de respuesta",
+        "responseHandlingDesc": "Después de llamar a la API de chat, el sistema TGO devolverá la respuesta del asistente de IA. La plataforma de terceros debe enviar el contenido de la respuesta devuelta al usuario correspondiente de terceros. El formato de respuesta es compatible con la API OpenAI ChatGPT, soportando respuestas tanto en streaming como sin streaming.",
+        "callbackApi": "API de Callback (Recibir respuestas de servicio al cliente)",
+        "callbackConfig": "Configurar URL de Callback",
+        "callbackConfigDesc": "Configura tu URL de callback en el campo 'Callback URL' a la izquierda. Cuando el servicio al cliente responda a un mensaje, el sistema enviará una solicitud POST a esa dirección.",
+        "requestFormat": "Opcional",
+        "fieldDescriptions": "Descripción de Campos",
+        "messageIdDesc": "Identificador único del mensaje",
+        "callbackUserDesc": "Identificador del usuario de terceros (corresponde al campo user en la API de chat)",
+        "contentDesc": "Contenido del mensaje de respuesta del servicio al cliente",
+        "timestampDesc": "Marca de tiempo del mensaje (formato ISO 8601)",
+        "responseRequirement": "Requisito de Respuesta",
+        "responseRequirementDesc": "Por favor, asegúrate de que la URL de callback sea accesible públicamente y devuelva el código de estado HTTP 200 para indicar la recepción exitosa.",
+        "codeExamples": "Ejemplos de Código"
+      }
+    },
+    "aiSettings": {
+      "title": "Configuración de IA",
+      "optional": "Optional",
+      "agents": "Agentes de IA",
+      "loadingAgents": "Cargando...",
+      "selectAgents": "Seleccionar Agente de IA",
+      "noAgents": "No hay Agentes de IA Disponibles",
+      "agentsHint": "Selecciona el agente de IA asignado a esta plataforma.",
+      "agentsHintDefault": "Si no se selecciona ninguno, se usará el agente de IA predeterminado del proyecto.",
+      "mode": "Modo de IA",
+      "modeAuto": "Automático",
+      "modeAssist": "Asistencia",
+      "modeOff": "Desactivado",
+      "modeAutoHint": "La IA maneja automáticamente todos los mensajes.",
+      "modeAssistHint": "Primero humano, la IA toma el control después del tiempo de espera.",
+      "modeOffHint": "Desactivar IA, solo el humano maneja los mensajes.",
+      "timeout": "Tiempo de espera (segundos)",
+      "timeoutPlaceholder": "ej., 60",
+      "timeoutHint": "Tiempo en segundos antes de que la IA tome el control cuando no hay respuesta. Establece en 0 para evitar que la IA tome el control.",
+      "saveSuccess": "Configuración de IA guardada",
+      "saveButton": "Guardar configuración de IA"
+    }
+  },
+  "setup": {
+    "title": "Asistente de configuración del sistema",
+    "subtitle": "Bienvenido a TKTLABS, vamos a configurar tu sistema",
+    "steps": {
+      "admin": "Cuenta de administrador",
+      "staff": "Agentes humanos",
+      "llm": "Configuración de LLM",
+      "verify": "Verificar instalación"
+    },
+    "stepIndicator": "Paso {{current}} / {{total}}",
+    "admin": {
+      "title": "Configurar cuenta de administrador",
+      "description": "Crea una cuenta de administrador del sistema para inicio de sesión y gestión",
+      "username": "Nombre de usuario",
+      "usernamePlaceholder": "Ingresa nombre de usuario (3-20 caracteres)",
+      "usernameFixed": "Nombre de usuario administrador predeterminado, no se puede modificar",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Ingresa contraseña (al menos 8 caracteres)",
+      "confirmPassword": "Confirmar contraseña",
+      "confirmPasswordPlaceholder": "Vuelve a ingresar la contraseña",
+      "validation": {
+        "usernameRequired": "El nombre de usuario es obligatorio",
+        "usernameLength": "El nombre de usuario debe tener entre 3 y 20 caracteres",
+        "usernameFormat": "El nombre de usuario solo puede contener letras, números y guiones bajos",
+        "passwordRequired": "La contraseña es obligatoria",
+        "passwordLength": "La contraseña debe tener al menos 8 caracteres",
+        "passwordStrength": "La contraseña debe contener mayúsculas, minúsculas y números",
+        "confirmPasswordRequired": "Por favor confirma tu contraseña",
+        "passwordMismatch": "Las contraseñas no coinciden"
+      }
+    },
+    "staff": {
+      "title": "Configurar agentes humanos",
+      "description": "Agrega cuentas de agentes humanos para manejar consultas de clientes",
+      "infoText": "Cuando el agente de IA no pueda resolver los problemas del usuario, el sistema asignará automáticamente la conversación a un agente humano. Los agentes humanos pueden tomar el control de la conversación y brindar asistencia más profesional.",
+      "staffItem": "Agente {{index}}",
+      "username": "Nombre de usuario",
+      "usernamePlaceholder": "Ingresa nombre de usuario (mínimo 4, solo letras/números)",
+      "name": "Nombre",
+      "namePlaceholder": "Ingresa nombre del agente",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Ingresa contraseña (al menos 8 caracteres)",
+      "confirmPassword": "Confirmar contraseña",
+      "confirmPasswordPlaceholder": "Reingresa contraseña",
+      "addStaff": "Agregar agente",
+      "emptyHint": "Haz clic en el botón de arriba para agregar cuentas de agentes humanos",
+      "requiredHint": "* Se requiere al menos un agente humano",
+      "validation": {
+        "usernameRequired": "Nombre de usuario es obligatorio",
+        "usernameLength": "El nombre de usuario debe tener entre 4 y 50 caracteres",
+        "usernameFormat": "El nombre de usuario solo puede contener letras y números en inglés (sin espacios/caracteres especiales)",
+        "nameRequired": "Nombre es obligatorio",
+        "passwordRequired": "Contraseña es obligatoria",
+        "passwordLength": "La contraseña debe tener al menos 8 caracteres",
+        "passwordMismatch": "Las contraseñas no coinciden",
+        "atLeastOne": "Por favor agrega al menos un agente humano"
+      }
+    },
+    "llm": {
+      "title": "Configurar Modelo de Lenguaje Grande AI",
+      "description": "Selecciona tu proveedor de LLM, también puedes configurarlo más tarde en la configuración del sistema",
+      "optional": "(Opcional)",
+      "provider": "Proveedor",
+      "providerPlaceholder": "Selecciona proveedor de LLM",
+      "providers": {
+        "none": "Omitir por ahora",
+        "openai": "OpenAI",
+        "azure": "Azure OpenAI",
+        "anthropic": "Anthropic",
+        "local": "Modelo local",
+        "other": "Otro"
+      },
+      "name": "Nombre para mostrar",
+      "namePlaceholder": "p. ej., Mi Proveedor OpenAI",
+      "apiKey": "Clave API",
+      "apiKeyPlaceholder": "Ingresa la Clave API (p. ej., sk-...)",
+      "apiEndpoint": "Endpoint API",
+      "apiEndpointPlaceholder": "Ingresa el Endpoint API (opcional)",
+      "model": "Nombre del Modelo",
+      "modelPlaceholder": "p. ej., gpt-4, claude-3-opus",
+      "testConnection": "Probar Conexión",
+      "testSuccess": "Prueba de conexión exitosa",
+      "testFailed": "Prueba de conexión fallida",
+      "validation": {
+        "providerRequired": "Por favor selecciona un proveedor",
+        "nameRequired": "El nombre para mostrar es obligatorio",
+        "apiKeyRequired": "La Clave API es obligatoria"
+      }
+    },
+    "verify": {
+      "title": "Instalación Completa",
+      "description": "Verificando configuración del sistema...",
+      "summary": "Resumen de Instalación",
+      "adminCreated": "Cuenta de administrador creada",
+      "staffCreated": "{{count}} agente(s) humano(s) creado(s)",
+      "staffNotConfigured": "Agentes humanos no configurados (pueden configurarse después)",
+      "llmConfigured": "LLM configurado",
+      "llmNotConfigured": "LLM no configurado (puede configurarse después)",
+      "checks": {
+        "title": "Verificaciones del Sistema",
+        "database": "Conexión a la Base de Datos",
+        "admin": "Cuenta de Administrador",
+        "llm": "Configuración de LLM",
+        "status": {
+          "success": "Éxito",
+          "failed": "Fallido",
+          "skipped": "Omitido"
+        }
+      },
+      "verifying": "Verificando...",
+      "verifySuccess": "Verificación exitosa",
+      "verifyFailed": "Verificación fallida",
+      "installationComplete": "¡Instalación completa!",
+      "redirecting": "Redirigiendo a la página de inicio de sesión..."
+    },
+    "buttons": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "skip": "Omitir",
+      "finish": "Finalizar instalación",
+      "retry": "Reintentar"
+    },
+    "errors": {
+      "createAdminFailed": "Error al crear la cuenta de administrador",
+      "createStaffFailed": "Error al crear el agente humano",
+      "configureLLMFailed": "Error al configurar LLM",
+      "verifyFailed": "Error al verificar la instalación",
+      "alreadyInstalled": "El sistema ya está instalado"
+    },
+    "success": {
+      "adminCreated": "Cuenta de administrador creada con éxito",
+      "llmConfigured": "LLM configurado con éxito"
+    },
+    "guard": {
+      "checking": "Comprobando el estado del sistema...",
+      "serverError": "No se puede conectar al servidor",
+      "retryButton": "Reintentar"
+    }
+  },
+  "onboarding": {
+    "title": "Inicio rápido",
+    "progress": "{{completed}}/{{total}} Completado",
+    "expand": "Expandir",
+    "collapse": "Colapsar",
+    "dismiss": "Cerrar",
+    "dismissButton": "No mostrar de nuevo",
+    "welcome": {
+      "title": "Bienvenido a TKTLABS",
+      "subtitle": "Completa los siguientes pasos para comenzar tu viaje de servicio al cliente con IA",
+      "progress": "Progreso",
+      "estimatedTime": "~2 min",
+      "skip": "Omitir guía",
+      "later": "Configurar después",
+      "start": "Iniciar configuración"
+    },
+    "panel": {
+      "title": "Inicio rápido",
+      "progress": "Progreso",
+      "skip": "Omitir",
+      "viewAll": "Ver todo"
+    },
+    "modal": {
+      "close": "Cerrar"
+    },
+    "steps": {
+      "ai_provider": {
+        "title": "Configurar modelos de IA",
+        "description": "Conectar con proveedores de IA como OpenAI, Qwen, etc."
+      },
+      "default_models": {
+        "title": "Establecer modelos predeterminados",
+        "description": "Elegir modelos predeterminados de chat e incrustación"
+      },
+      "rag_collection": {
+        "title": "Crear base de conocimiento",
+        "description": "Subir documentos o páginas web para construir tu base de conocimiento"
+      },
+      "agent_with_kb": {
+        "title": "Crear agente",
+        "description": "Crear un agente de IA y vincularlo a tu base de conocimiento"
+      },
+      "first_chat": {
+        "title": "Comenzar a chatear",
+        "description": "Enviar un mensaje y experimentar respuestas impulsadas por IA"
+      }
+    },
+    "tasks": {
+      "platformCreated": "Configurar plataforma",
+      "knowledgeBaseUploaded": "Subir base de conocimiento",
+      "agentCreated": "Crear agente de IA y vincular base de conocimiento",
+      "messageReceived": "Recibir mensaje de la plataforma"
+    }
+  },
+  "deviceControl": {
+    "title": "Control de dispositivos",
+    "subtitle": "Gestionar dispositivos remotos controlados por agentes de IA",
+    "addDevice": "Agregar dispositivo",
+    "search": {
+      "placeholder": "Buscar dispositivos..."
+    },
+    "banner": {
+      "title": "Control remoto de dispositivos",
+      "description": "Conecta tu computadora o dispositivo móvil para permitir que los agentes de IA controlen la pantalla directamente para tareas de automatización más complejas."
+    },
+    "stats": {
+      "total": "Total de dispositivos",
+      "online": "En línea",
+      "offline": "Desconectado"
+    },
+    "filter": {
+      "all": "Todos",
+      "online": "Conectado",
+      "offline": "Desconectado"
+    },
+    "empty": {
+      "title": "No hay dispositivos conectados",
+      "description": "Haz clic en el botón \"Agregar dispositivo\" para generar un código de vinculación, luego ingresa el código en el software cliente de control para conectar tu dispositivo.",
+      "noResults": "No se encontraron dispositivos coincidentes",
+      "tryOther": "Prueba con otros criterios de búsqueda o filtros"
+    },
+    "device": {
+      "online": "Conectado",
+      "offline": "Desconectado",
+      "disconnect": "Desconectar",
+      "resolution": "Resolución",
+      "lastSeen": "Última vez visto",
+      "now": "Ahora",
+      "neverConnected": "Nunca conectado",
+      "justNow": "Justo ahora",
+      "minutesAgo": "Hace {{count}} minutos",
+      "hoursAgo": "Hace {{count}} horas",
+      "daysAgo": "Hace {{count}} días",
+      "debug": "Depurar dispositivo"
+    },
+    "bindCode": {
+      "title": "Agregar dispositivo",
+      "description": "Ingresa el siguiente código de vinculación en el software cliente de control para conectar tu dispositivo",
+      "expiresIn": "Expira en",
+      "expired": "Código de vinculación expirado",
+      "howTo": "¿Cómo conectar?",
+      "step1": "Descarga e instala el software cliente de control",
+      "step2": "Abre el software e ingresa el código de vinculación arriba",
+      "step3": "Una vez conectado, el dispositivo aparecerá en la lista"
+    },
+    "edit": {
+      "title": "Editar dispositivo",
+      "deviceName": "Nombre del dispositivo",
+      "deviceNamePlaceholder": "Ingresa el nombre del dispositivo",
+      "nameRequired": "Por favor ingresa un nombre para el dispositivo",
+      "os": "Sistema Operativo",
+      "resolution": "Resolución de Pantalla",
+      "status": "Estado"
+    },
+    "delete": {
+      "title": "Confirmar Eliminación",
+      "message": "¿Estás seguro de que deseas eliminar el dispositivo \"{{name}}\"? Esta acción no se puede deshacer."
+    },
+    "disconnect": {
+      "title": "Confirmar Desconexión",
+      "message": "¿Estás seguro de que deseas desconectar el dispositivo \"{{name}}\"?"
+    }
+  },
+  "ws": {
+    "error": {
+      "unknown": "Error desconocido",
+      "success": "Éxito",
+      "authFail": "Autenticación fallida",
+      "subscriberNotExist": "El suscriptor no existe",
+      "inBlacklist": "El usuario está en la lista negra",
+      "channelNotExist": "El canal no existe",
+      "userNotOnNode": "El usuario no está en el nodo",
+      "senderOffline": "El remitente está desconectado",
+      "msgKeyError": "Error en la clave del mensaje",
+      "payloadDecodeError": "Error al decodificar la carga útil",
+      "forwardSendPacketError": "Error al reenviar el paquete",
+      "notAllowSend": "No permitido enviar",
+      "connectKick": "Conexión expulsada",
+      "notInWhitelist": "No está en la lista blanca",
+      "queryTokenError": "Error al consultar el token",
+      "systemError": "Error del sistema",
+      "channelIDError": "ID de canal inválido",
+      "nodeMatchError": "Error de coincidencia de nodo",
+      "nodeNotMatch": "Nodo no coincidente",
+      "ban": "El canal está bloqueado",
+      "notSupportHeader": "Encabezado no soportado",
+      "clientKeyIsEmpty": "La clave del cliente está vacía",
+      "rateLimit": "Límite de tasa excedido",
+      "notSupportChannelType": "Tipo de canal no soportado",
+      "disband": "Canal disuelto",
+      "sendBan": "Envío prohibido",
+      "sendFailed": "Error al enviar el mensaje (código de error: {{code}})"
+    }
+  },
+  "skills": {
+    "title": "Gestión de habilidades",
+    "subtitle": "Define conjuntos de instrucciones profesionales reutilizables para agentes de IA",
+    "search": {
+      "placeholder": "Buscar habilidades..."
+    },
+    "createSkill": "Crear habilidad",
+    "banner": {
+      "title": "Construir habilidades profesionales",
+      "description": "Al crear habilidades, puedes descomponer tareas complejas en plantillas de instrucciones estandarizadas. Permite que los agentes de IA completen tareas específicas como revisión de código, redacción y análisis de datos como expertos siguiendo las mejores prácticas."
+    },
+    "listTitle": "Lista de habilidades",
+    "empty": {
+      "title": "Aún no hay habilidades",
+      "description": "Crea tu primera habilidad para que los agentes de IA sean más profesionales"
+    },
+    "card": {
+      "author": "Autor",
+      "updated": "Actualizado"
+    },
+    "toggle": {
+      "enabled": "Habilitado",
+      "disabled": "Deshabilitado"
+    },
+    "fetchFailed": "Error al obtener habilidades",
+    "fetchDetailFailed": "Error al obtener detalles de la habilidad",
+    "deleteConfirm": "¿Estás seguro de que deseas eliminar la habilidad \"{{name}}\"? Esta acción no se puede deshacer.",
+    "deleteSuccess": "Habilidad eliminada",
+    "deleteFailed": "Error al eliminar la habilidad",
+    "form": {
+      "createTitle": "Crear habilidad",
+      "editTitle": "Editar habilidad",
+      "name": "Nombre de la habilidad",
+      "nameHint": "Letras minúsculas, números y guiones, por ejemplo my-skill",
+      "description": "Descripción",
+      "descriptionPlaceholder": "Describe brevemente el propósito y los casos de uso de esta habilidad",
+      "instructions": "Instrucciones de la Skill (Markdown)",
+      "instructionsPlaceholder": "Escribe instrucciones detalladas de la skill en Markdown...",
+      "author": "Autor",
+      "license": "Licencia",
+      "tags": "Etiquetas",
+      "tagPlaceholder": "Escribe una etiqueta y presiona Enter",
+      "createSuccess": "Skill creada",
+      "updateSuccess": "Skill actualizada",
+      "createFailed": "Error al crear la skill",
+      "updateFailed": "Error al actualizar la skill",
+      "errors": {
+        "nameRequired": "Por favor ingresa un nombre para la skill",
+        "nameFormat": "El nombre solo puede contener letras minúsculas, números y guiones, y debe comenzar con una letra",
+        "nameMinLength": "El nombre debe tener al menos 2 caracteres",
+        "descRequired": "Por favor ingresa una descripción"
+      }
+    },
+    "detail": {
+      "title": "Detalles de la Skill",
+      "instructions": "Instrucciones de la Skill",
+      "scripts": "Archivos de Script",
+      "references": "Archivos de Referencia"
+    },
+    "import": {
+      "title": "Importar Skill desde GitHub",
+      "urlLabel": "URL del Directorio de la Skill en GitHub",
+      "urlHint": "Pega una URL de directorio o archivo de GitHub (soporta enlaces /tree/ y /blob/), el sistema descargará automáticamente todo el directorio",
+      "tokenLabel": "Token de GitHub",
+      "tokenHint": "Para acceder a repositorios privados o aumentar los límites de la API de GitHub (anónimo: 60/hr, autenticado: 5000/hr)",
+      "addToken": "Agregar Token de GitHub (para repos privados o límites más altos)",
+      "submit": "Importar Skill",
+      "success": "Skill importada con éxito",
+      "failed": "Error al importar la skill",
+      "infoTitle": "Especificación del Directorio de la Skill",
+      "infoItem1": "El directorio debe contener un archivo SKILL.md con frontmatter YAML",
+      "infoItem2": "El frontmatter de SKILL.md debe incluir los campos name y description",
+      "infoItem3": "Puede incluir opcionalmente subdirectorios scripts/, references/, assets/",
+      "errors": {
+        "urlRequired": "Por favor ingresa una URL de directorio de GitHub",
+        "urlFormat": "Por favor ingresa una URL válida de GitHub, soporta enlaces a directorios o archivos, por ejemplo: https://github.com/owner/repo/tree/branch/path"
+      }
+    }
+  }
+}

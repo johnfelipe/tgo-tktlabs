@@ -82,6 +82,12 @@ if [ -z "$NGINX_CLIENT_MAX_BODY_SIZE" ]; then
         NGINX_CLIENT_MAX_BODY_SIZE="20m"
     fi
 fi
+# Path prefix used to reach WuKongIM over the main HTTP(S) entrypoint.
+# Useful for single-domain deployments (tunnels, reverse proxies) where no
+# dedicated WS_DOMAIN is available. Set WS_PATH_PREFIX= to disable.
+WS_PATH_PREFIX=$(read_env_var "WS_PATH_PREFIX" "$ENV_FILE")
+WS_PATH_PREFIX=${WS_PATH_PREFIX-/im}
+
 NGINX_PROXY_READ_TIMEOUT=${NGINX_PROXY_READ_TIMEOUT:-300s}
 NGINX_PROXY_SEND_TIMEOUT=${NGINX_PROXY_SEND_TIMEOUT:-300s}
 NGINX_PROXY_CONNECT_TIMEOUT=${NGINX_PROXY_CONNECT_TIMEOUT:-30s}
@@ -187,6 +193,31 @@ else
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_redirect off;
     }
+NGINX_CONFIG
+
+    if [ -n "$WS_PATH_PREFIX" ]; then
+        cat >> "$NGINX_CONF_DIR/default.conf" << 'NGINX_CONFIG'
+
+    # WuKongIM WebSocket over the main entrypoint (single-domain deployments)
+    location WS_PATH_PREFIX {
+        rewrite ^WS_PATH_PREFIX(/.*)?$ /$1 break;
+        proxy_pass http://wukongim:5200;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 180s;
+        proxy_send_timeout 120s;
+        proxy_connect_timeout 4s;
+        proxy_redirect off;
+    }
+NGINX_CONFIG
+    fi
+
+    cat >> "$NGINX_CONF_DIR/default.conf" << 'NGINX_CONFIG'
 
     # Web / widget HTML and other resources (root path)
     # Choose upstream (tgo-web or tgo-widget-js) based on Referer
@@ -422,6 +453,7 @@ cat "$NGINX_CONF_DIR/default.conf" | sed "s/WEB_DOMAIN/$WEB_DOMAIN/g" | \
   sed "s/WIDGET_DOMAIN/$WIDGET_DOMAIN/g" | \
   sed "s/API_DOMAIN/$API_DOMAIN/g" | \
   sed "s/WS_DOMAIN/$WS_DOMAIN/g" | \
+  sed "s#WS_PATH_PREFIX#$WS_PATH_PREFIX#g" | \
   sed "s/CLIENT_MAX_BODY_SIZE/$NGINX_CLIENT_MAX_BODY_SIZE/g" | \
   sed "s/NGINX_PROXY_READ_TIMEOUT/$NGINX_PROXY_READ_TIMEOUT/g" | \
   sed "s/NGINX_PROXY_SEND_TIMEOUT/$NGINX_PROXY_SEND_TIMEOUT/g" | \
@@ -434,5 +466,8 @@ echo "  - Web: $WEB_DOMAIN"
 echo "  - Widget: $WIDGET_DOMAIN"
 echo "  - API: $API_DOMAIN"
 echo "  - WebSocket: $WS_DOMAIN"
+if [ -n "$WS_PATH_PREFIX" ]; then
+    echo "  - WebSocket path: $WS_PATH_PREFIX"
+fi
 echo "[INFO] SSL Mode: $SSL_ENABLED"
 
