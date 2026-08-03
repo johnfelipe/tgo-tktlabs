@@ -327,7 +327,7 @@ class NotificationService {
 
     try {
       // 构建通知内容
-      const senderName = message.fromInfo?.name || '访客';
+      const senderName = message.fromInfo?.name || 'Visitante';
       const content = this.truncateContent(message.content, 50);
       
       const notification = new Notification(senderName, {
@@ -414,8 +414,8 @@ class NotificationService {
     }
 
     try {
-      const notification = new Notification('测试通知', {
-        body: '这是一条测试通知，用于验证通知功能是否正常工作。',
+      const notification = new Notification('Notificación de prueba', {
+        body: 'Esta es una notificación de prueba para verificar que la función de notificaciones funciona correctamente.',
         icon: '/logo.svg',
         tag: 'test-notification',
         requireInteraction: false,

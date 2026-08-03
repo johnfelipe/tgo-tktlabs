@@ -68,7 +68,7 @@ const KnowledgeBaseRow: React.FC<KnowledgeBaseRowProps> = ({ knowledgeBase, onAc
 
       {/* Document Count */}
       <div className="text-sm text-gray-600">
-        {(knowledgeBase.fileCount ?? knowledgeBase.views ?? 0)} 文件
+        {(knowledgeBase.fileCount ?? knowledgeBase.views ?? 0)} Archivo
       </div>
 
       {/* Last Updated */}
@@ -94,7 +94,7 @@ const KnowledgeBaseRow: React.FC<KnowledgeBaseRowProps> = ({ knowledgeBase, onAc
           variant="icon"
           icon="Pencil"
           size="sm"
-          title="编辑"
+          title="Editar"
           className="text-gray-400 hover:text-blue-600"
           onClick={() => handleAction('edit')}
         />
@@ -102,7 +102,7 @@ const KnowledgeBaseRow: React.FC<KnowledgeBaseRowProps> = ({ knowledgeBase, onAc
           variant="icon"
           icon="Share2"
           size="sm"
-          title="分享"
+          title="Compartir"
           className="text-gray-400 hover:text-blue-600"
           onClick={() => handleAction('share')}
         />
@@ -110,7 +110,7 @@ const KnowledgeBaseRow: React.FC<KnowledgeBaseRowProps> = ({ knowledgeBase, onAc
           variant="icon"
           icon="Trash2"
           size="sm"
-          title="删除"
+          title="Eliminar"
           className="text-gray-400 hover:text-red-600"
           onClick={() => handleAction('delete')}
         />

@@ -93,10 +93,10 @@ const AuthMethodModal: React.FC<AuthMethodModalProps> = ({
       } else if (headerPrefix === 'bearer') {
         return 'Bearer <token>';
       } else {
-        return '输入 API Key';
+        return 'Ingresa API Key';
       }
     } else if (authType === 'query') {
-      return '输入 API Key';
+      return 'Ingresa API Key';
     }
     return '';
   };
@@ -108,7 +108,7 @@ const AuthMethodModal: React.FC<AuthMethodModalProps> = ({
       <div className="bg-white rounded-lg shadow-xl w-full max-w-md">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-900">鉴权方法</h2>
+          <h2 className="text-xl font-semibold text-gray-900">Método de autenticación</h2>
           <button
             onClick={handleCancel}
             className="text-gray-400 hover:text-gray-600 transition-colors"
@@ -121,7 +121,7 @@ const AuthMethodModal: React.FC<AuthMethodModalProps> = ({
         <div className="p-6 space-y-6">
           {/* 鉴权类型 */}
           <div>
-            <h3 className="text-sm font-medium text-gray-700 mb-4">鉴权类型</h3>
+            <h3 className="text-sm font-medium text-gray-700 mb-4">Tipo de autenticación</h3>
             <div className="grid grid-cols-3 gap-3">
               <label className={`relative flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer transition-all ${
                 authType === 'none' 
@@ -143,7 +143,7 @@ const AuthMethodModal: React.FC<AuthMethodModalProps> = ({
                     <div className="w-2 h-2 rounded-full bg-blue-500"></div>
                   )}
                 </div>
-                <span className="text-sm font-medium text-gray-700">无</span>
+                <span className="text-sm font-medium text-gray-700">Ninguno</span>
               </label>
 
               <label className={`relative flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer transition-all ${
@@ -166,7 +166,7 @@ const AuthMethodModal: React.FC<AuthMethodModalProps> = ({
                     <div className="w-2 h-2 rounded-full bg-blue-500"></div>
                   )}
                 </div>
-                <span className="text-sm font-medium text-gray-700">请求头</span>
+                <span className="text-sm font-medium text-gray-700">Encabezado de la solicitud</span>
               </label>
 
               <label className={`relative flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer transition-all ${
@@ -189,7 +189,7 @@ const AuthMethodModal: React.FC<AuthMethodModalProps> = ({
                     <div className="w-2 h-2 rounded-full bg-blue-500"></div>
                   )}
                 </div>
-                <span className="text-sm font-medium text-gray-700">查询参数</span>
+                <span className="text-sm font-medium text-gray-700">Parámetros de consulta</span>
               </label>
             </div>
           </div>
@@ -197,7 +197,7 @@ const AuthMethodModal: React.FC<AuthMethodModalProps> = ({
           {/* 鉴权头部前缀 - 仅在选择请求头时显示 */}
           {authType === 'header' && (
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-4">鉴权头部前缀</h3>
+              <h3 className="text-sm font-medium text-gray-700 mb-4">Prefijo del encabezado de autenticación</h3>
               <div className="grid grid-cols-3 gap-3">
                 <label className={`relative flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer transition-all ${
                   headerPrefix === 'basic' 
@@ -277,7 +277,7 @@ const AuthMethodModal: React.FC<AuthMethodModalProps> = ({
               {/* 键 */}
               <div>
                 <div className="flex items-center space-x-2 mb-2">
-                  <label className="text-sm font-medium text-gray-700">键</label>
+                  <label className="text-sm font-medium text-gray-700">Clave</label>
                   <HelpCircle className="w-4 h-4 text-gray-400" />
                 </div>
                 <input
@@ -291,7 +291,7 @@ const AuthMethodModal: React.FC<AuthMethodModalProps> = ({
 
               {/* 值 */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">值</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Valor</label>
                 <input
                   type="text"
                   value={value}
@@ -311,14 +311,14 @@ const AuthMethodModal: React.FC<AuthMethodModalProps> = ({
             onClick={handleCancel}
             className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
           >
-            取消
+            Cancelar
           </button>
           <button
             type="button"
             onClick={handleSave}
             className="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
           >
-            保存
+            Guardar
           </button>
         </div>
       </div>

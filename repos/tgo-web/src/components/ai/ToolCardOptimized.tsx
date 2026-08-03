@@ -76,7 +76,7 @@ const AiToolCardOptimized: React.FC<AiToolCardOptimizedProps> = ({
       onAction(actionType, tool);
     } catch (error) {
       console.error(`Action ${actionType} failed:`, error);
-      onShowToast?.('error', '操作失败', `执行 ${actionType} 操作时发生错误`);
+      onShowToast?.('error', 'Operación fallida', `Error al ejecutar la operación ${actionType}`);
     }
   };
 

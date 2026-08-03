@@ -29,7 +29,7 @@ const ToolsList: React.FC<ToolsListProps> = ({
   showIcon = true,
   maxDisplay,
   className = '',
-  emptyText = '未关联工具',
+  emptyText = 'Herramienta no asociada',
   showLabel = false
 }) => {
   // 如果没有关联工具，显示空状态
@@ -53,7 +53,7 @@ const ToolsList: React.FC<ToolsListProps> = ({
       {showLabel && (
         <div className="flex items-center text-[13px] font-medium text-gray-700 mb-1.5">
           <Wrench className="w-3.5 h-3.5 mr-1.5" />
-          关联工具 ({toolIds.length})
+          Herramientas vinculadas ({toolIds.length})
         </div>
       )}
 
@@ -75,7 +75,7 @@ const ToolsList: React.FC<ToolsListProps> = ({
             inline-flex items-center rounded-md border bg-gray-100 text-gray-600 border-gray-200
             ${size === 'xs' ? 'px-1.5 py-0.5 text-[11px]' : size === 'sm' ? 'px-2 py-1 text-xs' : 'px-3 py-1.5 text-sm'}
           `}>
-            +{remainingCount} 更多
+            +{remainingCount} Más
           </span>
         )}
       </div>

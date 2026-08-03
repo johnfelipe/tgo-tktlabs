@@ -24,7 +24,7 @@ const FileMessage: React.FC<MessageComponentProps> = ({ message, isStaff }) => {
   const typedPayload = message.payload as any | undefined;
 
   const fileUrl = ((typedPayload?.type === MessagePayloadType.FILE && (typedPayload as any)?.url) || (message.metadata as any)?.file_url || '') as string;
-  const fileName = ((typedPayload?.type === MessagePayloadType.FILE && (typedPayload as any)?.name) || (message.metadata as any)?.file_name || '[文件]') as string;
+  const fileName = ((typedPayload?.type === MessagePayloadType.FILE && (typedPayload as any)?.name) || (message.metadata as any)?.file_name || '[Archivo]') as string;
   const fileSize = ((typedPayload?.type === MessagePayloadType.FILE && (typedPayload as any)?.size) || (message.metadata as any)?.file_size) as number | undefined;
 
   const fileUploading = message.metadata?.upload_status === 'uploading';
@@ -53,9 +53,9 @@ const FileMessage: React.FC<MessageComponentProps> = ({ message, isStaff }) => {
         const size = (message.metadata as any)?.file_size || f.size;
         updateMessageByClientMsgNo(clientKey, { metadata: { file_url: url, upload_progress: 100, upload_status: 'completed' } });
         // try send via WS
-        const payload: any = { type: MessagePayloadType.FILE, content: '[文件]', url, name, size, timestamp: Date.now() };
+        const payload: any = { type: MessagePayloadType.FILE, content: '[Archivo]', url, name, size, timestamp: Date.now() };
         try {
-          if (!isConnected) throw new Error('WebSocket 未连接，无法发送文件消息');
+          if (!isConnected) throw new Error('WebSocket no conectado, no se puede enviar mensaje de archivo');
           await sendWsMessage(message.channelId as string, message.channelType as number, payload, clientKey);
           updateMessageByClientMsgNo(clientKey, { metadata: { ws_sent: true, ws_send_error: false } });
         } catch (err) {

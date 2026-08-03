@@ -51,7 +51,7 @@ const ToolStoreCard: React.FC<ToolStoreCardProps> = ({ tool, onClick, onInstall,
                 ? 'bg-orange-50 text-orange-600 dark:bg-orange-900/20 dark:text-orange-400' 
                 : 'bg-green-50 text-green-600 dark:bg-green-900/20 dark:text-green-400'
             }`}>
-              {(tool.price_per_call || 0) > 0 ? `¥${tool.price_per_call}/次` : t('tools.store.free', '免费')}
+              {(tool.price_per_call || 0) > 0 ? `¥${tool.price_per_call}/llamada` : t('tools.store.free', '免费')}
             </span>
           </p>
         </div>

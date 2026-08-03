@@ -82,7 +82,7 @@ export const uploadChatImageWithProgress = (
           resolve(response);
         } catch (e) {
           reject(new APIError(status, {
-            error: { code: 'PARSE_ERROR', message: '无法解析上传响应', details: { status_code: status } },
+            error: { code: 'PARSE_ERROR', message: 'No se pudo analizar la respuesta de carga', details: { status_code: status } },
             request_id: 'unknown'
           }));
         }
@@ -101,7 +101,7 @@ export const uploadChatImageWithProgress = (
 
     xhr.onerror = () => {
       reject(new APIError(0, {
-        error: { code: 'NETWORK_ERROR', message: '网络错误或服务器不可用', details: { status_code: 0 } },
+        error: { code: 'NETWORK_ERROR', message: 'Error de red o servidor no disponible', details: { status_code: 0 } },
         request_id: 'unknown'
       }));
     };
@@ -111,7 +111,7 @@ export const uploadChatImageWithProgress = (
       options.signal.addEventListener('abort', () => {
         try { xhr.abort(); } catch {}
         reject(new APIError(0, {
-          error: { code: 'ABORTED', message: '上传已取消', details: { status_code: 0 } },
+          error: { code: 'ABORTED', message: 'Carga cancelada', details: { status_code: 0 } },
           request_id: 'unknown'
         }));
       }, { once: true });
@@ -167,7 +167,7 @@ export const uploadChatFileWithProgress = (
           resolve(response);
         } catch (e) {
           reject(new APIError(status, {
-            error: { code: 'PARSE_ERROR', message: '无法解析上传响应', details: { status_code: status } },
+            error: { code: 'PARSE_ERROR', message: 'No se pudo analizar la respuesta de carga', details: { status_code: status } },
             request_id: 'unknown'
           }));
         }
@@ -186,7 +186,7 @@ export const uploadChatFileWithProgress = (
 
     xhr.onerror = () => {
       reject(new APIError(0, {
-        error: { code: 'NETWORK_ERROR', message: '网络错误或服务器不可用', details: { status_code: 0 } },
+        error: { code: 'NETWORK_ERROR', message: 'Error de red o servidor no disponible', details: { status_code: 0 } },
         request_id: 'unknown'
       }));
     };
@@ -196,7 +196,7 @@ export const uploadChatFileWithProgress = (
       options.signal.addEventListener('abort', () => {
         try { xhr.abort(); } catch {}
         reject(new APIError(0, {
-          error: { code: 'ABORTED', message: '上传已取消', details: { status_code: 0 } },
+          error: { code: 'ABORTED', message: 'Carga cancelada', details: { status_code: 0 } },
           request_id: 'unknown'
         }));
       }, { once: true });

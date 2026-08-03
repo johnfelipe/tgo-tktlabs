@@ -228,7 +228,7 @@ export default function MessageList({ messages }: { messages: ChatMessage[] }){
                   {payload.type === 1 ? (
                     <TextMessage content={payload.content} onSendMessage={handleSendMessage} />
                   ) : (
-                    <div>[消息]</div>
+                    <div>[Mensaje]</div>
                   )}
                 </Bubble>
               )}

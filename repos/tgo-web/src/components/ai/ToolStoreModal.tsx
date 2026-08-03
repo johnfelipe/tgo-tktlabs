@@ -43,10 +43,10 @@ const ToolStoreModal: React.FC<ToolStoreModalProps> = ({ isOpen, onClose }) => {
       { 
         id: 'all', 
         slug: 'all', 
-        name_zh: '全部工具', 
+        name_zh: 'Todas las herramientas', 
         name_en: 'All Tools', 
         icon: 'Grid3X3', 
-        label: '全部工具' 
+        label: 'Todas las herramientas' 
       },
       ...data.map((cat: any) => ({
         id: cat.id,

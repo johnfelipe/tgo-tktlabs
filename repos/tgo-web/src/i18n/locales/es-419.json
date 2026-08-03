@@ -74,7 +74,20 @@
     "yes": "Sí",
     "no": "No",
     "enabled": "Habilitado",
-    "advancedOptions": "Opciones avanzadas"
+    "advancedOptions": "Opciones avanzadas",
+    "tableCreated": "Fecha de creación",
+    "lastUpdated": "Fecha de actualización",
+    "official": "Oficial",
+    "submitting": "Enviando...",
+    "deleting": "Eliminando…",
+    "disabling": "Deshabilitando…",
+    "enabling": "Habilitando…",
+    "disable": "Deshabilitar",
+    "submit": "Enviar",
+    "copySuccess": "Copiado con éxito",
+    "noData": "Sin datos",
+    "processing": "Procesando...",
+    "deleteFailed": "No se pudo eliminar"
   },
   "config": {
     "respondDirectly": "Responder directamente",
@@ -194,6 +207,10 @@
           "copying": "Desplegar archivos",
           "building": "Compilar y construir",
           "starting": "Iniciar servicio"
+        },
+        "manual": {
+          "title": "Modo de instalación manual",
+          "description": "Pega el archivo YAML de descripción del plugin para instalar. Recomendado solo para usuarios avanzados o para desarrollo y depuración."
         }
       },
       "actions": {
@@ -238,6 +255,9 @@
         "preparing": "Preparando actualización...",
         "confirm": "Actualizar Ahora",
         "error": "Error en la actualización"
+      },
+      "fetch": {
+        "error": "No se puede obtener información del plugin, verifica que la URL sea correcta."
       }
     },
     "profile": {
@@ -564,7 +584,12 @@
         "defaultModel": "Modelo Predeterminado",
         "modelType": "Tipo de Modelo",
         "embeddingModel": "Modelo de Embedding",
-        "modelId": "ID del Modelo"
+        "modelId": "ID del Modelo",
+        "azure": {
+          "deployment": "Despliegue",
+          "resource": "Recurso",
+          "apiVersion": "Versión de API"
+        }
       },
       "suggestedModels": "Modelos Sugeridos",
       "noStoreModels": "No hay modelos disponibles en la tienda",
@@ -631,7 +656,16 @@
       "createModelOption": "Crear",
       "confirmDeleteTitle": "Eliminar proveedor",
       "confirmDeleteMsg": "¿Estás seguro de que deseas eliminar esta configuración de proveedor? Esta acción no se puede deshacer.",
-      "empty": "No hay proveedores configurados aún. Haz clic en \"Obtener de la tienda\" o \"Configuración personalizada\" para comenzar."
+      "empty": "No hay proveedores configurados aún. Haz clic en \"Obtener de la tienda\" o \"Configuración personalizada\" para comenzar.",
+      "addModel": "Agregar modelo"
+    },
+    "calendar": {
+      "title": "Itinerario",
+      "comingSoon": "Configuración relacionada con el itinerario, por favor espera…"
+    },
+    "shortcuts": {
+      "title": "Atajo",
+      "comingSoon": "Configuración de atajos, combinaciones de teclas predeterminadas, por favor espera…"
     }
   },
   "about": {
@@ -649,7 +683,8 @@
     "loadError": "Error al cargar la información del sistema",
     "systemInfo": "Información del sistema",
     "technicalDetails": "Detalles técnicos",
-    "links": "Enlaces"
+    "links": "Enlaces",
+    "apiEndpoint": "Dirección del endpoint"
   },
   "agents": {
     "title": "Gestión del equipo de agentes",
@@ -672,7 +707,9 @@
       "teamChat": "Chat de equipo",
       "teamChatTooltip": "Chatear con el equipo de agentes",
       "teamChatNoAgents": "Por favor crea un agente primero",
-      "teamInfo": "Información del equipo"
+      "teamInfo": "Información del equipo",
+      "store": "Contratar empleado",
+      "defaultAgentChat": "Conversar con el empleado AI predeterminado"
     },
     "form": {
       "name": "Nombre del agente",
@@ -726,7 +763,11 @@
       "noTeam": "Equipo no cargado",
       "noTeamDesc": "Por favor, inténtalo de nuevo más tarde",
       "noAgentsForTeamChat": "No se puede iniciar el chat del equipo",
-      "noAgentsForTeamChatDesc": "Por favor, crea al menos un agente primero"
+      "noAgentsForTeamChatDesc": "Por favor, crea al menos un agente primero",
+      "noDefaultAgent": "Empleado AI predeterminado no cargado",
+      "noDefaultAgentDesc": "Por favor, inténtalo de nuevo más tarde",
+      "validationFailed": "Validación fallida",
+      "fillRequired": "Por favor, completa todos los campos obligatorios"
     },
     "teamChat": {
       "defaultName": "Equipo de agentes"
@@ -741,7 +782,9 @@
     },
     "empty": {
       "title": "Sin agentes",
-      "description": "Haz clic en el botón \"Crear agente\" para comenzar a crear tu primer agente"
+      "description": "Haz clic en el botón \"Crear agente\" para comenzar a crear tu primer agente",
+      "noResults": "No se encontró empleado AI relacionado",
+      "noResultsDesc": "Por favor, intenta cambiar las palabras clave de búsqueda"
     },
     "error": {
       "title": "Carga fallida",
@@ -790,6 +833,61 @@
         "message": "¿Estás seguro de que deseas eliminar el agente \"{{name}}\"? Esta acción no se puede deshacer.",
         "confirm": "Eliminar",
         "cancel": "Cancelar"
+      },
+      "apiTest": {
+        "errors": {
+          "parseResponseFailed": "Error al analizar la respuesta",
+          "requestFailed": "Solicitud fallida",
+          "networkFailed": "Error de conexión de red, verifica que la URL sea correcta o que no haya problemas de CORS",
+          "required": "{{name}} es obligatorio",
+          "mustBeNumber": "{{name}} debe ser un número",
+          "minValue": "{{name}} debe ser mayor o igual que {{min}}",
+          "maxValue": "{{name}} debe ser menor o igual que {{max}}",
+          "minLength": "{{name}} debe tener al menos {{min}} caracteres",
+          "maxLength": "{{name}} no puede tener más de {{max}} caracteres",
+          "formatInvalid": "El formato de {{name}} no es válido",
+          "enumInvalid": "{{name}} debe ser uno de estos valores: {{values}}",
+          "validationFailedPrefix": "La validación de los parámetros falló:"
+        },
+        "sections": {
+          "authMethod": "Método de autenticación",
+          "testResult": "Resultado de la prueba"
+        },
+        "auth": {
+          "autoDetected": "Detección automática",
+          "autoDetectedTitle": "Autenticación detectada automáticamente ({{level}})"
+        },
+        "labels": {
+          "param": "Parámetro",
+          "value": "Valor",
+          "type": "Tipo",
+          "format": "Formato",
+          "min": "Valor mínimo",
+          "max": "Valor máximo",
+          "minLength": "Longitud mínima",
+          "maxLength": "Longitud máxima",
+          "pattern": "Patrón"
+        },
+        "placeholders": {
+          "select": "Por favor selecciona",
+          "enter": "Por favor ingresa",
+          "example": "Ejemplo: {{value}}",
+          "default": "Predeterminado: {{value}}"
+        },
+        "noParams": "Este endpoint no tiene parámetros definidos",
+        "buttons": {
+          "testing": "Probando...",
+          "test": "Probar"
+        },
+        "result": {
+          "corsHintTitle": "Nota: Debido a las restricciones CORS del navegador, algunas API pueden no ser probadas directamente",
+          "corsHint": "Aviso CORS",
+          "error": "Error:",
+          "responseHeaders": "Encabezados de respuesta:",
+          "responseData": "Datos de respuesta:",
+          "empty": "El resultado de la prueba se mostrará aquí"
+        },
+        "title": "Probar API: {{name}}"
       }
     },
     "create": {
@@ -798,7 +896,8 @@
         "description": "Descripción de Capacidades",
         "tools": "Herramientas",
         "skills": "Habilidades",
-        "resources": "Asociación de Recursos"
+        "resources": "Asociación de Recursos",
+        "toolTools": "Herramienta Tool"
       },
       "placeholders": {
         "name": "Por favor ingresa el nombre del agente",
@@ -812,11 +911,14 @@
         "selectPlaceholder": "Por favor selecciona un modelo",
         "loadFailedTitle": "Carga fallida",
         "loadFailedDesc": "No se pudo cargar la lista de modelos, por favor intenta de nuevo más tarde",
-        "loadFailedInline": "Error al cargar modelo: {{error}}"
+        "loadFailedInline": "Error al cargar modelo: {{error}}",
+        "invalid": "Por favor, selecciona un modelo válido (debe incluir proveedor)"
       },
       "tools": {
         "shortNoMissingTitle": "Falta Tool Short No",
-        "shortNoMissingDesc": "Las siguientes herramientas carecen de short_no o nombre: {{names}}, por favor actualiza la tienda de herramientas o vuelve a seleccionar e intenta de nuevo"
+        "shortNoMissingDesc": "Las siguientes herramientas carecen de short_no o nombre: {{names}}, por favor actualiza la tienda de herramientas o vuelve a seleccionar e intenta de nuevo",
+        "missingTitle": "Información de la herramienta faltante",
+        "missingDesc": "Las siguientes herramientas carecen de nombre: {{names}}, por favor selecciona de nuevo e inténtalo otra vez"
       }
     },
     "edit": {
@@ -828,7 +930,8 @@
         "pendingNewTool": "Nueva herramienta pendiente",
         "missingTitle": "Información de la herramienta faltante",
         "missingDesc": "Las siguientes herramientas carecen de nombre: {{names}}, por favor vuelve a seleccionar e intenta de nuevo"
-      }
+      },
+      "modelProviderRequired": "Por favor, selecciona un modelo válido (debe incluir proveedor)"
     },
     "detail": {
       "basicInfo": "Información Básica",
@@ -977,6 +1080,19 @@
       },
       "cancel": "Cancelar",
       "save": "Guardar"
+    },
+    "store": {
+      "hire": "Contratar",
+      "hireNow": "Contratar ahora",
+      "alreadyInstalled": "El empleado ya está en el equipo",
+      "installFailed": "Fallo en la contratación, por favor intenta de nuevo",
+      "title": "Tienda de empleados",
+      "searchPlaceholder": "Buscar nombre o función del empleado...",
+      "noResults": "No se encontraron empleados que coincidan"
+    },
+    "defaultAgent": {
+      "defaultName": "Empleado AI predeterminado",
+      "description": "El empleado AI predeterminado del proyecto asumirá la conversación AI cuando no se especifique un objetivo explícito."
     }
   },
   "team": {
@@ -1022,7 +1138,10 @@
       "registerLink": "Regístrate ahora",
       "emailPlaceholder": "tú@ejemplo.com",
       "emailOrUsernamePlaceholder": "Ingresa correo electrónico o nombre de usuario",
-      "passwordPlaceholder": "Ingresa tu contraseña"
+      "passwordPlaceholder": "Ingresa tu contraseña",
+      "resetAdminInstruction": "Ejecuta el siguiente comando para restablecer el usuario admin",
+      "copied": "Copiado",
+      "copy": "Copiar"
     },
     "register": {
       "title": "Crear nueva cuenta",
@@ -1255,7 +1374,9 @@
       "max_tokens": "Máximo de Tokens",
       "workflow_info": "Información del Flujo de Trabajo",
       "version": "Versión",
-      "total_nodes": "Total de Nodos"
+      "total_nodes": "Total de Nodos",
+      "input_variables": "Parámetros de entrada",
+      "cron_description": "Configura el plan de ejecución automática usando formato Cron estándar."
     },
     "placeholders": {
       "selectAgent": "Por favor selecciona un Agente de IA",
@@ -1335,7 +1456,8 @@
       "llm_evaluation": "Evaluación LLM",
       "not_configured_condition": "Condición No Configurada",
       "custom_event": "Evento Personalizado",
-      "not_configured_agent": "Agente No Configurado"
+      "not_configured_agent": "Agente No Configurado",
+      "output": "Salida"
     },
     "panel": {
       "nodeConfig": "Configuración del Nodo",
@@ -1379,7 +1501,11 @@
       "description": "Crea tu primer flujo de trabajo de IA"
     },
     "noMatch": "No se encontraron flujos de trabajo coincidentes",
-    "noMatch.description": "Intenta ajustar tus criterios de búsqueda"
+    "noMatch.description": "Intenta ajustar tus criterios de búsqueda",
+    "namePlaceholder": "Nombre del flujo de trabajo",
+    "settings": "Configuración",
+    "loading": "Cargando flujo de trabajo...",
+    "tagsPlaceholder": "Separado por comas"
   },
   "ai": {
     "menu": {
@@ -1630,7 +1756,17 @@
         "tags": "Etiquetas",
         "tagsPlaceholder": "Ingresa etiquetas, separadas por comas",
         "tagsHint": "Separa múltiples etiquetas con comas"
-      }
+      },
+      "results": "Preguntas y respuestas QA",
+      "segmentCount": "Total de {{count}} pares de preguntas y respuestas",
+      "searchSegments": "Buscar contenido de segmentos...",
+      "loadingSegments": "Cargando segmentos...",
+      "noResults": "No se encontraron segmentos coincidentes",
+      "noSegments": "Este archivo no tiene resultados segmentados de preguntas y respuestas",
+      "tryDifferentSearch": "Por favor intenta con otra palabra clave",
+      "ensureQaMode": "Asegúrate de activar el modo de división QA al subir",
+      "chars": "Caracteres",
+      "editSegment": "Editar párrafo"
     },
     "icons": {
       "book": "Libro",
@@ -1716,7 +1852,8 @@
         "title": "Base de conocimiento no encontrada",
         "description": "Por favor verifica si el enlace es correcto"
       },
-      "fileServiceNotInitialized": "Servicio de archivos no inicializado"
+      "fileServiceNotInitialized": "Servicio de archivos no inicializado",
+      "viewQA": "Ver pares de preguntas y respuestas"
     },
     "upload": {
       "title": "Arrastra archivos aquí o haz clic para cargar",
@@ -1736,7 +1873,9 @@
         "title": "⚠️ No se pueden cargar archivos",
         "description": "No hay un modelo de embedding configurado. Los archivos de la base de conocimiento requieren un modelo de embedding para la vectorización. Por favor, configura un modelo de embedding predeterminado en la Configuración del Proveedor de IA primero.",
         "goToSettings": "Ir a Configuración"
-      }
+      },
+      "error": "Error al subir",
+      "totalSizeLimit": "El tamaño total de los archivos supera el límite permitido"
     },
     "embedding": {
       "error": "Error",
@@ -1748,6 +1887,19 @@
       "configPath": "Ruta de Configuración",
       "configPathDesc": "Configuración → Proveedores de Modelo → Establecer Modelo de Embedding Predeterminado",
       "goToConfig": "Ir a Configuración"
+    },
+    "search": {
+      "failed": "Error en la búsqueda",
+      "title": "Prueba de búsqueda",
+      "query": "Texto de prueba",
+      "placeholder": "Ingresa una pregunta para probar...",
+      "mode": "Modo de recuperación",
+      "results": "Resultados de búsqueda"
+    },
+    "update": "Actualizar base de conocimientos",
+    "tabs": {
+      "documents": "Lista de documentos",
+      "searchTest": "Prueba de búsqueda"
     }
   },
   "channels": {
@@ -2182,7 +2334,12 @@
       "clearMemoryTooltip": "Borrar la memoria de conversación AI y reiniciar",
       "clearMemoryConfirm": "¿Estás seguro de que deseas borrar la memoria AI para esta sesión? La AI ya no recordará conversaciones previas.",
       "clearMemorySuccess": "Memoria borrada",
-      "clearMemoryError": "Error al borrar la memoria"
+      "clearMemoryError": "Error al borrar la memoria",
+      "endChatSuccess": "Sesión finalizada",
+      "endChatError": "Error al finalizar la sesión",
+      "loadStaffError": "Error al obtener la lista de agentes",
+      "noAvailableStaff": "No hay agentes disponibles",
+      "endChatTooltip": "Finalizar sesión actual"
     },
     "suggestions": {
       "label": "✨ Sugerencias:"
@@ -2226,7 +2383,9 @@
         "sessionClosed": "Sesión finalizada. El agente {0} ha completado el servicio.",
         "sessionClosedEmpty": "Sesión finalizada.",
         "memoryCleared": "Memoria borrada, AI reiniciará la conversación"
-      }
+      },
+      "aiThinking": "AI está pensando...",
+      "aiReply": "[Respuesta AI]"
     },
     "input": {
       "placeholder": "Escribe un mensaje...",
@@ -2324,7 +2483,20 @@
       },
       "closed": "Conversación finalizada",
       "notMyVisitor": "Este visitante está asignado a {{name}}",
-      "otherAgent": "otro agente"
+      "otherAgent": "otro agente",
+      "accept": {
+        "successTitle": "Conexión exitosa",
+        "successMessage": "El visitante se ha conectado exitosamente",
+        "hint": "El visitante está esperando para conectarse",
+        "accepting": "Conectando...",
+        "button": "Conectar visitante"
+      },
+      "streaming": {
+        "cancelledTitle": "Pausado",
+        "cancelledMessage": "Mensajes de flujo pausados",
+        "pauseTooltip": "Pausar mensajes de flujo",
+        "pause": "Pausar"
+      }
     }
   },
   "tools": {
@@ -2436,7 +2608,10 @@
         "type": "Tipo de Modelo",
         "documentation": "Documentación API del Proveedor",
         "loading": "Buscando los modelos de IA más avanzados del mundo..."
-      }
+      },
+      "type": "Tipo",
+      "createdAt": "Fecha de publicación",
+      "noResultsDesc": "Prueba buscar otras palabras clave o cambiar de categoría"
     },
     "newTool": "Nueva Herramienta",
     "selectModal": {
@@ -2478,7 +2653,7 @@
       "ai": "Herramientas de IA",
       "integration": "Integración",
       "plugin": "Herramienta de Plugin",
-      "unknown": "Categoría Desconocida"
+      "unknown": "Categoría desconocida"
     },
     "page": {
       "customTool": "Herramienta personalizada"
@@ -2677,7 +2852,16 @@
         "number": "Por favor ingresa un número válido"
       },
       "save": "Guardar configuración"
-    }
+    },
+    "list": {
+      "emptyTitle": "No hay herramientas disponibles",
+      "emptyDescriptionAll": "Haz clic en el botón \"Agregar herramienta\" para comenzar a añadir tu primera herramienta",
+      "emptyAction": "Comenzar a agregar herramienta",
+      "emptyDescriptionCategory": "No hay herramientas en la categoría {{category}}"
+    },
+    "endpointCopied": "Dirección del endpoint copiada al portapapeles",
+    "copyEndpointFailed": "No se pudo copiar la dirección del endpoint",
+    "noDescription": "Sin descripción"
   },
   "platforms": {
     "list": {
@@ -2755,6 +2939,10 @@
         "title": "Configuración de Plataforma",
         "comingSoon": "Las opciones específicas de configuración para esta plataforma se proporcionarán en versiones futuras.",
         "currentStatus": "Estado Actual: {{status}}"
+      },
+      "aiSettings": {
+        "saveSuccess": "Configuración de AI guardada",
+        "saveButton": "Guardar configuración de AI"
       }
     },
     "website": {
@@ -2811,7 +2999,10 @@
         "displayModeBig": "Ventana grande",
         "apiKey": "Clave API",
         "apiKeyPlaceholder": "Sin clave API",
-        "apiKeyHint": "Identificador de autenticación para el script de integración del sitio web, por favor mantenlo seguro."
+        "apiKeyHint": "Identificador de autenticación para el script de integración del sitio web, por favor mantenlo seguro.",
+        "uploadLogo": "Subir Logo",
+        "uploading": "Subiendo…",
+        "noApiKey": "No hay API Key"
       },
       "embed": {
         "title": "Código de integración del sitio web",
@@ -2840,18 +3031,31 @@
         "uploadSuccessMessage": "El logo ha sido actualizado",
         "uploadError": "La carga falló, por favor intenta de nuevo",
         "deleteSuccess": "Plataforma eliminada",
-        "deleteSuccessMessage": "La plataforma ha sido eliminada"
+        "deleteSuccessMessage": "La plataforma ha sido eliminada",
+        "disabled": "Plataforma deshabilitada",
+        "enabled": "Plataforma habilitada",
+        "copied": "Copiado",
+        "updated": "Actualizado",
+        "logoUpdated": "Logo actualizado"
       },
       "confirm": {
         "deleteTitle": "Eliminar plataforma",
         "deleteMessage": "¿Estás seguro de que deseas eliminar esta plataforma?",
         "confirmText": "Eliminar",
-        "cancelText": "Cancelar"
+        "cancelText": "Cancelar",
+        "regenerateApiKey": "¿Estás seguro de que deseas regenerar la API Key? Los scripts de integración existentes deberán actualizarse."
       },
       "defaults": {
         "widgetTitle": "Bienvenido",
         "welcomeMessage": "¡Hola! ¿Cómo puedo ayudarte?",
         "displayMode": "pequeño"
+      },
+      "errors": {
+        "fileTooLarge": "El tamaño de la imagen no puede exceder 2MB",
+        "invalidFileType": "Solo se admiten archivos de imagen",
+        "cropperFailed": "No se puede abrir el recortador",
+        "removeLogoFailed": "Actualmente no se admite eliminar el Logo, por favor sube una nueva imagen para reemplazarla",
+        "uploadFailed": "Error al subir, por favor intenta de nuevo"
       }
     },
     "wechat": {
@@ -3542,6 +3746,69 @@
       "timeoutHint": "Tiempo en segundos antes de que la IA tome el control cuando no hay respuesta. Establece en 0 para evitar que la IA tome el control.",
       "saveSuccess": "Configuración de IA guardada",
       "saveButton": "Guardar configuración de IA"
+    },
+    "wecomBot": {
+      "messages": {
+        "saveSuccess": "Guardado con éxito",
+        "saveSuccessMessage": "Configuración del robot de WeChat empresarial actualizada",
+        "disabled": "Plataforma deshabilitada",
+        "enabled": "Plataforma habilitada",
+        "urlCopied": "URL de callback copiada",
+        "deleteSuccess": "Eliminación exitosa",
+        "deleteSuccessMessage": "La plataforma de robot de WeChat Work ha sido eliminada"
+      },
+      "header": {
+        "title": "Configuración de {{name}}",
+        "subtitle": "Configura las credenciales y callbacks necesarios para integrar el robot de WeChat empresarial (Webhook)."
+      },
+      "buttons": {
+        "deleting": "Eliminando…",
+        "delete": "Eliminar",
+        "disabling": "Deshabilitando…",
+        "enabling": "Habilitando…",
+        "disable": "Deshabilitar",
+        "enable": "Habilitar",
+        "saving": "Guardando…",
+        "save": "Guardar",
+        "copy": "Copiar"
+      },
+      "form": {
+        "name": "Nombre de la plataforma",
+        "namePlaceholder": "Por favor ingresa el nombre de la plataforma",
+        "callbackUrl": "URL de callback",
+        "callbackUrlPlaceholder": "Después de crear la plataforma se generará la URL de callback",
+        "callbackUrlHint": "Ingresa esta URL en la configuración de \"URL\" del robot inteligente de WeChat Work.",
+        "token": "Token",
+        "tokenPlaceholder": "Token para la verificación de callback",
+        "tokenHint": "Debe coincidir con el Token configurado en el backend de WeChat Work.",
+        "encodingAESKey": "EncodingAESKey",
+        "encodingAESKeyPlaceholder": "Clave de cifrado de mensajes de 43 caracteres",
+        "encodingAESKeyHint": "Clave de cifrado de mensajes de 43 caracteres, usada para cifrar y descifrar los mensajes de callback."
+      },
+      "guide": {
+        "title": "Guía de configuración del robot de WeChat Work",
+        "overview": "Resumen rápido",
+        "overviewText": "Completa los siguientes tres pasos: ① Crea un robot inteligente en el panel de trabajo → ② Ingresa la URL de callback en WeChat Work y obtén el Token y EncodingAESKey → ③ Rellena esta información en esta plataforma y guarda.",
+        "step1Title": "1️⃣ Crear un robot inteligente en WeChat Work",
+        "step1Item1": "Inicia sesión en la app de WeChat Work y entra al \"Panel de trabajo\".",
+        "step1Item2": "Busca y haz clic en la aplicación \"Robot inteligente\" para entrar.",
+        "step1Item3": "Haz clic en el botón \"Crear robot inteligente\".",
+        "step1Item4": "Desplázate hasta el final de la página y haz clic en el enlace \"Crear en modo API\".",
+        "step2Title": "2️⃣ Configurar URL de callback e información de seguridad",
+        "step2Item1": "Copia la \"URL de callback\" a la izquierda y pégala en el campo \"URL\" en la configuración del robot de WeChat Work.",
+        "step2Item2": "Haz clic en el botón \"Generar aleatoriamente\" junto a \"Token\", copia el Token generado y pégalo en el campo \"Token\" a la izquierda.",
+        "step2Item3": "Haz clic en el botón \"Generar aleatoriamente\" junto a \"EncodingAESKey\", copia la clave generada y pégala en el campo \"EncodingAESKey\" a la izquierda.",
+        "step2Item4": "Importante: ahora haz clic en guardar en esta plataforma, luego regresa a la app de WeChat Work y haz clic en el botón \"Finalizar\" para completar la creación del robot.",
+        "step2SecurityTitle": "Aviso de seguridad",
+        "step2SecurityText": "Por favor, guarda correctamente el Token y EncodingAESKey, ya que se utilizan para verificar el origen del mensaje y para cifrar y descifrar."
+      },
+      "dialog": {
+        "deleteTitle": "Confirmar eliminación",
+        "deleteMessage": "¿Estás seguro de que deseas eliminar esta plataforma de robot de WeChat Work? Esta acción no se puede deshacer.",
+        "confirmDelete": "Eliminar",
+        "cancel": "Cancelar"
+      },
+      "label": "Robot de WeChat Empresarial"
     }
   },
   "setup": {
@@ -3824,6 +4091,16 @@
     "disconnect": {
       "title": "Confirmar Desconexión",
       "message": "¿Estás seguro de que deseas desconectar el dispositivo \"{{name}}\"?"
+    },
+    "sessionMonitor": {
+      "title": "Monitoreo de sesión",
+      "modalTitle": "Uso de computadora Monitoreo de sesión",
+      "modalSubtitle": "Visualiza en tiempo real el estado de ejecución de los dispositivos controlados por AI",
+      "noSession": "No hay sesiones activas",
+      "noSessionDesc": "Cuando un empleado AI comienza a controlar un dispositivo para ejecutar una tarea, puedes monitorear aquí el progreso y los pasos de la operación en tiempo real.",
+      "tip1": "Asegúrate de que el dispositivo esté en línea",
+      "tip2": "Agrega un agente remoto en la configuración del equipo",
+      "tip3": "Haz que el empleado AI ejecute tareas de operación del dispositivo mediante diálogo"
     }
   },
   "ws": {
@@ -3934,6 +4211,44 @@
         "urlRequired": "Por favor ingresa una URL de directorio de GitHub",
         "urlFormat": "Por favor ingresa una URL válida de GitHub, soporta enlaces a directorios o archivos, por ejemplo: https://github.com/owner/repo/tree/branch/path"
       }
+    },
+    "disable": "Deshabilitar skill",
+    "enable": "Habilitar skill",
+    "toggleFailed": "Error al cambiar el estado de la habilidad"
+  },
+  "modelDetail": {
+    "details": "Detalles del empleado",
+    "intro": "Introducción del empleado"
+  },
+  "session": {
+    "pending": "Pendiente",
+    "running": "En ejecución",
+    "completed": "Completado",
+    "failed": "Fallido",
+    "paused": "Pausado",
+    "cancelled": "Cancelado",
+    "maxRounds": "Máximo de rondas"
+  },
+  "computerUse": {
+    "sessionMonitor": "Sesión de uso de computadora",
+    "round": "Ronda",
+    "screenshots": "Capturas de pantalla",
+    "actions": "Acciones",
+    "errors": "Errores",
+    "taskCompleted": "Tarea completada",
+    "executionHistory": "Historial de ejecución",
+    "starting": "Iniciando...",
+    "noSteps": "Aún no hay pasos de ejecución",
+    "reasoning": "Razonamiento",
+    "result": "Resultado",
+    "viewScreenshot": "Ver captura de pantalla",
+    "started": "Iniciado",
+    "completed": "Completed"
+  },
+  "plugin": {
+    "ui": {
+      "loading": "Cargando plugin...",
+      "title": "Funciones extendidas"
     }
   }
 }

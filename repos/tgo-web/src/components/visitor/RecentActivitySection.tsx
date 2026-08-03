@@ -20,13 +20,13 @@ interface RecentActivitySectionProps {
 function formatDuration(seconds?: number | null, t?: any): string | null {
   if (seconds == null || !Number.isFinite(seconds)) return null;
   const s = Math.floor(seconds);
-  if (s < 60) return t ? t('visitor.activity.duration.seconds', { count: s, defaultValue: `\u6301\u7eed ${s}\u79d2` }) : `持续 ${s}秒`;
+  if (s < 60) return t ? t('visitor.activity.duration.seconds', { count: s, defaultValue: `\u6301\u7eed ${s}\u79d2` }) : `Duración ${s} segundos`;
   const m = Math.floor(s / 60);
   const rs = s % 60;
   if (rs) {
-    return t ? t('visitor.activity.duration.minutesSeconds', { m, s: rs, defaultValue: `\u6301\u7eed ${m}\u5206${rs}\u79d2` }) : `持续 ${m}分${rs}秒`;
+    return t ? t('visitor.activity.duration.minutesSeconds', { m, s: rs, defaultValue: `\u6301\u7eed ${m}\u5206${rs}\u79d2` }) : `Duración ${m}min${rs}seg`;
   }
-  return t ? t('visitor.activity.duration.minutes', { count: m, defaultValue: `\u6301\u7eed ${m}\u5206\u949f` }) : `持续 ${m}分钟`;
+  return t ? t('visitor.activity.duration.minutes', { count: m, defaultValue: `\u6301\u7eed ${m}\u5206\u949f` }) : `Duración ${m} minutos`;
 }
 
 function getActivityIconAndColor(type: string) {

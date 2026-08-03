@@ -1192,7 +1192,7 @@ const ParallelNodeConfig: React.FC<{
           value={data.timeout || ''}
           onChange={(e) => onUpdate({ timeout: e.target.value ? parseInt(e.target.value) : undefined })}
           min={1}
-          placeholder="∞ 无限制"
+          placeholder="∞ Ilimitado"
           className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all text-sm dark:text-gray-100"
         />
       </div>

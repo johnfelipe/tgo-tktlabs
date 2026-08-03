@@ -12,38 +12,38 @@ export type ShowToastFunction = (type: ToastType, title: string, message?: strin
  * Show API error with appropriate message
  */
 export const showApiError = (showToast: ShowToastFunction, error: unknown): void => {
-  let title = '操作失败';
-  let message = '请稍后重试';
+  let title = 'Operación fallida';
+  let message = 'Por favor intenta de nuevo más tarde';
   
   if (error instanceof Error) {
-    title = '操作失败';
+    title = 'Operación fallida';
     message = error.message;
     
     // Handle authentication errors specially
-    if (message.includes('身份验证失败') || message.includes('401')) {
-      title = '身份验证失败';
-      message = '请重新登录后再试';
+    if (message.includes('身份验证失败') || message.includes('Autenticación fallida') || message.includes('401')) {
+      title = 'Autenticación fallida';
+      message = 'Por favor inicia sesión de nuevo e intenta otra vez';
       // Show error with longer duration for auth issues
       showToast('error', title, message, 8000);
       return;
     }
     
     // Handle specific error types
-    if (message.includes('网络连接失败') || message.includes('Network')) {
-      title = '网络错误';
-      message = '请检查网络连接后重试';
-    } else if (message.includes('权限不足') || message.includes('403')) {
-      title = '权限不足';
-      message = '无法执行此操作';
-    } else if (message.includes('文件过大') || message.includes('413')) {
-      title = '文件过大';
-      message = '请选择较小的文件';
-    } else if (message.includes('不支持的文件类型') || message.includes('415')) {
-      title = '文件类型错误';
-      message = '不支持的文件类型';
-    } else if (message.includes('服务器') || message.includes('500')) {
-      title = '服务器错误';
-      message = '服务暂时不可用，请稍后重试';
+    if (message.includes('网络连接失败') || message.includes('conexión de red') || message.includes('Network')) {
+      title = 'Error de red';
+      message = 'Por favor verifica la conexión de red e intenta de nuevo';
+    } else if (message.includes('权限不足') || message.includes('Permisos insuficientes') || message.includes('403')) {
+      title = 'Permisos insuficientes';
+      message = 'No se puede realizar esta operación';
+    } else if (message.includes('文件过大') || message.includes('demasiado grande') || message.includes('413')) {
+      title = 'Archivo demasiado grande';
+      message = 'Por favor selecciona un archivo más pequeño';
+    } else if (message.includes('不支持的文件类型') || message.includes('Tipo de archivo no soportado') || message.includes('415')) {
+      title = 'Tipo de archivo incorrecto';
+      message = 'Tipo de archivo no soportado';
+    } else if (message.includes('服务器') || message.includes('Error del servidor') || message.includes('500')) {
+      title = 'Error del servidor';
+      message = 'Servicio temporalmente no disponible, por favor intenta más tarde';
     }
   }
   
@@ -54,7 +54,7 @@ export const showApiError = (showToast: ShowToastFunction, error: unknown): void
  * Show network error
  */
 export const showNetworkError = (showToast: ShowToastFunction): void => {
-  showToast('error', '网络错误', '网络连接失败，请检查网络连接后重试');
+  showToast('error', 'Error de red', 'Fallo en la conexión de red, por favor verifica la conexión y vuelve a intentarlo');
 };
 
 /**
@@ -82,8 +82,8 @@ export const showInfo = (showToast: ShowToastFunction, message: string, details?
  * Show authentication error with special handling
  */
 export const showAuthError = (showToast: ShowToastFunction, message?: string): void => {
-  const title = '身份验证失败';
-  const authMessage = message || '请重新登录后再试';
+  const title = 'Autenticación fallida';
+  const authMessage = message || 'Por favor inicia sesión de nuevo e intenta otra vez';
   showToast('error', title, authMessage, 8000);
   
   // Log for potential redirect logic
@@ -95,13 +95,13 @@ export const showAuthError = (showToast: ShowToastFunction, message?: string): v
  */
 export const showFileSuccess = (showToast: ShowToastFunction, operation: string, fileName: string): void => {
   const messages = {
-    upload: '上传成功',
-    delete: '删除成功',
-    download: '下载完成',
+    upload: 'Carga exitosa',
+    delete: 'Eliminación exitosa',
+    download: 'Descarga completada',
   };
   
-  const title = messages[operation as keyof typeof messages] || '操作成功';
-  showToast('success', title, `文件 "${fileName}" ${title.replace('成功', '').replace('完成', '')}`);
+  const title = messages[operation as keyof typeof messages] || 'Operación exitosa';
+  showToast('success', title, `Archivo "${fileName}": ${title.toLowerCase()}`);
 };
 
 /**
@@ -109,13 +109,13 @@ export const showFileSuccess = (showToast: ShowToastFunction, operation: string,
  */
 export const showFileError = (showToast: ShowToastFunction, operation: string, fileName: string, error?: unknown): void => {
   const messages = {
-    upload: '上传失败',
-    delete: '删除失败',
-    download: '下载失败',
+    upload: 'Error al subir',
+    delete: 'Error al eliminar',
+    download: 'Descarga fallida',
   };
   
-  const title = messages[operation as keyof typeof messages] || '操作失败';
-  let message = `文件 "${fileName}" ${title}`;
+  const title = messages[operation as keyof typeof messages] || 'Operación fallida';
+  let message = `Archivo "${fileName}" ${title}`;
   
   if (error instanceof Error) {
     message += `：${error.message}`;
@@ -129,13 +129,13 @@ export const showFileError = (showToast: ShowToastFunction, operation: string, f
  */
 export const showKnowledgeBaseSuccess = (showToast: ShowToastFunction, operation: string, name?: string): void => {
   const messages = {
-    create: '创建成功',
-    update: '更新成功',
-    delete: '删除成功',
+    create: 'Creación exitosa',
+    update: 'Actualización exitosa',
+    delete: 'Eliminación exitosa',
   };
   
-  const title = messages[operation as keyof typeof messages] || '操作成功';
-  const message = name ? `知识库 "${name}" ${title}` : `知识库${title}`;
+  const title = messages[operation as keyof typeof messages] || 'Operación exitosa';
+  const message = name ? `Base de conocimiento "${name}" ${title}` : `Base de conocimiento${title}`;
   showToast('success', title, message);
 };
 
@@ -144,14 +144,14 @@ export const showKnowledgeBaseSuccess = (showToast: ShowToastFunction, operation
  */
 export const showKnowledgeBaseError = (showToast: ShowToastFunction, operation: string, error?: unknown, name?: string): void => {
   const messages = {
-    create: '创建失败',
-    update: '更新失败',
-    delete: '删除失败',
-    load: '加载失败',
+    create: 'Creación fallida',
+    update: 'Actualización fallida',
+    delete: 'Error al eliminar',
+    load: 'Error al cargar',
   };
   
-  const title = messages[operation as keyof typeof messages] || '操作失败';
-  let message = name ? `知识库 "${name}" ${title}` : `知识库${title}`;
+  const title = messages[operation as keyof typeof messages] || 'Operación fallida';
+  let message = name ? `Base de conocimiento "${name}" ${title}` : `Base de conocimiento${title}`;
   
   if (error instanceof Error) {
     message += `：${error.message}`;

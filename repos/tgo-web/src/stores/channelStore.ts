@@ -95,7 +95,7 @@ export const useChannelStore = create<ChannelStoreState>((set, get) => ({
         return info;
       })
       .catch((error) => {
-        const message = error instanceof Error ? error.message : '获取频道信息失败';
+        const message = error instanceof Error ? error.message : 'Error al obtener la información del canal';
         set((state) => ({
           channels: {
             ...state.channels,

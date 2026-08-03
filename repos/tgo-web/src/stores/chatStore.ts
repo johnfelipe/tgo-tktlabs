@@ -542,7 +542,7 @@ export const useChatStore = create<ChatState>()(
 
             if (message.type === MESSAGE_SENDER_TYPE.VISITOR && channelId) {
               const cachedChannel = channelStore.getChannel(channelId, CHANNEL_TYPE.PERSON);
-              const fallbackName = message.fromInfo?.name || cachedChannel?.name || `访客${String(channelId).slice(-4)}`;
+              const fallbackName = message.fromInfo?.name || cachedChannel?.name || `Visitante${String(channelId).slice(-4)}`;
               const fallbackAvatar = message.fromInfo?.avatar || message.avatar || cachedChannel?.avatar || '';
 
               channelStore.seedChannel(channelId, DEFAULT_CHANNEL_TYPE, {

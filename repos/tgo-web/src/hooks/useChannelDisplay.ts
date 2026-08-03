@@ -134,7 +134,7 @@ export const useChannelDisplay = ({
     if (overrideName && overrideName.trim()) return overrideName;
     if (channelInfo?.name) return channelInfo.name;
     // Fallback: "访客" + last 4 chars of channelId
-    return `访客${(channelId || '').slice(-4)}`;
+    return `Visitante${(channelId || '').slice(-4)}`;
   }, [overrideName, channelInfo?.name, channelId]);
 
   const avatar = useMemo(() => {

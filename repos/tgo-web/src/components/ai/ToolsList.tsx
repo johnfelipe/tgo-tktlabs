@@ -34,7 +34,7 @@ const ToolsList: React.FC<ToolsListProps> = ({
         <p className="text-gray-500 dark:text-gray-400 max-w-md mx-auto">
           {selectedCategory === 'all'
             ? t('tools.list.emptyDescriptionAll', '点击"添加工具"按钮开始添加您的第一个工具')
-            : t('tools.list.emptyDescriptionCategory', { category: t(`tools.categories.${selectedCategory}`, '未知分类') })
+            : t('tools.list.emptyDescriptionCategory', { category: t(`tools.categories.${selectedCategory}`, 'Categoría desconocida') })
           }
         </p>
         <div className="mt-6">

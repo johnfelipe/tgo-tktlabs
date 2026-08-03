@@ -104,7 +104,7 @@ export const usePlatformStore = create<PlatformState>()(
 
           try {
             // Prepare request body according to API schema
-            const name = platformData.name || '新平台';
+            const name = platformData.name || 'Nueva plataforma';
             const type = (platformData.type as PlatformType) || 'custom';
             const config = (platformData.config as Record<string, any>) || undefined;
 
@@ -122,7 +122,7 @@ export const usePlatformStore = create<PlatformState>()(
               icon: platformData.icon || 'Webhook',
               iconColor: platformData.iconColor || 'text-gray-500',
               status: 'unconfigured',
-              statusText: '未配置',
+              statusText: 'No configurado',
               statusColor: 'bg-gray-400',
               type: apiResp.type as PlatformType,
               description: platformData.description || '',
@@ -197,7 +197,7 @@ export const usePlatformStore = create<PlatformState>()(
                 // If server responded, prefer its values; otherwise apply local updates
                 const mapRespToUI = (p: PlatformResponse): Platform => {
                   const status = p.is_active ? 'connected' as const : 'disabled' as const;
-                  const statusText = p.is_active ? '已连接' : '已禁用';
+                  const statusText = p.is_active ? 'Conectado' : 'Deshabilitado';
                   const statusColor = p.is_active ? 'bg-green-500' : 'bg-gray-400';
                   return {
                     id: p.id,
@@ -250,7 +250,7 @@ export const usePlatformStore = create<PlatformState>()(
             const p = await platformsApiService.getPlatformById(platformId);
             const state = get();
             const status = p.is_active ? 'connected' as const : 'disabled' as const;
-            const statusText = p.is_active ? '已连接' : '已禁用';
+            const statusText = p.is_active ? 'Conectado' : 'Deshabilitado';
             const statusColor = p.is_active ? 'bg-green-500' : 'bg-gray-400';
             const mapped: Platform = {
               id: p.id,
@@ -285,7 +285,7 @@ export const usePlatformStore = create<PlatformState>()(
             console.error('获取平台详情失败:', error);
             set({
               isLoadingDetail: false,
-              detailLoadError: (error as Error).message || '加载平台详情失败'
+              detailLoadError: (error as Error).message || 'Error al cargar detalles de la plataforma'
             }, false, 'fetchPlatformByIdError');
             throw error; // Re-throw to allow caller to handle
           }
@@ -362,7 +362,7 @@ export const usePlatformStore = create<PlatformState>()(
               const map = (p: Platform): Platform => ({
                 ...p,
                 status: 'connected',
-                statusText: '已连接',
+                statusText: 'Conectado',
                 statusColor: 'bg-green-500',
               });
               return {
@@ -383,7 +383,7 @@ export const usePlatformStore = create<PlatformState>()(
               const map = (p: Platform): Platform => ({
                 ...p,
                 status: 'disabled',
-                statusText: '已禁用',
+                statusText: 'Deshabilitado',
                 statusColor: 'bg-gray-400',
               });
               return {
@@ -406,7 +406,7 @@ export const usePlatformStore = create<PlatformState>()(
 
             if (platform) {
               const newStatus = platform.status === 'connected' ? 'disabled' : 'connected';
-              const newStatusText = newStatus === 'connected' ? '已连接' : '已禁用';
+              const newStatusText = newStatus === 'connected' ? 'Conectado' : 'Deshabilitado';
               const newStatusColor = newStatus === 'connected' ? 'bg-green-500' : 'bg-gray-400';
 
               await get().updatePlatform(platformId, {
@@ -435,13 +435,13 @@ export const usePlatformStore = create<PlatformState>()(
             if (isSuccess) {
               await get().updatePlatform(platformId, {
                 status: 'connected',
-                statusText: '已连接',
+                statusText: 'Conectado',
                 statusColor: 'bg-green-500'
               });
             } else {
               await get().updatePlatform(platformId, {
                 status: 'error',
-                statusText: '连接失败',
+                statusText: 'Conexión fallida',
                 statusColor: 'bg-red-500'
               });
             }
@@ -584,7 +584,7 @@ export const usePlatformStore = create<PlatformState>()(
               // Map API responses directly; use API-provided icon (raw SVG) and type
               const mapped: Platform[] = items.map((p) => {
                 const status = p.is_active ? 'connected' as const : 'disabled' as const;
-                const statusText = p.is_active ? '已连接' : '已禁用';
+                const statusText = p.is_active ? 'Conectado' : 'Deshabilitado';
                 const statusColor = p.is_active ? 'bg-green-500' : 'bg-gray-400';
 
                 return {
@@ -619,7 +619,7 @@ export const usePlatformStore = create<PlatformState>()(
             set({ platforms: all, isLoading: false, loadError: null }, false, 'initializeStoreSuccess');
           } catch (error) {
             console.error('加载平台列表失败:', error);
-            set({ isLoading: false, loadError: error instanceof Error ? error.message : '加载失败' }, false, 'initializeStoreError');
+            set({ isLoading: false, loadError: error instanceof Error ? error.message : 'Error al cargar' }, false, 'initializeStoreError');
           }
         }
       }),

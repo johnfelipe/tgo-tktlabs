@@ -80,7 +80,7 @@ export const useSyncStore = create<SyncState>()(
           });
         }
 
-        const lastMessage = latestWkMsg ? WuKongIMUtils.extractMessageContent(latestWkMsg) : '暂无消息';
+        const lastMessage = latestWkMsg ? WuKongIMUtils.extractMessageContent(latestWkMsg) : 'Sin mensajes';
         const rawPayload = latestWkMsg?.payload;
         let lastPayload: any = undefined;
         if (typeof rawPayload === 'object' && rawPayload !== null) {
@@ -213,7 +213,7 @@ export const useSyncStore = create<SyncState>()(
           );
         } catch (error) {
           console.error('同步对话失败:', error);
-          const errorMessage = error instanceof Error ? error.message : '同步失败';
+          const errorMessage = error instanceof Error ? error.message : 'Error de sincronización';
           setSyncError(errorMessage);
           setSyncing(false);
         }

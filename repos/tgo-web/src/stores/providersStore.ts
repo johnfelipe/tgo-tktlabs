@@ -90,7 +90,7 @@ export const useProvidersStore = create<ProvidersState>()(
           const list = (res.data || []).map(mapDtoToConfig);
           set({ providers: list, isLoading: false });
         } catch (e: any) {
-          set({ isLoading: false, error: e?.message || '加载失败' });
+          set({ isLoading: false, error: e?.message || 'Error al cargar' });
         }
       },
 

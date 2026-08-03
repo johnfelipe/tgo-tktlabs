@@ -405,7 +405,7 @@ Content-Type: application/json
 {
   "message_id": "msg_123",
   "user": "third_party_user_123",
-  "content": "客服回复的消息内容",
+  "content": "Contenido del mensaje de respuesta del servicio al cliente",
   "timestamp": "2024-01-01T12:00:00Z"
 }`}
                 </code>

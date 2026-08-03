@@ -12,7 +12,7 @@ interface Language {
 
 const languages: Language[] = [
   { code: 'system', name: 'Auto', nativeName: 'Auto', flag: '🌐' },
-  { code: 'zh', name: 'Chinese', nativeName: '中文', flag: '🇨🇳' },
+  { code: 'zh', name: 'Chinese', nativeName: 'Chino', flag: '🇨🇳' },
   { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
   { code: 'es', name: 'Spanish (Latin America)', nativeName: 'Español (LatAm)', flag: '🌎' }
 ];

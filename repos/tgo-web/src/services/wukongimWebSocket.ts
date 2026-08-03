@@ -29,32 +29,32 @@ export interface WsSendResult {
  * ReasonCode 错误码对应的 i18n key 和默认消息
  */
 export const REASON_CODE_I18N: Record<ReasonCode, { key: string; defaultMessage: string }> = {
-  [ReasonCode.Unknown]: { key: 'ws.error.unknown', defaultMessage: '未知错误' },
-  [ReasonCode.Success]: { key: 'ws.error.success', defaultMessage: '成功' },
-  [ReasonCode.AuthFail]: { key: 'ws.error.authFail', defaultMessage: '认证失败' },
-  [ReasonCode.SubscriberNotExist]: { key: 'ws.error.subscriberNotExist', defaultMessage: '订阅者不存在' },
-  [ReasonCode.InBlacklist]: { key: 'ws.error.inBlacklist', defaultMessage: '用户在黑名单中' },
-  [ReasonCode.ChannelNotExist]: { key: 'ws.error.channelNotExist', defaultMessage: '频道不存在' },
-  [ReasonCode.UserNotOnNode]: { key: 'ws.error.userNotOnNode', defaultMessage: '用户不在节点上' },
-  [ReasonCode.SenderOffline]: { key: 'ws.error.senderOffline', defaultMessage: '发送者离线' },
-  [ReasonCode.MsgKeyError]: { key: 'ws.error.msgKeyError', defaultMessage: '消息密钥错误' },
-  [ReasonCode.PayloadDecodeError]: { key: 'ws.error.payloadDecodeError', defaultMessage: '消息解码失败' },
-  [ReasonCode.ForwardSendPacketError]: { key: 'ws.error.forwardSendPacketError', defaultMessage: '转发消息失败' },
-  [ReasonCode.NotAllowSend]: { key: 'ws.error.notAllowSend', defaultMessage: '不允许发送消息' },
-  [ReasonCode.ConnectKick]: { key: 'ws.error.connectKick', defaultMessage: '连接被踢出' },
-  [ReasonCode.NotInWhitelist]: { key: 'ws.error.notInWhitelist', defaultMessage: '不在白名单中' },
-  [ReasonCode.QueryTokenError]: { key: 'ws.error.queryTokenError', defaultMessage: '查询 Token 失败' },
-  [ReasonCode.SystemError]: { key: 'ws.error.systemError', defaultMessage: '系统错误' },
-  [ReasonCode.ChannelIDError]: { key: 'ws.error.channelIDError', defaultMessage: '频道 ID 错误' },
-  [ReasonCode.NodeMatchError]: { key: 'ws.error.nodeMatchError', defaultMessage: '节点匹配错误' },
-  [ReasonCode.NodeNotMatch]: { key: 'ws.error.nodeNotMatch', defaultMessage: '节点不匹配' },
-  [ReasonCode.Ban]: { key: 'ws.error.ban', defaultMessage: '频道被禁' },
-  [ReasonCode.NotSupportHeader]: { key: 'ws.error.notSupportHeader', defaultMessage: '不支持的消息头' },
-  [ReasonCode.ClientKeyIsEmpty]: { key: 'ws.error.clientKeyIsEmpty', defaultMessage: '客户端密钥为空' },
-  [ReasonCode.RateLimit]: { key: 'ws.error.rateLimit', defaultMessage: '发送频率限制' },
-  [ReasonCode.NotSupportChannelType]: { key: 'ws.error.notSupportChannelType', defaultMessage: '不支持的频道类型' },
-  [ReasonCode.Disband]: { key: 'ws.error.disband', defaultMessage: '频道已解散' },
-  [ReasonCode.SendBan]: { key: 'ws.error.sendBan', defaultMessage: '发送被禁止' },
+  [ReasonCode.Unknown]: { key: 'ws.error.unknown', defaultMessage: 'Error desconocido' },
+  [ReasonCode.Success]: { key: 'ws.error.success', defaultMessage: 'Éxito' },
+  [ReasonCode.AuthFail]: { key: 'ws.error.authFail', defaultMessage: 'Autenticación fallida' },
+  [ReasonCode.SubscriberNotExist]: { key: 'ws.error.subscriberNotExist', defaultMessage: 'Suscriptor no existe' },
+  [ReasonCode.InBlacklist]: { key: 'ws.error.inBlacklist', defaultMessage: 'El usuario está en la lista negra' },
+  [ReasonCode.ChannelNotExist]: { key: 'ws.error.channelNotExist', defaultMessage: 'Canal no existe' },
+  [ReasonCode.UserNotOnNode]: { key: 'ws.error.userNotOnNode', defaultMessage: 'El usuario no está en el nodo' },
+  [ReasonCode.SenderOffline]: { key: 'ws.error.senderOffline', defaultMessage: 'Remitente desconectado' },
+  [ReasonCode.MsgKeyError]: { key: 'ws.error.msgKeyError', defaultMessage: 'Clave de mensaje incorrecta' },
+  [ReasonCode.PayloadDecodeError]: { key: 'ws.error.payloadDecodeError', defaultMessage: 'Error al decodificar mensaje' },
+  [ReasonCode.ForwardSendPacketError]: { key: 'ws.error.forwardSendPacketError', defaultMessage: 'Error al reenviar mensaje' },
+  [ReasonCode.NotAllowSend]: { key: 'ws.error.notAllowSend', defaultMessage: 'No está permitido enviar mensajes' },
+  [ReasonCode.ConnectKick]: { key: 'ws.error.connectKick', defaultMessage: 'Conexión expulsada' },
+  [ReasonCode.NotInWhitelist]: { key: 'ws.error.notInWhitelist', defaultMessage: 'No está en la lista blanca' },
+  [ReasonCode.QueryTokenError]: { key: 'ws.error.queryTokenError', defaultMessage: 'Error al consultar Token' },
+  [ReasonCode.SystemError]: { key: 'ws.error.systemError', defaultMessage: 'Error del sistema' },
+  [ReasonCode.ChannelIDError]: { key: 'ws.error.channelIDError', defaultMessage: 'ID de canal incorrecto' },
+  [ReasonCode.NodeMatchError]: { key: 'ws.error.nodeMatchError', defaultMessage: 'Error de coincidencia de nodo' },
+  [ReasonCode.NodeNotMatch]: { key: 'ws.error.nodeNotMatch', defaultMessage: 'Nodo no coincide' },
+  [ReasonCode.Ban]: { key: 'ws.error.ban', defaultMessage: 'Canal prohibido' },
+  [ReasonCode.NotSupportHeader]: { key: 'ws.error.notSupportHeader', defaultMessage: 'Encabezado de mensaje no soportado' },
+  [ReasonCode.ClientKeyIsEmpty]: { key: 'ws.error.clientKeyIsEmpty', defaultMessage: 'Clave del cliente vacía' },
+  [ReasonCode.RateLimit]: { key: 'ws.error.rateLimit', defaultMessage: 'Límite de frecuencia de envío' },
+  [ReasonCode.NotSupportChannelType]: { key: 'ws.error.notSupportChannelType', defaultMessage: 'Tipo de canal no soportado' },
+  [ReasonCode.Disband]: { key: 'ws.error.disband', defaultMessage: 'Canal disuelto' },
+  [ReasonCode.SendBan]: { key: 'ws.error.sendBan', defaultMessage: 'Envío prohibido' },
 };
 
 /**
@@ -62,7 +62,7 @@ export const REASON_CODE_I18N: Record<ReasonCode, { key: string; defaultMessage:
  */
 export function getReasonCodeMessage(reasonCode: ReasonCode): string {
   const info = REASON_CODE_I18N[reasonCode];
-  return info?.defaultMessage || `发送消息失败 (错误码: ${reasonCode})`;
+  return info?.defaultMessage || `Error al enviar mensaje (Código de error: ${reasonCode})`;
 }
 
 /**
@@ -76,7 +76,7 @@ export class WsSendError extends Error {
   constructor(reasonCode: ReasonCode) {
     const info = REASON_CODE_I18N[reasonCode] || { 
       key: 'ws.error.unknown', 
-      defaultMessage: `发送消息失败 (错误码: ${reasonCode})` 
+      defaultMessage: `Error al enviar mensaje (Código de error: ${reasonCode})` 
     };
     super(info.defaultMessage);
     this.name = 'WsSendError';
@@ -797,13 +797,13 @@ export class WuKongIMWebSocketService {
         }
 
         if (newEventType === WS_EVENT_TYPE.STREAM_CLOSE) {
-          const errorMessage = eventData.payload?.end_reason > 0 ? '流异常结束' : undefined;
+          const errorMessage = eventData.payload?.end_reason > 0 ? 'Finalización anormal del flujo' : undefined;
           this.notifyStreamEndHandlers(clientMsgNo, errorMessage);
           return;
         }
 
         if (newEventType === WS_EVENT_TYPE.STREAM_ERROR) {
-          this.notifyStreamEndHandlers(clientMsgNo, eventData.payload?.error || '未知错误');
+          this.notifyStreamEndHandlers(clientMsgNo, eventData.payload?.error || 'Error desconocido');
           return;
         }
 

@@ -52,7 +52,7 @@ const getErrorMessage = (
   if (t && fallbackKey && fallbackDefault) {
     return t(fallbackKey, fallbackDefault);
   }
-  return '上传失败';
+  return 'Error al subir';
 };
 
 interface MessageInputProps {
@@ -795,7 +795,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
       const localMessage: Message = {
         id: nowId,
         type: 'staff',
-        content: '[图片]',
+        content: '[Imagen]',
         timestamp: new Date().toISOString(),
         messageId: nowId,
         clientMsgNo: nowId,
@@ -838,7 +838,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
 
         const payload = {
           type: MessagePayloadType.IMAGE,
-          content: '[图片]',
+          content: '[Imagen]',
           url: toAbsoluteApiUrl(res.file_url),
           width,
           height,
@@ -866,7 +866,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
           await sendWsMessage(channelId, channelType, payload, nowId);
           updateMessageByClientMsgNo(nowId, { metadata: { ws_sent: true, ws_send_error: false } });
         } catch (err) {
-          const errMsg = getErrorMessage(err, t, 'chat.input.errors.websocketFailed', 'WebSocket 发送失败，请检查网络连接');
+          const errMsg = getErrorMessage(err, t, 'chat.input.errors.websocketFailed', 'Error al enviar WebSocket, por favor verifica la conexión de red');
           updateMessageByClientMsgNo(nowId, { metadata: { ws_send_error: true, error_text: errMsg } });
           showApiError(showToast, err);
         }
@@ -901,7 +901,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
       const localMessage: Message = {
         id: nowId,
         type: 'staff',
-        content: '[文件]',
+        content: '[Archivo]',
         timestamp: new Date().toISOString(),
         messageId: nowId,
         clientMsgNo: nowId,
@@ -945,7 +945,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
 
         const payload = {
           type: MessagePayloadType.FILE,
-          content: '[文件]',
+          content: '[Archivo]',
           url: fileUrl,
           name: f.name,
           size: f.size,
@@ -972,7 +972,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
           await sendWsMessage(channelId, channelType, payload, nowId);
           updateMessageByClientMsgNo(nowId, { metadata: { ws_sent: true, ws_send_error: false } });
         } catch (err) {
-          const errMsg = getErrorMessage(err, t, 'chat.input.errors.websocketFailed', 'WebSocket 发送失败，请检查网络连接');
+          const errMsg = getErrorMessage(err, t, 'chat.input.errors.websocketFailed', 'Error al enviar WebSocket, por favor verifica la conexión de red');
           updateMessageByClientMsgNo(nowId, { metadata: { ws_send_error: true, error_text: errMsg } });
           showApiError(showToast, err);
         }
@@ -1084,7 +1084,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
         await sendWsMessage(channelId, channelType, payload, nowId);
         updateMessageByClientMsgNo(nowId, { metadata: { ws_sent: true, ws_send_error: false } });
       } catch (err) {
-        const errMsg = getErrorMessage(err, t, 'chat.input.errors.websocketFailed', 'WebSocket 发送失败，请检查网络连接');
+        const errMsg = getErrorMessage(err, t, 'chat.input.errors.websocketFailed', 'Error al enviar WebSocket, por favor verifica la conexión de red');
         updateMessageByClientMsgNo(nowId, { metadata: { ws_send_error: true, error_text: errMsg } });
         showApiError(showToast, err);
       }
@@ -1202,7 +1202,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
       await sendWsMessage(channelId, channelType, payload, nowId);
       updateMessageByClientMsgNo(nowId, { metadata: { ws_sent: true, ws_send_error: false } });
     } catch (err) {
-      const errMsg = getErrorMessage(err, t, 'chat.input.errors.websocketFailed', 'WebSocket 发送失败，请检查网络连接');
+      const errMsg = getErrorMessage(err, t, 'chat.input.errors.websocketFailed', 'Error al enviar WebSocket, por favor verifica la conexión de red');
       updateMessageByClientMsgNo(nowId, { metadata: { ws_send_error: true, error_text: errMsg } });
       showApiError(showToast, err);
     }

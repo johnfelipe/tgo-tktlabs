@@ -19,7 +19,7 @@ export async function uploadImage(file: File): Promise<UploadImageResponse> {
     formData.append('file', file);
     return await apiClient.postFormData<UploadImageResponse>(endpoint, formData);
   } catch (error) {
-    const message = error instanceof Error ? error.message : '上传失败，请稍后重试';
+    const message = error instanceof Error ? error.message : 'Error al subir, por favor intenta más tarde';
     throw new Error(message);
   }
 }

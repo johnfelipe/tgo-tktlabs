@@ -156,15 +156,15 @@ export const uploadFileWithProgress = (
 
         // Handle specific status codes
         if (xhr.status === 401) {
-          errorMessage = '身份验证失败，请重新登录';
+          errorMessage = 'Autenticación fallida, por favor inicia sesión de nuevo';
         } else if (xhr.status === 403) {
-          errorMessage = '权限不足，无法上传文件';
+          errorMessage = 'Permisos insuficientes para subir archivos';
         } else if (xhr.status === 413) {
-          errorMessage = '文件过大，请选择较小的文件';
+          errorMessage = 'Archivo demasiado grande, por favor selecciona un archivo más pequeño';
         } else if (xhr.status === 415) {
-          errorMessage = '不支持的文件类型';
+          errorMessage = 'Tipo de archivo no soportado';
         } else if (xhr.status >= 500) {
-          errorMessage = '服务器错误，请稍后重试';
+          errorMessage = 'Error del servidor, por favor intenta más tarde';
         }
 
         const uploadError = new Error(errorMessage);
@@ -192,13 +192,13 @@ export const uploadFileWithProgress = (
       responseHandled = true;
       
       // Try to determine error type - 413 from nginx may close connection before response
-      let errorMessage = '网络连接失败，请检查网络连接后重试';
+      let errorMessage = 'Fallo en la conexión de red, por favor verifica la conexión y vuelve a intentarlo';
       
       // Check if the status is available (may be 0 for network errors)
       if (xhr.status === 413) {
-        errorMessage = '文件过大，请选择较小的文件';
+        errorMessage = 'Archivo demasiado grande, por favor selecciona un archivo más pequeño';
       } else if (xhr.status >= 400) {
-        errorMessage = `上传失败 (${xhr.status})`;
+        errorMessage = `Error al subir (${xhr.status})`;
       }
       
       const networkError = new Error(errorMessage);
@@ -224,7 +224,7 @@ export const uploadFileWithProgress = (
       if (responseHandled) return;
       responseHandled = true;
       
-      const abortError = new Error('上传已取消');
+      const abortError = new Error('Carga cancelada');
       
       const errorEvent: UploadProgressEvent = {
         fileId,
@@ -247,13 +247,13 @@ export const uploadFileWithProgress = (
       if (xhr.readyState >= 2 && xhr.status >= 400 && !responseHandled) {
         responseHandled = true;
         
-        let errorMessage = `上传失败 (${xhr.status})`;
+        let errorMessage = `Error al subir (${xhr.status})`;
         if (xhr.status === 413) {
-          errorMessage = '文件过大，服务器拒绝接收。请选择较小的文件或联系管理员调整上传限制。';
+          errorMessage = 'Archivo demasiado grande, el servidor rechazó la recepción. Por favor selecciona un archivo más pequeño o contacta al administrador para ajustar el límite de carga.';
         } else if (xhr.status === 401) {
-          errorMessage = '身份验证失败，请重新登录';
+          errorMessage = 'Autenticación fallida, por favor inicia sesión de nuevo';
         } else if (xhr.status === 403) {
-          errorMessage = '权限不足，无法上传文件';
+          errorMessage = 'Permisos insuficientes para subir archivos';
         }
         
         const uploadError = new Error(errorMessage);

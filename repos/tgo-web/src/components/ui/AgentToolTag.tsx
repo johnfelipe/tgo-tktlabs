@@ -43,7 +43,7 @@ const AgentToolTag: React.FC<AgentToolTagProps> = ({
   const formatToolName = (toolName?: string) => {
     const safe = typeof toolName === 'string' ? toolName : '';
     if (!safe) {
-      return { provider: '', name: '', displayName: '工具' };
+      return { provider: '', name: '', displayName: 'Herramientas' };
     }
     // 如果工具名称包含冒号，显示冒号后的部分作为主要名称
     if (safe.includes(':')) {
@@ -72,8 +72,8 @@ const AgentToolTag: React.FC<AgentToolTagProps> = ({
   const { provider, displayName } = formatToolName(tool?.tool_name);
   // Prefer API title/name over generic fallback label when tool_name is missing
   const titleFromApi = (tool as any)?.title || (tool as any)?.name;
-  const baseFromToolName = displayName && displayName !== '工具' ? displayName : undefined;
-  const finalDisplayName = titleFromApi || baseFromToolName || (tool as any)?.id || '工具';
+  const baseFromToolName = displayName && displayName !== 'Herramientas' ? displayName : undefined;
+  const finalDisplayName = titleFromApi || baseFromToolName || (tool as any)?.id || 'Herramientas';
   const providerDisplay = (tool as any)?.tool_server?.short_no || (tool as any)?.tool_source_type || provider;
 
   const handleClick = () => {
@@ -92,7 +92,7 @@ const AgentToolTag: React.FC<AgentToolTagProps> = ({
         ${className}
       `}
       onClick={handleClick}
-      title={`${tool?.tool_name || '工具'}${tool?.enabled ? ' (已启用)' : ' (已禁用)'}`}
+      title={`${tool?.tool_name || 'Herramienta'}${tool?.enabled ? ' (habilitada)' : ' (deshabilitada)'}`}
     >
       {showIcon && (
         <Wrench className={`${iconSizeClasses[size]} mr-1 ${iconColor}`} />

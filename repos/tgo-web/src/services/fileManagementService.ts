@@ -75,7 +75,7 @@ export class FileManagementService {
 
     // Check authentication before loading files
     if (!isAuthenticated()) {
-      const errorMessage = '身份验证失败，请重新登录后再试';
+      const errorMessage = 'Autenticación fallida, por favor inicia sesión de nuevo e intenta otra vez';
       this.setState({
         isLoading: false,
         error: errorMessage,
@@ -99,7 +99,7 @@ export class FileManagementService {
       });
     } catch (error) {
       console.error('Failed to load files:', error);
-      const errorMessage = error instanceof Error ? error.message : '加载文件列表失败';
+      const errorMessage = error instanceof Error ? error.message : 'Error al cargar lista de archivos';
       this.setState({
         isLoading: false,
         error: errorMessage,
@@ -121,7 +121,7 @@ export class FileManagementService {
   ): Promise<void> {
     // Check authentication before starting upload
     if (!isAuthenticated()) {
-      const error = new Error('身份验证失败，请重新登录后再试');
+      const error = new Error('Autenticación fallida, por favor inicia sesión de nuevo e intenta otra vez');
       throw error;
     }
 
@@ -241,7 +241,7 @@ export class FileManagementService {
   async deleteFile(fileId: string): Promise<void> {
     // Check authentication before deleting
     if (!isAuthenticated()) {
-      const error = new Error('身份验证失败，请重新登录后再试');
+      const error = new Error('Autenticación fallida, por favor inicia sesión de nuevo e intenta otra vez');
       throw error;
     }
 
@@ -262,7 +262,7 @@ export class FileManagementService {
   async downloadFile(fileId: string): Promise<void> {
     // Check authentication before downloading
     if (!isAuthenticated()) {
-      const error = new Error('身份验证失败，请重新登录后再试');
+      const error = new Error('Autenticación fallida, por favor inicia sesión de nuevo e intenta otra vez');
       throw error;
     }
 
@@ -311,7 +311,7 @@ export class FileManagementService {
       // - Open a modal with file content
       // - Navigate to a preview page
       // - Open file in a new tab
-      alert(`预览文件: ${file.name}\n\n此功能正在开发中...`);
+      alert(`Archivo de vista previa: ${file.name}\n\nEsta función está en desarrollo...`);
     } catch (error) {
       console.error('Failed to preview file:', error);
       throw error;

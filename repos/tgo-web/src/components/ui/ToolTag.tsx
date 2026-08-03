@@ -94,12 +94,12 @@ const ToolTag: React.FC<ToolTagProps> = ({
         ${className}
       `}
       onClick={handleClick}
-      title={resolvedTool ? `${resolvedTool.name} - ${resolvedTool.description}` : (toolId || '未知工具')}
+      title={resolvedTool ? `${resolvedTool.name} - ${resolvedTool.description}` : (toolId || 'Herramienta desconocida')}
     >
       {showIcon && (
         <Wrench className={`${iconSizeClasses[size]} mr-1 ${iconColor}`} />
       )}
-      <span className="font-medium truncate max-w-[9rem]">{resolvedTool ? resolvedTool.name : (toolId || '未知工具')}</span>
+      <span className="font-medium truncate max-w-[9rem]">{resolvedTool ? resolvedTool.name : (toolId || 'Herramienta desconocida')}</span>
       {onClick && resolvedTool && (
         <ExternalLink className={`${iconSizeClasses[size]} ml-1 opacity-60`} />
       )}

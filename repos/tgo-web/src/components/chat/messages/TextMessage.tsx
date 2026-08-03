@@ -65,7 +65,7 @@ const TextMessage: React.FC<MessageComponentProps> = ({ message, isStaff, onSend
             {hasLink ? (
               <>
                 {textContent.split('耳机连接指南')[0]}
-                <a href="#" className="underline">耳机连接指南</a>
+                <a href="#" className="underline">Guía de conexión de auriculares</a>
               </>
             ) : (
               textContent

@@ -26,16 +26,16 @@ interface KnowledgeBaseFiltersProps {
 
 // Mock data for filters (since we don't have the original constants)
 const FILTER_OPTIONS: FilterOption[] = [
-  { value: 'all', label: '全部状态' },
-  { value: 'published', label: '已发布' },
-  { value: 'draft', label: '草稿' },
-  { value: 'archived', label: '已归档' }
+  { value: 'all', label: 'Todos los estados' },
+  { value: 'published', label: 'Publicado' },
+  { value: 'draft', label: 'Borrador' },
+  { value: 'archived', label: 'Archivado' }
 ];
 
 const QUICK_FILTERS: QuickFilter[] = [
-  { id: 'recent', label: '最近更新' },
-  { id: 'popular', label: '热门' },
-  { id: 'mine', label: '我的' }
+  { id: 'recent', label: 'Última actualización' },
+  { id: 'popular', label: 'Popular' },
+  { id: 'mine', label: 'Mío' }
 ];
 
 /**
@@ -69,7 +69,7 @@ const KnowledgeBaseFilters: React.FC<KnowledgeBaseFiltersProps> = ({
         <div className="relative flex-grow max-w-xs">
           <input 
             type="text" 
-            placeholder="搜索知识库..." 
+            placeholder="Buscar en la base de conocimientos..." 
             value={searchQuery}
             onChange={handleSearchChange}
             className="w-full pl-9 pr-3 py-1.5 text-sm border border-gray-300/70 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-white/80"
@@ -83,7 +83,7 @@ const KnowledgeBaseFilters: React.FC<KnowledgeBaseFiltersProps> = ({
 
         {/* Filter Dropdown */}
         <div className="flex items-center space-x-2 flex-shrink-0">
-          <span className="text-sm text-gray-500">筛选:</span>
+          <span className="text-sm text-gray-500">Filtrar:</span>
           <select 
             value={selectedFilter}
             onChange={handleFilterChange}
@@ -100,7 +100,7 @@ const KnowledgeBaseFilters: React.FC<KnowledgeBaseFiltersProps> = ({
 
       {/* Quick Filters */}
       <div className="flex items-center space-x-2 flex-wrap gap-y-2">
-        <span className="text-sm text-gray-500 mr-1 flex-shrink-0">快速筛选:</span>
+        <span className="text-sm text-gray-500 mr-1 flex-shrink-0">Filtro rápido:</span>
         {QUICK_FILTERS.map((filter) => (
           <Button
             key={filter.id}

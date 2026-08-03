@@ -27,17 +27,17 @@ interface TagManagerProps {
 // 颜色选项 - hex 值使用大写格式，用于提交到后端
 // bgHex: 背景色（浅色），textHex: 文本色（深色），用于动态样式
 const COLOR_OPTIONS = [
-  { name: 'red', label: '红色', hex: '#EF4444', bgHex: '#FEE2E2', textHex: '#B91C1C' },
-  { name: 'orange', label: '橙色', hex: '#F97316', bgHex: '#FFEDD5', textHex: '#C2410C' },
-  { name: 'yellow', label: '黄色', hex: '#EAB308', bgHex: '#FEF9C3', textHex: '#A16207' },
-  { name: 'green', label: '绿色', hex: '#22C55E', bgHex: '#DCFCE7', textHex: '#15803D' },
-  { name: 'emerald', label: '翠绿', hex: '#10B981', bgHex: '#D1FAE5', textHex: '#047857' },
-  { name: 'teal', label: '青色', hex: '#14B8A6', bgHex: '#CCFBF1', textHex: '#0F766E' },
-  { name: 'blue', label: '蓝色', hex: '#3B82F6', bgHex: '#DBEAFE', textHex: '#1D4ED8' },
-  { name: 'indigo', label: '靛蓝', hex: '#6366F1', bgHex: '#E0E7FF', textHex: '#4338CA' },
-  { name: 'purple', label: '紫色', hex: '#A855F7', bgHex: '#F3E8FF', textHex: '#7E22CE' },
-  { name: 'pink', label: '粉色', hex: '#EC4899', bgHex: '#FCE7F3', textHex: '#BE185D' },
-  { name: 'gray', label: '灰色', hex: '#6B7280', bgHex: '#F3F4F6', textHex: '#374151' }
+  { name: 'red', label: 'Rojo', hex: '#EF4444', bgHex: '#FEE2E2', textHex: '#B91C1C' },
+  { name: 'orange', label: 'Naranja', hex: '#F97316', bgHex: '#FFEDD5', textHex: '#C2410C' },
+  { name: 'yellow', label: 'Amarillo', hex: '#EAB308', bgHex: '#FEF9C3', textHex: '#A16207' },
+  { name: 'green', label: 'Verde', hex: '#22C55E', bgHex: '#DCFCE7', textHex: '#15803D' },
+  { name: 'emerald', label: 'Verde esmeralda', hex: '#10B981', bgHex: '#D1FAE5', textHex: '#047857' },
+  { name: 'teal', label: 'Cian', hex: '#14B8A6', bgHex: '#CCFBF1', textHex: '#0F766E' },
+  { name: 'blue', label: 'Azul', hex: '#3B82F6', bgHex: '#DBEAFE', textHex: '#1D4ED8' },
+  { name: 'indigo', label: 'Índigo', hex: '#6366F1', bgHex: '#E0E7FF', textHex: '#4338CA' },
+  { name: 'purple', label: 'Morado', hex: '#A855F7', bgHex: '#F3E8FF', textHex: '#7E22CE' },
+  { name: 'pink', label: 'Rosa', hex: '#EC4899', bgHex: '#FCE7F3', textHex: '#BE185D' },
+  { name: 'gray', label: 'Gris', hex: '#6B7280', bgHex: '#F3F4F6', textHex: '#374151' }
 ];
 
 // 默认颜色（蓝色）

@@ -60,23 +60,23 @@ export abstract class BaseApiService {
       
       // Network errors
       if (message.includes('network') || message.includes('fetch')) {
-        return '网络连接失败，请检查网络连接后重试';
+        return 'Fallo en la conexión de red, por favor verifica la conexión y vuelve a intentarlo';
       }
       
       // Timeout errors
       if (message.includes('timeout')) {
-        return '请求超时，请稍后重试';
+        return 'Tiempo de espera agotado, por favor intenta de nuevo más tarde';
       }
       
       // HTTP status errors
-      if (message.includes('400')) return '请求参数错误，请检查输入内容';
-      if (message.includes('401')) return '身份验证失败，请重新登录';
-      if (message.includes('403')) return '权限不足，无法执行此操作';
-      if (message.includes('404')) return '请求的资源不存在';
-      if (message.includes('409')) return '资源冲突，请刷新页面后重试';
-      if (message.includes('413')) return '文件过大，请选择较小的文件';
-      if (message.includes('415')) return '不支持的文件类型';
-      if (message.includes('500')) return '服务器错误，请稍后重试';
+      if (message.includes('400')) return 'Parámetros de la solicitud inválidos, revisa los datos ingresados';
+      if (message.includes('401')) return 'Autenticación fallida, vuelve a iniciar sesión';
+      if (message.includes('403')) return 'Permisos insuficientes para realizar esta operación';
+      if (message.includes('404')) return 'El recurso solicitado no existe';
+      if (message.includes('409')) return 'Conflicto de recursos, recarga la página e intenta de nuevo';
+      if (message.includes('413')) return 'El archivo es demasiado grande, elige uno más pequeño';
+      if (message.includes('415')) return 'Tipo de archivo no soportado';
+      if (message.includes('500')) return 'Error del servidor, intenta de nuevo más tarde';
       
       return error.message;
     }

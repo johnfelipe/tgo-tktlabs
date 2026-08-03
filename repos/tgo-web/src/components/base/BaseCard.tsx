@@ -171,13 +171,13 @@ export function BaseCard<T extends BaseCardItem>({
                 {displayName}
               </h3>
               {item.verified && (
-                <div title="已验证">
+                <div title="Verificado">
                   <Shield className="w-3 h-3 text-blue-500 flex-shrink-0" />
                 </div>
               )}
               {item.featured && (
                 <span className="bg-yellow-100 text-yellow-800 text-xs px-1.5 py-0.5 rounded-full font-medium">
-                  推荐
+                  Recomendado
                 </span>
               )}
             </div>
@@ -207,14 +207,14 @@ export function BaseCard<T extends BaseCardItem>({
       <div className="space-y-2 mb-3">
         {showVersion && item.version && (
           <div className="flex items-center justify-between text-xs text-gray-500">
-            <span>版本</span>
+            <span>Versión</span>
             <span className="font-mono">{item.version}</span>
           </div>
         )}
         
         {showRating && item.rating && (
           <div className="flex items-center justify-between">
-            <span className="text-xs text-gray-500">评分</span>
+            <span className="text-xs text-gray-500">Calificación</span>
             {renderRating(item.rating)}
           </div>
         )}
@@ -250,7 +250,7 @@ export function BaseCard<T extends BaseCardItem>({
                 title={action.label}
               >
                 {action.icon}
-                <span>{action.loading ? '处理中...' : action.label}</span>
+                <span>{action.loading ? 'Procesando...' : action.label}</span>
               </button>
             ))}
           </div>
@@ -266,7 +266,7 @@ export function BaseCard<T extends BaseCardItem>({
 export const createCardActions = {
   view: (onClick: () => void): CardAction => ({
     type: 'view',
-    label: '详情',
+    label: 'Detalles',
     icon: <Eye className="w-4 h-4" />,
     variant: 'secondary',
     onClick,
@@ -274,7 +274,7 @@ export const createCardActions = {
   
   edit: (onClick: () => void, disabled?: boolean): CardAction => ({
     type: 'edit',
-    label: '编辑',
+    label: 'Editar',
     icon: <Edit className="w-4 h-4" />,
     variant: 'secondary',
     disabled,
@@ -283,7 +283,7 @@ export const createCardActions = {
   
   delete: (onClick: () => void, disabled?: boolean): CardAction => ({
     type: 'delete',
-    label: '删除',
+    label: 'Eliminar',
     icon: <Trash2 className="w-4 h-4" />,
     variant: 'danger',
     disabled,
@@ -292,7 +292,7 @@ export const createCardActions = {
   
   install: (onClick: () => void, isInstalled?: boolean, loading?: boolean): CardAction => ({
     type: 'install',
-    label: isInstalled ? '已安装' : '安装',
+    label: isInstalled ? 'Instalado' : 'Instalar',
     icon: isInstalled ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />,
     variant: isInstalled ? 'success' : 'primary',
     disabled: isInstalled,

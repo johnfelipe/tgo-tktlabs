@@ -24,20 +24,20 @@ export const formatRelativeTime = (dateString: string): string => {
   const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 
   if (diffInDays === 0) {
-    return '今天';
+    return 'Hoy';
   } else if (diffInDays === 1) {
-    return '昨天';
+    return 'Ayer';
   } else if (diffInDays < 7) {
-    return `${diffInDays} 天前`;
+    return `${diffInDays} días atrás`;
   } else if (diffInDays < 30) {
     const weeks = Math.floor(diffInDays / 7);
-    return `${weeks} 周前`;
+    return `${weeks} semanas atrás`;
   } else if (diffInDays < 365) {
     const months = Math.floor(diffInDays / 30);
-    return `${months} 个月前`;
+    return `${months} meses atrás`;
   } else {
     const years = Math.floor(diffInDays / 365);
-    return `${years} 年前`;
+    return `${years} años atrás`;
   }
 };
 

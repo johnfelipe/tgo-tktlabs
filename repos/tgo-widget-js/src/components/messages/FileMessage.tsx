@@ -20,7 +20,7 @@ export default function FileMessage({ url, name, size }: FileMessageProps){
         <FileName title={name}>{name}</FileName>
         <FileSize>{formatFileSize(size)}</FileSize>
       </FileInfo>
-      <FileAction href={url} target="_blank" rel="noreferrer" download onClick={e=>e.stopPropagation()} aria-label="下载">
+      <FileAction href={url} target="_blank" rel="noreferrer" download onClick={e=>e.stopPropagation()} aria-label="Descargar">
         <Download size={20} />
       </FileAction>
     </FileCard>

@@ -69,7 +69,7 @@ export class TransformUtils {
    */
   static transformToStoreCategory(category: string | null): ToolStoreCategory {
     const slug = category ? category.toLowerCase() : 'other';
-    const name_zh = category || '其他';
+    const name_zh = category || 'Otros';
     return {
       id: slug,
       slug: slug,
@@ -90,10 +90,10 @@ export class TransformUtils {
         return {
           id: cat.id || cat.slug || 'other',
           slug: cat.slug || cat.id || 'other',
-          name_zh: cat.name_zh || cat.name || cat.label || '其他',
+          name_zh: cat.name_zh || cat.name || cat.label || 'Otros',
           name_en: cat.name_en || cat.name || null,
           icon: cat.icon || 'Package',
-          label: cat.name_zh || cat.name || cat.label || '其他'
+          label: cat.name_zh || cat.name || cat.label || 'Otros'
         };
       });
     }

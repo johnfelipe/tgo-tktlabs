@@ -125,7 +125,7 @@ export class WuKongIMApiService extends BaseApiService {
       throw new Error('Invalid ws_addr from route');
     } catch (err) {
       console.error('Failed to fetch WuKongIM route, using env fallback if available:', err);
-      throw new Error('无法获取WuKongIM路由地址，请稍后重试');
+      throw new Error('No se pudo obtener la dirección de ruta de WuKongIM, por favor intenta de nuevo más tarde');
     }
   }
 
@@ -377,11 +377,11 @@ export class WuKongIMUtils {
     if (typeof payload === 'object' && payload !== null) {
       // Special-case image messages (type: 2) with no textual content
       if (payload.type === MessagePayloadType.IMAGE) {
-        return payload.content || '[图片]';
+        return payload.content || '[Imagen]';
       }
       // Special-case stream messages (type: 100) with no textual content
       if (payload.type === MessagePayloadType.STREAM) {
-        return payload.content || 'AI 正在输入...';
+        return payload.content || 'AI está escribiendo...';
       }
       // 处理系统消息 (type: 1000-2000) 的模板替换
       if (typeof payload.type === 'number' && isSystemMessageType(payload.type)) {
@@ -398,12 +398,12 @@ export class WuKongIMUtils {
           return WuKongIMUtils.formatSystemMessageContent(parsed.content, parsed.extra);
         }
         if (parsed.type === MessagePayloadType.STREAM) {
-          return parsed.content || 'AI 正在输入...';
+          return parsed.content || 'AI está escribiendo...';
         }
-        return parsed.content || (parsed.type === MessagePayloadType.IMAGE ? '[图片]' : '');
+        return parsed.content || (parsed.type === MessagePayloadType.IMAGE ? '[Imagen]' : '');
       }
       if (parsed) {
-        return parsed.content || parsed.text || (parsed.type === 2 ? '[图片]' : payload);
+        return parsed.content || parsed.text || (parsed.type === 2 ? '[Imagen]' : payload);
       }
       return payload;
     }
@@ -472,7 +472,7 @@ export class WuKongIMUtils {
       const url = url0 ? toAbsoluteApiUrl(url0) : undefined;
       const width = payloadObj?.width || payloadObj?.image_width;
       const height = payloadObj?.height || payloadObj?.image_height;
-      typedPayload = { type: MessagePayloadType.IMAGE, content: payloadObj?.content || content || '[图片]', url: url || '', width, height };
+      typedPayload = { type: MessagePayloadType.IMAGE, content: payloadObj?.content || content || '[Imagen]', url: url || '', width, height };
       imageMeta = { image_url: url || url0, image_width: width, image_height: height };
     } else if (payloadType === MessagePayloadType.RICH_TEXT) {
       const imgs: PayloadRichTextImage[] = Array.isArray(payloadObj?.images)
@@ -490,7 +490,7 @@ export class WuKongIMUtils {
         const fileUrl = fileUrl0 ? toAbsoluteApiUrl(fileUrl0) : undefined;
         fileAttachment = {
           url: (fileUrl || fileUrl0 || '') as string,
-          name: payloadObj.file.name || payloadObj.file.file_name || '未命名文件',
+          name: payloadObj.file.name || payloadObj.file.file_name || 'Archivo sin nombre',
           size: payloadObj.file.size || payloadObj.file.file_size,
         };
         fileMeta = { file_url: fileAttachment.url, file_name: fileAttachment.name, file_size: fileAttachment.size };

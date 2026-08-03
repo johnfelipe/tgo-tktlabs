@@ -14,11 +14,11 @@ const AIInfoCard: React.FC<AIInfoCardProps> = ({ aiInfo }) => {
   const getDetailLabel = (key: string): string => {
     switch (key) {
       case 'status':
-        return '状态: ';
+        return 'Estado: ';
       case 'product':
-        return '商品: ';
+        return 'Producto: ';
       case 'tracking':
-        return '物流: ';
+        return 'Logística: ';
       default:
         return '';
     }

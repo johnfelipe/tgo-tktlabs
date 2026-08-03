@@ -34,51 +34,51 @@ export const handleApiError = (error: unknown): string => {
 
     // Network errors
     if (message.includes('network') || message.includes('fetch')) {
-      return '网络连接失败，请检查网络连接后重试';
+      return 'Fallo en la conexión de red, por favor verifica la conexión y vuelve a intentarlo';
     }
 
     // Timeout errors
     if (message.includes('timeout')) {
-      return '请求超时，请稍后重试';
+      return 'Tiempo de espera agotado, por favor intenta de nuevo más tarde';
     }
 
     // HTTP status errors
     if (message.includes('400')) {
-      return '请求参数错误，请检查输入内容';
+      return 'Error en los parámetros de la solicitud, por favor verifica el contenido ingresado';
     }
     if (message.includes('401')) {
-      return '身份验证失败，请重新登录';
+      return 'Autenticación fallida, por favor inicia sesión de nuevo';
     }
     if (message.includes('403')) {
-      return '权限不足，无法执行此操作';
+      return 'Permisos insuficientes para realizar esta acción';
     }
     if (message.includes('404')) {
-      return '请求的资源不存在';
+      return 'El recurso solicitado no existe';
     }
     if (message.includes('409')) {
-      return '资源冲突，请刷新页面后重试';
+      return 'Conflicto de recursos, por favor actualiza la página e intenta de nuevo';
     }
     if (message.includes('413')) {
-      return '文件过大，请选择较小的文件';
+      return 'Archivo demasiado grande, por favor selecciona un archivo más pequeño';
     }
     if (message.includes('415')) {
-      return '不支持的文件类型';
+      return 'Tipo de archivo no soportado';
     }
     if (message.includes('429')) {
-      return '请求过于频繁，请稍后重试';
+      return 'Solicitudes demasiado frecuentes, por favor intenta de nuevo más tarde';
     }
     if (message.includes('500')) {
-      return '服务器内部错误，请稍后重试';
+      return 'Error interno del servidor, por favor intenta más tarde';
     }
     if (message.includes('502') || message.includes('503') || message.includes('504')) {
-      return '服务暂时不可用，请稍后重试';
+      return 'Servicio temporalmente no disponible, por favor intenta más tarde';
     }
 
     // Return original message if no specific pattern matches
     return error.message;
   }
 
-  return '发生未知错误，请稍后重试';
+  return 'Ocurrió un error desconocido, por favor intenta de nuevo más tarde';
 };
 
 // API Response Types based on OpenAPI specification

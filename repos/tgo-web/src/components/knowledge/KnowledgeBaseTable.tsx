@@ -61,13 +61,13 @@ const KnowledgeBaseTable: React.FC<KnowledgeBaseTableProps> = ({
   const getStatusText = (status: string): string => {
     switch (status) {
       case 'published':
-        return '已发布';
+        return 'Publicado';
       case 'draft':
-        return '草稿';
+        return 'Borrador';
       case 'archived':
-        return '已归档';
+        return 'Archivado';
       default:
-        return '未知';
+        return 'Desconocido';
     }
   };
 
@@ -80,8 +80,8 @@ const KnowledgeBaseTable: React.FC<KnowledgeBaseTableProps> = ({
       <div className="bg-white/80 backdrop-blur-md rounded-lg shadow-sm border border-gray-200/60 p-12">
         <div className="text-center text-gray-500">
           <Icon name="FolderOpen" size={48} className="mx-auto mb-4 text-gray-300" />
-          <h3 className="text-lg font-medium text-gray-900 mb-2">暂无知识库</h3>
-          <p>点击"新建知识库"按钮开始创建您的第一个知识库</p>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Sin base de conocimiento</h3>
+          <p>Haz clic en el botón "Nuevo repositorio de conocimiento" para comenzar a crear tu primer repositorio de conocimiento</p>
         </div>
       </div>
     );
@@ -96,26 +96,26 @@ const KnowledgeBaseTable: React.FC<KnowledgeBaseTableProps> = ({
             className="col-span-4 flex items-center cursor-pointer hover:text-gray-700"
             onClick={() => handleSort('title')}
           >
-            标题
+            Título
             {renderSortIcon('title')}
           </div>
-          <div className="col-span-2">分类</div>
+          <div className="col-span-2">Categoría</div>
           <div 
             className="col-span-2 flex items-center cursor-pointer hover:text-gray-700"
             onClick={() => handleSort('views')}
           >
-            浏览量
+            Vistas
             {renderSortIcon('views')}
           </div>
           <div 
             className="col-span-2 flex items-center cursor-pointer hover:text-gray-700"
             onClick={() => handleSort('updatedAt')}
           >
-            更新时间
+            Fecha de actualización
             {renderSortIcon('updatedAt')}
           </div>
-          <div className="col-span-1">状态</div>
-          <div className="col-span-1">操作</div>
+          <div className="col-span-1">Estado</div>
+          <div className="col-span-1">Operación</div>
         </div>
       </div>
 
@@ -181,7 +181,7 @@ const KnowledgeBaseTable: React.FC<KnowledgeBaseTableProps> = ({
                 variant="icon"
                 icon="Eye"
                 size="sm"
-                title="查看"
+                title="Ver"
                 className="text-gray-400 hover:text-gray-600"
                 onClick={() => handleAction('view', kb)}
               />
@@ -189,7 +189,7 @@ const KnowledgeBaseTable: React.FC<KnowledgeBaseTableProps> = ({
                 variant="icon"
                 icon="Edit"
                 size="sm"
-                title="编辑"
+                title="Editar"
                 className="text-gray-400 hover:text-gray-600"
                 onClick={() => handleAction('edit', kb)}
               />
@@ -197,7 +197,7 @@ const KnowledgeBaseTable: React.FC<KnowledgeBaseTableProps> = ({
                 variant="icon"
                 icon="Share"
                 size="sm"
-                title="分享"
+                title="Compartir"
                 className="text-gray-400 hover:text-gray-600"
                 onClick={() => handleAction('share', kb)}
               />
@@ -205,7 +205,7 @@ const KnowledgeBaseTable: React.FC<KnowledgeBaseTableProps> = ({
                 variant="icon"
                 icon="MoreHorizontal"
                 size="sm"
-                title="更多"
+                title="Más"
                 className="text-gray-400 hover:text-gray-600"
                 onClick={() => handleAction('menu', kb)}
               />

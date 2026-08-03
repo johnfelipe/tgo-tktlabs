@@ -727,7 +727,7 @@ export const CreateKnowledgeBaseModal: React.FC<CreateKnowledgeBaseModalProps> =
                       {/* Exclude Patterns */}
                       <div>
                         <label htmlFor="crawl-exclude" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
-                          {t('knowledge.crawl.excludePatterns', '排除模式')}
+                          {t('knowledge.crawl.excludePatterns', 'Modo de exclusión')}
                         </label>
                         <input
                           id="crawl-exclude"

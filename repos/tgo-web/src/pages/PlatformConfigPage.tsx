@@ -48,7 +48,7 @@ const PlatformConfigPage: React.FC = () => {
       <div className="flex-grow flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
         <div className="text-center text-gray-500 dark:text-gray-400">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 dark:border-blue-400 mx-auto mb-4"></div>
-          <p className="text-sm">加载平台配置中...</p>
+          <p className="text-sm">Cargando configuración de la plataforma...</p>
         </div>
       </div>
     );
@@ -64,13 +64,13 @@ const PlatformConfigPage: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
           </div>
-          <p className="text-sm font-medium mb-2">加载平台配置失败</p>
+          <p className="text-sm font-medium mb-2">Error al cargar configuración de la plataforma</p>
           <p className="text-xs text-red-500 dark:text-red-400 mb-4">{detailLoadError}</p>
           <button
             onClick={() => platformId && fetchPlatformById(platformId)}
             className="px-4 py-2 bg-blue-600 dark:bg-blue-500 text-white text-sm rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
           >
-            重试
+            Reintentar
           </button>
         </div>
       </div>

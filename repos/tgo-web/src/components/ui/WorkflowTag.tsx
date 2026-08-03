@@ -76,7 +76,7 @@ const WorkflowTag: React.FC<WorkflowTagProps> = ({
         ${className}
       `}
       onClick={handleClick}
-      title={`${workflow.name}${isEnabled ? ' (已启用)' : ' (已禁用)'}`}
+      title={`${workflow.name}${isEnabled ? ' (habilitado)' : ' (deshabilitado)'}`}
     >
       {showIcon && (
         <GitBranch className={`${iconSizeClasses[size]} mr-1 ${iconColor}`} />

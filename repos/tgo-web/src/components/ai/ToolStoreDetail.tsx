@@ -147,7 +147,7 @@ const ToolStoreDetail: React.FC<ToolStoreDetailProps> = ({
               {t('tools.store.price', '费用')}
             </div>
             <div className="text-sm font-bold text-gray-900 dark:text-gray-100">
-              {tool.price_per_call && tool.price_per_call > 0 ? `¥${tool.price_per_call} / 次` : t('tools.store.free', '免费')}
+              {tool.price_per_call && tool.price_per_call > 0 ? `¥${tool.price_per_call} / llamada` : t('tools.store.free', '免费')}
             </div>
           </div>
         </div>
@@ -155,7 +155,7 @@ const ToolStoreDetail: React.FC<ToolStoreDetailProps> = ({
         {/* Long Description */}
         <div className="max-w-none">
           <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b border-gray-100 dark:border-gray-800">
-            描述
+            Descripción
           </h3>
           <div className="text-gray-600 dark:text-gray-400 leading-relaxed">
             {tool.longDescription ? (
@@ -170,7 +170,7 @@ const ToolStoreDetail: React.FC<ToolStoreDetailProps> = ({
         {methods.length > 0 && (
           <div className="space-y-6">
             <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700">
-              可用方法 (Methods)
+              Métodos disponibles (Methods)
             </h3>
             <div className="space-y-4">
               {methods.map((method: ToolMethod) => {
@@ -190,7 +190,7 @@ const ToolStoreDetail: React.FC<ToolStoreDetailProps> = ({
                         <p className="text-sm text-gray-600 dark:text-gray-400">{method.description}</p>
                         {method.parameters && method.parameters.length > 0 && (
                           <div className="space-y-2">
-                            <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">参数 (Parameters)</div>
+                            <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Parámetros (Parameters)</div>
                             {method.parameters.map((param: ToolParameter) => (
                               <div key={param.name} className="p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl">
                                 <code className="text-gray-900 dark:text-gray-100 font-mono font-bold text-xs">{param.name}</code>

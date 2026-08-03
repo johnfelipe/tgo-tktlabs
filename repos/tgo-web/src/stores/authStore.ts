@@ -93,7 +93,7 @@ export const useAuthStore = create<AuthState>()(
           console.log('🔐 Auth Store: State updated after login');
 
         } catch (error) {
-          let errorMessage = '登录失败';
+          let errorMessage = 'Error de inicio de sesión';
 
           if (error instanceof APIError) {
             errorMessage = error.getUserMessage();
@@ -157,7 +157,7 @@ export const useAuthStore = create<AuthState>()(
           console.log('🔐 Auth Store: State updated after registration');
 
         } catch (error) {
-          let errorMessage = '注册失败';
+          let errorMessage = 'Registro fallido';
 
           if (error instanceof APIError) {
             errorMessage = error.getUserMessage();

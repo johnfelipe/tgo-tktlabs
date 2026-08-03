@@ -159,7 +159,7 @@ export const useKnowledgeStore = create<KnowledgeState>()(
             }, false, 'fetchKnowledgeBasesSuccess');
           } catch (error) {
             console.error('获取知识库列表失败:', error);
-            const errorMessage = error instanceof Error ? error.message : '获取知识库列表失败';
+            const errorMessage = error instanceof Error ? error.message : 'Error al obtener la lista de bases de conocimiento';
             set({
               knowledgeBases: [],
               isLoading: false,
@@ -201,7 +201,7 @@ export const useKnowledgeStore = create<KnowledgeState>()(
               content: newCollection.description || '',
               category: data.category || 'other',
               tags: data.tags || newCollection.tags || [],
-              author: data.author || '当前用户',
+              author: data.author || 'Usuario actual',
               createdAt: newCollection.created_at, // Preserve full timestamp
               updatedAt: newCollection.updated_at, // Preserve full timestamp
               views: 0,
@@ -225,7 +225,7 @@ export const useKnowledgeStore = create<KnowledgeState>()(
             return newItem;
           } catch (error) {
             console.error('创建知识库失败:', error);
-            const errorMessage = error instanceof Error ? error.message : '创建知识库失败';
+            const errorMessage = error instanceof Error ? error.message : 'Error al crear la base de conocimiento';
             set({
               isCreating: false,
               error: errorMessage,
@@ -291,7 +291,7 @@ export const useKnowledgeStore = create<KnowledgeState>()(
             );
           } catch (error) {
             console.error('更新知识库失败:', error);
-            const errorMessage = error instanceof Error ? error.message : '更新知识库失败';
+            const errorMessage = error instanceof Error ? error.message : 'Error al actualizar la base de conocimientos';
             set({
               isUpdating: false,
               error: errorMessage,
@@ -326,7 +326,7 @@ export const useKnowledgeStore = create<KnowledgeState>()(
             );
           } catch (error) {
             console.error('删除知识库失败:', error);
-            const errorMessage = error instanceof Error ? error.message : '删除知识库失败';
+            const errorMessage = error instanceof Error ? error.message : 'Error al eliminar la base de conocimiento';
             set({
               isDeleting: false,
               error: errorMessage,
@@ -345,7 +345,7 @@ export const useKnowledgeStore = create<KnowledgeState>()(
             const duplicate: KnowledgeBaseItem = {
               ...original,
               id: Date.now().toString(),
-              title: `${original.title} (副本)`,
+              title: `${original.title} (copia)`,
               createdAt: new Date().toISOString().split('T')[0],
               updatedAt: new Date().toISOString().split('T')[0],
               status: 'draft'

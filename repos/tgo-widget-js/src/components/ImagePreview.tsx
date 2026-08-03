@@ -194,7 +194,7 @@ export const ImagePreview: React.FC<ImagePreviewProps> = ({ images, initialIndex
 
   return (
     <Overlay ref={overlayRef} onClick={handleOverlayClick}>
-      <CloseButton onClick={onClose} title="关闭 (Esc)">×</CloseButton>
+      <CloseButton onClick={onClose} title="Cerrar (Esc)">×</CloseButton>
       
       {hasMultiple && (
         <>
@@ -202,7 +202,7 @@ export const ImagePreview: React.FC<ImagePreviewProps> = ({ images, initialIndex
             direction="left" 
             onClick={goToPrev} 
             disabled={currentIndex === 0}
-            title="上一张 (←)"
+            title="Anterior (←)"
           >
             ‹
           </NavButton>
@@ -210,7 +210,7 @@ export const ImagePreview: React.FC<ImagePreviewProps> = ({ images, initialIndex
             direction="right" 
             onClick={goToNext} 
             disabled={currentIndex === images.length - 1}
-            title="下一张 (→)"
+            title="Siguiente (→)"
           >
             ›
           </NavButton>
@@ -220,11 +220,11 @@ export const ImagePreview: React.FC<ImagePreviewProps> = ({ images, initialIndex
       <ImageContainer>
         {loading && !error && <LoadingSpinner />}
         {error ? (
-          <ErrorMessage>图片加载失败</ErrorMessage>
+          <ErrorMessage>No se pudo cargar la imagen</ErrorMessage>
         ) : (
           <PreviewImage
             src={currentImage}
-            alt={`预览图片 ${currentIndex + 1}`}
+            alt={`Vista previa de la imagen ${currentIndex + 1}`}
             scale={scale}
             onClick={toggleZoom}
             onLoad={() => setLoading(false)}

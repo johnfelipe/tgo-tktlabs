@@ -532,7 +532,7 @@ const ApiTestModal: React.FC<ApiTestModalProps> = ({
 
             {/* 参数和值 */}
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-3">参数和值</h3>
+              <h3 className="text-sm font-medium text-gray-700 mb-3">Parámetros y valores</h3>
               {parameters.length > 0 ? (
                 <div className="space-y-3">
                   <div className="grid grid-cols-2 gap-4 text-sm font-medium text-gray-500 px-3">

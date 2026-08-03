@@ -56,7 +56,7 @@ const useSearchFiltering = (chats: Chat[], searchQuery: string) => {
     const lowerQuery = searchQuery.toLowerCase();
     return chats.filter((chat: Chat) => {
       const baseId = chat.channelId || chat.id;
-      const name = (chat.channelInfo?.name || `访客${String(baseId).slice(-4)}`).toLowerCase();
+      const name = (chat.channelInfo?.name || `Visitante${String(baseId).slice(-4)}`).toLowerCase();
       return name.includes(lowerQuery) || chat.lastMessage.toLowerCase().includes(lowerQuery);
     });
   }, [chats, searchQuery]);
@@ -860,7 +860,7 @@ const ChatListComponent: React.FC<ChatListProps> = ({
     if (!searchQuery.trim()) return recentVisitors;
     const lowerQuery = searchQuery.toLowerCase();
     return recentVisitors.filter(v => {
-      const name = (v.name || v.display_nickname || v.nickname_zh || v.nickname || `访客${String(v.id).slice(-4)}`).toLowerCase();
+      const name = (v.name || v.display_nickname || v.nickname_zh || v.nickname || `Visitante${String(v.id).slice(-4)}`).toLowerCase();
       return name.includes(lowerQuery);
     });
   }, [recentVisitors, searchQuery]);

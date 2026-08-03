@@ -210,7 +210,7 @@ export const useMessageStore = create<MessageState>()(
           console.error('Failed to load historical messages:', error);
           loadingHistoryChannels.delete(key);
           set({
-            historyError: error instanceof Error ? error.message : '加载历史消息失败',
+            historyError: error instanceof Error ? error.message : 'Error al cargar mensajes históricos',
             isLoadingHistory: false,
           });
         }
@@ -255,7 +255,7 @@ export const useMessageStore = create<MessageState>()(
         } catch (error) {
           console.error('Failed to load more historical messages:', error);
           set({
-            historyError: error instanceof Error ? error.message : '加载更多消息失败',
+            historyError: error instanceof Error ? error.message : 'Error al cargar más mensajes',
             isLoadingHistory: false,
           });
         }
@@ -305,7 +305,7 @@ export const useMessageStore = create<MessageState>()(
           );
         } catch (error) {
           console.error('Failed to load newer messages:', error);
-          set({ historyError: error instanceof Error ? error.message : '加载更新消息失败' }, false, 'loadNewerHistoryError');
+          set({ historyError: error instanceof Error ? error.message : 'Error al cargar mensajes actualizados' }, false, 'loadNewerHistoryError');
         }
       },
 
@@ -352,7 +352,7 @@ export const useMessageStore = create<MessageState>()(
         } catch (error) {
           console.error('Failed to load message context by seq:', error);
           set(
-            { historyError: error instanceof Error ? error.message : '加载消息上下文失败', isLoadingHistory: false },
+            { historyError: error instanceof Error ? error.message : 'Error al cargar contexto del mensaje', isLoadingHistory: false },
             false,
             'loadMessageContextError'
           );

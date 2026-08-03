@@ -436,7 +436,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
             // Flush parser before finalizing
             const closeParser = activeParsers.get(clientMsgNo)
             if (closeParser) { closeParser.flush(); activeParsers.delete(clientMsgNo) }
-            const errorMessage = eventData?.payload?.end_reason > 0 ? '流异常结束' : undefined
+            const errorMessage = eventData?.payload?.end_reason > 0 ? 'El flujo terminó de forma inesperada' : undefined
             console.log('[Chat] Stream closed for message:', clientMsgNo, errorMessage ? `error: ${errorMessage}` : '')
             get().finalizeStreamMessage(clientMsgNo, errorMessage)
             try { get().markStreamingEnd() } catch {}
@@ -447,7 +447,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
             if (!clientMsgNo) return
             const errParser = activeParsers.get(clientMsgNo)
             if (errParser) { errParser.flush(); activeParsers.delete(clientMsgNo) }
-            const errorMessage = eventData?.payload?.error || '未知错误'
+            const errorMessage = eventData?.payload?.error || 'Error desconocido'
             console.log('[Chat] Stream error for message:', clientMsgNo, errorMessage)
             get().finalizeStreamMessage(clientMsgNo, errorMessage)
             try { get().markStreamingEnd() } catch {}

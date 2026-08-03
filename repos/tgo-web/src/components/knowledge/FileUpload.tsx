@@ -260,7 +260,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
                       {file.name || 'Unknown file'}
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
-                      {file.size > 0 ? formatFileSize(file.size) : '上传中...'}
+                      {file.size > 0 ? formatFileSize(file.size) : 'Subiendo...'}
                     </p>
 
                     {/* Progress bar */}

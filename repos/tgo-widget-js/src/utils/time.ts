@@ -6,12 +6,12 @@ export function formatMessageTime(input: number | Date): string {
   const diff = now.getTime() - msgDate.getTime()
 
   // 1分钟内
-  if (diff < 60 * 1000) return '刚才'
+  if (diff < 60 * 1000) return 'ahora mismo'
 
   // 1小时内
   if (diff < 60 * 60 * 1000) {
     const minutes = Math.floor(diff / (60 * 1000))
-    return `${minutes}分钟前`
+    return `hace ${minutes} min`
   }
 
   const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0)
@@ -24,7 +24,7 @@ export function formatMessageTime(input: number | Date): string {
 
   // 昨天
   if (msgDate >= startOfYesterday) {
-    return `昨天 ${fmt(msgDate, 'HH:mm')}`
+    return `ayer ${fmt(msgDate, 'HH:mm')}`
   }
 
   // 7天内（不包含今天/昨天）
@@ -71,6 +71,6 @@ function fmt(d: Date, pattern: 'HH:mm' | 'MM-DD HH:mm' | 'YYYY-MM-DD HH:mm'): st
 
 function weekdayCN(d: Date): string {
   const w = d.getDay() // 0-6 (0: Sunday)
-  return ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'][w]
+  return ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'][w]
 }
 

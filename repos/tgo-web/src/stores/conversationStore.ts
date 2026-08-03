@@ -86,7 +86,7 @@ export const useConversationStore = create<ConversationState>()(
           const newChat: Chat = {
             id,
             platform,
-            lastMessage: '新对话已创建',
+            lastMessage: 'Nueva conversación creada',
             timestamp: new Date().toISOString(),
             lastTimestampSec: Math.floor(Date.now() / 1000),
             status: CHAT_STATUS_CONST.ACTIVE,
@@ -171,7 +171,7 @@ export const useConversationStore = create<ConversationState>()(
           const lower = searchQuery.toLowerCase();
           return chats.filter((chat: Chat) => {
             const baseId = chat.channelId || chat.id;
-            const fallbackName = `访客${String(baseId).slice(-4)}`;
+            const fallbackName = `Visitante${String(baseId).slice(-4)}`;
             const name = (chat.channelInfo?.name || fallbackName).toLowerCase();
             return name.includes(lower) || chat.lastMessage.toLowerCase().includes(lower);
           });
@@ -202,7 +202,7 @@ export const useConversationStore = create<ConversationState>()(
         // For STREAM messages, use a placeholder if content is empty
         let content = message.content;
         if (message.payloadType === MessagePayloadType.STREAM && !content) {
-          content = 'AI 正在输入...';
+          content = 'AI está escribiendo...';
         }
 
                   return {

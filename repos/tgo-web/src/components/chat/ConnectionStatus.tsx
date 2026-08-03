@@ -25,10 +25,10 @@ export const ConnectionStatus: React.FC<ConnectionStatusProps> = React.memo(({
   };
 
   const getStatusText = () => {
-    if (isConnected) return '已连接';
-    if (isConnecting) return '连接中...';
-    if (error) return '连接失败';
-    return '未连接';
+    if (isConnected) return 'Conectado';
+    if (isConnecting) return 'Conectando...';
+    if (error) return 'Conexión fallida';
+    return 'No conectado';
   };
 
   const handleRetryConnection = async () => {
@@ -67,9 +67,9 @@ export const ConnectionStatus: React.FC<ConnectionStatusProps> = React.memo(({
         <button
           onClick={handleRetryConnection}
           className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
-          title="重新连接"
+          title="Reconectar"
         >
-          重试
+          Reintentar
         </button>
       )}
 

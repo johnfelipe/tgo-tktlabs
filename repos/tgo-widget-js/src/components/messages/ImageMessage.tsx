@@ -57,14 +57,14 @@ export default function ImageMessage({ url, w, h, allImages, imageIndex = 0 }: I
     <ImgBox
       style={{ width: dw, height: dh }}
       onClick={handleClick}
-      title="点击查看大图"
+      title="Haz clic para ver la imagen completa"
       role="button"
-      aria-label="查看大图"
+      aria-label="Ver imagen completa"
     >
       {!error ? (
-        <ImgEl src={url} alt="[图片]" loading="lazy" onError={()=>setError(true)} />
+        <ImgEl src={url} alt="[Imagen]" loading="lazy" onError={()=>setError(true)} />
       ) : (
-        <div style={{width:'100%',height:'100%',display:'grid',placeItems:'center', color:'#9ca3af', fontSize:12}}>图片加载失败</div>
+        <div style={{width:'100%',height:'100%',display:'grid',placeItems:'center', color:'#9ca3af', fontSize:12}}>No se pudo cargar la imagen</div>
       )}
     </ImgBox>
   )

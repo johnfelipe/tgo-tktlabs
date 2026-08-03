@@ -52,7 +52,7 @@ export const useStoreAuthStore = create<StoreAuthState>()(
         } catch (error: any) {
           set({
             isLoading: false,
-            error: error.response?.data?.detail || '登录失败',
+            error: error.response?.data?.detail || 'Error de inicio de sesión',
           });
           throw error;
         }
@@ -72,7 +72,7 @@ export const useStoreAuthStore = create<StoreAuthState>()(
         } catch (error: any) {
           set({
             isLoading: false,
-            error: error.response?.data?.detail || '授权码交换失败',
+            error: error.response?.data?.detail || 'Intercambio de código de autorización fallido',
           });
           throw error;
         }

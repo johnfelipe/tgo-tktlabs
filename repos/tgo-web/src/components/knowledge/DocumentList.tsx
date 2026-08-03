@@ -245,7 +245,7 @@ export const DocumentList: React.FC<DocumentListProps> = ({
                     onClick={() => onDownload(doc.id)}
                     disabled={downloadingFiles.has(doc.id)}
                     className="p-1.5 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/30 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                    title={downloadingFiles.has(doc.id) ? '下载中...' : '下载文件'}
+                    title={downloadingFiles.has(doc.id) ? 'Descargando...' : 'Descargar archivo'}
                   >
                     {downloadingFiles.has(doc.id) ? (
                       <Loader className="w-4 h-4 animate-spin" />
@@ -257,7 +257,7 @@ export const DocumentList: React.FC<DocumentListProps> = ({
                     onClick={() => onDelete(doc.id)}
                     disabled={deletingFiles.has(doc.id)}
                     className="p-1.5 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                    title={deletingFiles.has(doc.id) ? '删除中...' : '删除文件'}
+                    title={deletingFiles.has(doc.id) ? 'Eliminando...' : 'Eliminar archivo'}
                   >
                     {deletingFiles.has(doc.id) ? (
                       <Loader className="w-4 h-4 animate-spin" />

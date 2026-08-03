@@ -44,11 +44,11 @@ interface NodePaletteProps {
 }
 
 const CATEGORIES = [
-  { id: 'trigger', label: 'workflow.categories.trigger', defaultLabel: '触发节点', color: 'bg-green-500', icon: Play },
-  { id: 'ai', label: 'workflow.categories.ai', defaultLabel: 'AI 能力', color: 'bg-blue-500', icon: Bot },
-  { id: 'logic', label: 'workflow.categories.logic', defaultLabel: '逻辑控制', color: 'bg-purple-500', icon: GitMerge },
-  { id: 'external', label: 'workflow.categories.external', defaultLabel: '外部集成', color: 'bg-orange-500', icon: Globe },
-  { id: 'output', label: 'workflow.categories.output', defaultLabel: '输出', color: 'bg-indigo-500', icon: MessageSquare },
+  { id: 'trigger', label: 'workflow.categories.trigger', defaultLabel: 'Nodo disparador', color: 'bg-green-500', icon: Play },
+  { id: 'ai', label: 'workflow.categories.ai', defaultLabel: 'Capacidades de AI', color: 'bg-blue-500', icon: Bot },
+  { id: 'logic', label: 'workflow.categories.logic', defaultLabel: 'Control lógico', color: 'bg-purple-500', icon: GitMerge },
+  { id: 'external', label: 'workflow.categories.external', defaultLabel: 'Integración externa', color: 'bg-orange-500', icon: Globe },
+  { id: 'output', label: 'workflow.categories.output', defaultLabel: 'Salida', color: 'bg-indigo-500', icon: MessageSquare },
 ] as const;
 
 const NodePalette: React.FC<NodePaletteProps> = ({ isCollapsed, onToggleCollapse }) => {

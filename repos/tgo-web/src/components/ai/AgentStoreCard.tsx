@@ -53,7 +53,7 @@ const AgentStoreCard: React.FC<AgentStoreCardProps> = ({ agent, onClick, onInsta
 
       {/* Description */}
       <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 h-10 mb-4 leading-relaxed">
-        {description || '暂无描述'}
+        {description || 'Sin descripción'}
       </p>
 
       {/* Footer / Actions */}
