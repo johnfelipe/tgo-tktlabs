@@ -7,7 +7,7 @@ import BaseApiService from './base/BaseApiService';
 import type { PaginationMetadata } from '@/types';
 
 // Local type copies to avoid circular imports
-export type ProviderKind = 'openai' | 'azure' | 'qwen' | 'moonshot' | 'deepseek' | 'baichuan' | 'ollama' | 'custom';
+export type ProviderKind = 'openai' | 'openrouter' | 'azure' | 'qwen' | 'moonshot' | 'deepseek' | 'baichuan' | 'ollama' | 'custom';
 export interface ProviderParams {
   azure?: { deployment?: string; resource?: string; apiVersion?: string };
   [key: string]: any;
@@ -216,7 +216,7 @@ export class AIProvidersApiService extends BaseApiService {
     switch (kind) {
       case 'azure': return 'azure_openai';
       case 'qwen': return 'dashscope';
-      default: return kind; // openai, moonshot, deepseek, baichuan, ollama, custom
+      default: return kind; // openai, openrouter, moonshot, deepseek, baichuan, ollama, custom
     }
   }
   static providerKeyToKind(key: string): ProviderKind {
@@ -224,6 +224,7 @@ export class AIProvidersApiService extends BaseApiService {
       case 'azure_openai': return 'azure';
       case 'dashscope': return 'qwen';
       case 'openai': return 'openai';
+      case 'openrouter': return 'openrouter';
       case 'moonshot': return 'moonshot';
       case 'deepseek': return 'deepseek';
       case 'baichuan': return 'baichuan';

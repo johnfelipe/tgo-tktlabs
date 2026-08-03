@@ -39,6 +39,7 @@ const ProviderConfigModal: React.FC<ProviderConfigModalProps> = ({ isOpen, onClo
 
   const providerOptions: Array<{ value: ProviderKind; label: string; hint?: string }> = useMemo(() => [
     { value: 'openai', label: t('settings.providers.provider.openai', 'OpenAI'), hint: 'https://api.openai.com/v1' },
+    { value: 'openrouter', label: t('settings.providers.provider.openrouter', 'OpenRouter'), hint: 'https://openrouter.ai/api/v1' },
     { value: 'azure', label: t('settings.providers.provider.azure', 'Azure OpenAI'), hint: 'https://{resource}.openai.azure.com' },
     { value: 'qwen', label: t('settings.providers.provider.qwen', '通义千问 (DashScope)'), hint: 'https://dashscope.aliyuncs.com/compatible-mode/v1' },
     { value: 'moonshot', label: t('settings.providers.provider.moonshot', '月之暗面 (Kimi)'), hint: 'https://api.moonshot.cn/v1' },

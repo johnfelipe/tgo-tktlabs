@@ -562,6 +562,7 @@
       "baseUrl": "URL Base",
       "provider": {
         "openai": "OpenAI",
+        "openrouter": "OpenRouter",
         "azure": "Azure OpenAI",
         "qwen": "Qwen (DashScope)",
         "moonshot": "Moonshot (Kimi)",

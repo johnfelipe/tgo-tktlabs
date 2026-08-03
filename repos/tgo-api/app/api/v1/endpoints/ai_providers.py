@@ -80,6 +80,21 @@ def _normalize_base(base: Optional[str]) -> Optional[str]:
     return base.rstrip("/")
 
 
+# Providers whose API base URL can be inferred so callers may omit it.
+_DEFAULT_BASE_URLS: dict[str, str] = {
+    "openrouter": "https://openrouter.ai/api/v1",
+    "open_router": "https://openrouter.ai/api/v1",
+}
+
+
+def _resolve_base_url(provider: str, api_base_url: Optional[str]) -> Optional[str]:
+    """Return the API base URL, filling in a known default when omitted."""
+    normalized = _normalize_base(api_base_url)
+    if normalized:
+        return normalized
+    return _DEFAULT_BASE_URLS.get((provider or "").lower())
+
+
 def _build_test_request(item: AIProvider, plain_key: Optional[str]) -> tuple[str, str, dict]:
     """Return (method, url, headers) for a lightweight connectivity check.
     Raises HTTPException on unsupported provider or missing key.
@@ -93,6 +108,12 @@ def _build_test_request(item: AIProvider, plain_key: Optional[str]) -> tuple[str
 
     if provider in ("openai", "gpt", "gpt-4o", "oai"):
         base = base or "https://api.openai.com/v1"
+        url = f"{base}/models"
+        headers = {"Authorization": f"Bearer {plain_key}"}
+        return ("GET", url, headers)
+
+    if provider in ("openrouter", "open_router"):
+        base = base or "https://openrouter.ai/api/v1"
         url = f"{base}/models"
         headers = {"Authorization": f"Bearer {plain_key}"}
         return ("GET", url, headers)
@@ -136,14 +157,22 @@ def _parse_remote_models(provider: str, data: Any) -> list[RemoteModelInfo]:
     models = []
     p = provider.lower()
 
-    if p in ("openai", "gpt", "gpt-4o", "oai", "dashscope", "ali", "aliyun") or "compatible" in p:
+    if (
+        p in ("openai", "gpt", "gpt-4o", "oai", "dashscope", "ali", "aliyun", "openrouter", "open_router")
+        or "compatible" in p
+    ):
         # OpenAI style: { "data": [ { "id": "...", ... } ] }
         if isinstance(data, dict) and "data" in data:
             for m in data["data"]:
                 if isinstance(m, dict) and "id" in m:
                     mid = m["id"]
                     mtype = "embedding" if "embedding" in mid.lower() else "chat"
-                    models.append(RemoteModelInfo(id=mid, name=mid, model_type=mtype))
+                    label = m.get("name")
+                    models.append(RemoteModelInfo(
+                        id=mid,
+                        name=label if isinstance(label, str) and label else mid,
+                        model_type=mtype,
+                    ))
     
     elif p in ("anthropic", "claude"):
         # Anthropic style: { "data": [ { "id": "...", "display_name": "..." } ] }
@@ -325,7 +354,7 @@ async def create_ai_provider(
         provider=payload.provider,
         name=payload.name,
         api_key=encrypt_str(payload.api_key),
-        api_base_url=payload.api_base_url,
+        api_base_url=_resolve_base_url(payload.provider, payload.api_base_url),
         default_model=payload.default_model or (initial_model_ids[0] if initial_model_ids else None),
         config=payload.config,
         is_active=payload.is_active,

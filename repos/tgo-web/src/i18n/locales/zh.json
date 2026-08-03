@@ -81,9 +81,9 @@
     "respondDirectlyDesc": "跳过成员回答汇总，直接返回回答",
     "markdown": "Markdown 格式",
     "markdownDesc": "使用 Markdown 格式化输出内容",
-      "addDatetime": "添加日期时间",
-      "addDatetimeDesc": "在上下文中包含当前日期时间",
-      "numHistoryRuns": "历史会话轮数",
+    "addDatetime": "添加日期时间",
+    "addDatetimeDesc": "在上下文中包含当前日期时间",
+    "numHistoryRuns": "历史会话轮数",
     "toolCallLimit": "工具调用限制",
     "skillsEnabled": "启用技能",
     "skillsEnabledDesc": "允许 AI 员工自动发现并使用项目中的专业技能"
@@ -542,6 +542,7 @@
       "baseUrl": "Base URL",
       "provider": {
         "openai": "OpenAI",
+        "openrouter": "OpenRouter",
         "azure": "Azure OpenAI",
         "qwen": "通义千问 (DashScope)",
         "moonshot": "月之暗面 (Kimi)",

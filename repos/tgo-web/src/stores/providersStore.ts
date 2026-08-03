@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import AIProvidersApiService, { type AIProviderResponseDTO } from '@/services/aiProvidersApi';
 
-export type ProviderKind = 'openai' | 'azure' | 'qwen' | 'moonshot' | 'deepseek' | 'baichuan' | 'ollama' | 'custom';
+export type ProviderKind = 'openai' | 'openrouter' | 'azure' | 'qwen' | 'moonshot' | 'deepseek' | 'baichuan' | 'ollama' | 'custom';
 
 export interface AzureExtra {
   deployment?: string;
