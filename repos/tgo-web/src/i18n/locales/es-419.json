@@ -3728,6 +3728,26 @@
       "first_chat": {
         "title": "Comenzar a chatear",
         "description": "Enviar un mensaje y experimentar respuestas impulsadas por IA"
+      },
+      "setup_ai_provider": {
+        "title": "Configurar proveedor de IA",
+        "description": "Configura al menos un proveedor de IA (por ejemplo, OpenAI, Anthropic)"
+      },
+      "set_default_models": {
+        "title": "Modelos predeterminados",
+        "description": "Configura los modelos predeterminados de chat e incrustación en los ajustes del proyecto"
+      },
+      "create_knowledge_base": {
+        "title": "Crear base de conocimiento",
+        "description": "Crea una colección RAG (archivo, sitio web o tipo preguntas y respuestas)"
+      },
+      "create_agent": {
+        "title": "Crear agente de IA",
+        "description": "Crea un agente de IA"
+      },
+      "start_chat": {
+        "title": "Empezar a chatear",
+        "description": "Configura una [plataforma externa](/platforms) para habilitar el chat o conversa directamente con los [agentes](/ai/agents)"
       }
     },
     "tasks": {
