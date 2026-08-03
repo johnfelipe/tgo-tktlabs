@@ -115,6 +115,11 @@ async def check_all_steps(
     """
     step_1 = await check_step_1_ai_provider(db, project_id)
     step_2 = await check_step_2_default_models(db, project_id)
+
+    # Release the pooled connection before the downstream service checks,
+    # which may take seconds while RAG/AI are under load.
+    db.rollback()
+
     step_3 = await check_step_3_rag_collection(project_id)
     step_4 = await check_step_4_agent_created(project_id)
     # Step 5 is 'notify' type, no actual completion check needed

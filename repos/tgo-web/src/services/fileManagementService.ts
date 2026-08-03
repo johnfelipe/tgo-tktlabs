@@ -9,6 +9,9 @@ import { uploadFileWithProgress, type UploadProgressEvent } from './fileUploadSe
 import type { KnowledgeFile } from '@/types';
 import { useOnboardingStore } from '@/stores/onboardingStore';
 
+/** Uploads sent at the same time when several files are selected at once. */
+const MAX_CONCURRENT_UPLOADS = 3;
+
 export interface FileUploadProgress {
   fileId: string;
   fileName: string;
@@ -201,9 +204,26 @@ export class FileManagementService {
       language?: string;
     }
   ): Promise<{ successCount: number; failedCount: number; errors: Error[] }> {
-    const uploadPromises = files.map(file => this.uploadFile(file, metadata));
+    const queue = [...files];
+    const results: PromiseSettledResult<void>[] = [];
 
-    const results = await Promise.allSettled(uploadPromises);
+    const worker = async (): Promise<void> => {
+      for (let file = queue.shift(); file; file = queue.shift()) {
+        try {
+          await this.uploadFile(file, metadata);
+          results.push({ status: 'fulfilled', value: undefined });
+        } catch (error) {
+          results.push({ status: 'rejected', reason: error });
+        }
+      }
+    };
+
+    await Promise.all(
+      Array.from(
+        { length: Math.min(MAX_CONCURRENT_UPLOADS, files.length) },
+        () => worker()
+      )
+    );
 
     const errors: Error[] = [];
     let successCount = 0;

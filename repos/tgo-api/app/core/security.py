@@ -11,7 +11,7 @@ from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 
 from app.core.config import settings
-from app.core.database import get_db
+from app.core.database import SessionLocal, get_db
 from app.core.logging import get_logger
 from app.models import Project, Staff, Permission, RolePermission, ProjectRolePermission
 
@@ -194,7 +194,6 @@ def generate_api_key() -> str:
 
 async def get_authenticated_project(
     credentials: HTTPAuthorizationCredentials = Depends(HTTPBearer(auto_error=True)),
-    db: Session = Depends(get_db),
 ) -> tuple[Project, str]:
     """
     Get authenticated project via JWT token.
@@ -240,38 +239,44 @@ async def get_authenticated_project(
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    # Extract project_id from JWT claims
-    project_id = payload.get("project_id")
-    if not project_id:
-        # Fallback: get project_id from user's project association
-        username = payload.get("sub")
-        if username:
-            user = db.query(Staff).filter(
-                Staff.username == username,
-                Staff.deleted_at.is_(None)
-            ).first()
-            if user:
-                project_id = user.project_id
+    # Own a short-lived session so the pooled connection is released before
+    # the endpoint proxies the request to a downstream service.
+    with SessionLocal() as db:
+        # Extract project_id from JWT claims
+        project_id = payload.get("project_id")
+        if not project_id:
+            # Fallback: get project_id from user's project association
+            username = payload.get("sub")
+            if username:
+                user = db.query(Staff).filter(
+                    Staff.username == username,
+                    Staff.deleted_at.is_(None)
+                ).first()
+                if user:
+                    project_id = user.project_id
 
-    if not project_id:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="No project information in JWT token",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
+        if not project_id:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="No project information in JWT token",
+                headers={"WWW-Authenticate": "Bearer"},
+            )
 
-    # Get project from database
-    project = get_project_by_id(db, project_id)
-    if not project:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Project not found",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
+        # Get project from database
+        project = get_project_by_id(db, project_id)
+        if not project:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Project not found",
+                headers={"WWW-Authenticate": "Bearer"},
+            )
 
-    # Use project's API key for forwarding to external services
-    api_key_for_forwarding = project.api_key
-    logger.debug(f"Authenticated via JWT for project: {project.id}")
+        # Use project's API key for forwarding to external services
+        api_key_for_forwarding = project.api_key
+        logger.debug(f"Authenticated via JWT for project: {project.id}")
+
+        # Detach before closing so loaded attributes stay readable
+        db.expunge(project)
 
     return project, api_key_for_forwarding
 
