@@ -1857,7 +1857,7 @@
     },
     "upload": {
       "title": "Arrastra archivos aquí o haz clic para cargar",
-      "supportedFormats": "Soporta archivos PDF, Word, Excel, PowerPoint, Texto, Markdown, HTML",
+      "supportedFormats": "Formatos admitidos: PDF, Word, Excel (.xlsx), CSV, texto, Markdown y HTML",
       "selectFiles": "Seleccionar archivos",
       "uploading": "Cargando...",
       "uploadProgress": "Progreso de carga",

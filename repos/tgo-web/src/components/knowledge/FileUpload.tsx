@@ -136,7 +136,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
       }
 
       // Check file type
-      const allowedTypes = ['.pdf', '.doc', '.docx', '.txt', '.xlsx', '.xls', '.ppt', '.pptx', '.md', '.markdown', '.html', '.htm'];
+      const allowedTypes = ['.pdf', '.doc', '.docx', '.txt', '.csv', '.xlsx', '.md', '.markdown', '.html', '.htm'];
       const fileExtension = '.' + file.name.split('.').pop()?.toLowerCase();
       if (!allowedTypes.includes(fileExtension)) {
         alert(`${file.name}: ${t('knowledge.upload.unsupportedFormat')}`);
@@ -215,14 +215,14 @@ export const FileUpload: React.FC<FileUploadProps> = ({
               {t('knowledge.upload.title', '点击或拖拽上传文件')}
             </h3>
             <p className={`text-sm mb-4 ${isUploadDisabled ? 'text-gray-400 dark:text-gray-600' : 'text-gray-500 dark:text-gray-400'}`}>
-              {t('knowledge.upload.supportedFormats', '支持 PDF, Word, Excel, PowerPoint, Text, Markdown 等格式')}
+              {t('knowledge.upload.supportedFormats', 'Formatos admitidos: PDF, Word, Excel (.xlsx), CSV, texto, Markdown y HTML')}
             </p>
 
             <input
               ref={fileInputRef}
               type="file"
               multiple
-              accept=".pdf,.doc,.docx,.txt,.xlsx,.xls,.ppt,.pptx,.md,.markdown,.html,.htm"
+              accept=".pdf,.doc,.docx,.txt,.csv,.xlsx,.md,.markdown,.html,.htm"
               onChange={handleFileSelect}
               className="hidden"
               disabled={isUploadDisabled}

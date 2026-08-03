@@ -15,6 +15,7 @@ Supported File Types:
 - PDF: PDFMinerParser for reliable PDF text extraction
 - Text/Markdown: TextParser for plain text and markdown files
 - Word Documents: Docx2txtLoader for .docx files (direct loader, not via GenericLoader)
+- Spreadsheets: SpreadsheetLoader for .xlsx workbooks (one document per sheet)
 - HTML: BS4HTMLParser for HTML content extraction
 - Other: MimeTypeBasedParser with TextParser fallback
 """
@@ -29,6 +30,7 @@ from langchain_community.document_loaders.generic import GenericLoader
 
 from ..logging_config import get_logger
 from .document_processing_errors import DocumentProcessingError, ProcessingStep
+from .spreadsheet_loader import XLSX_CONTENT_TYPE, SpreadsheetLoader
 from .document_processing_types import (
     DocumentLoader as DocumentLoaderProtocol,
     ParserInfo,
@@ -67,6 +69,11 @@ def get_document_loader(file_path: str, content_type: str, file_id: str) -> Unio
             "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         ]:
             return _get_word_document_loader(file_path, content_type, file_id)
+
+        # Spreadsheets are read sheet by sheet instead of through GenericLoader
+        if content_type == XLSX_CONTENT_TYPE:
+            logger.debug(f"Using SpreadsheetLoader for .xlsx file {file_id}: {file_name}")
+            return SpreadsheetLoader(file_path)
         
         # For other file types, use GenericLoader with appropriate parser
         file_dir = os.path.dirname(file_path)
@@ -183,9 +190,9 @@ def _get_parser_for_content_type(content_type: str, file_id: str) -> Any:
             logger.debug(f"Selected PDFMinerParser for PDF file {file_id}")
             return PDFMinerParser()
             
-        elif content_type in ["text/plain", "text/markdown"]:
-            # Use TextParser for text and markdown files - handles UTF-8 encoding
-            logger.debug(f"Selected TextParser for text/markdown file {file_id}")
+        elif content_type in ["text/plain", "text/markdown", "text/csv"]:
+            # Use TextParser for text, markdown and CSV files - handles UTF-8 encoding
+            logger.debug(f"Selected TextParser for text/markdown/csv file {file_id}")
             return TextParser()
             
         elif content_type in [
@@ -259,10 +266,15 @@ def get_parser_info(content_type: str) -> ParserInfo:
             parser="PDFMinerParser",
             description="Specialized PDF text extraction with reliable formatting"
         )
-    elif content_type in ["text/plain", "text/markdown"]:
+    elif content_type in ["text/plain", "text/markdown", "text/csv"]:
         return ParserInfo(
             parser="TextParser",
             description="Plain text parser with UTF-8 encoding support"
+        )
+    elif content_type == XLSX_CONTENT_TYPE:
+        return ParserInfo(
+            parser="SpreadsheetLoader",
+            description="Excel workbook parser producing one text document per sheet"
         )
     elif content_type in [
         "application/msword",

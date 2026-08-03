@@ -41,6 +41,7 @@ python-magic = "^0.4.27"
 # Document processing
 unstructured = {extras = ["docx"], version = "^0.18.13"}
 docx2txt = "^0.8"  # Fallback for Word document loading
+openpyxl = "^3.1.5"  # .xlsx spreadsheet loading
 # HTTP client
 httpx = {extras = ["socks"], version = "^0.28.1"}
 socksio = "^1.0.0"
