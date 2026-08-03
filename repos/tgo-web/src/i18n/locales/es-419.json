@@ -2385,7 +2385,7 @@
         "sessionClosedEmpty": "Sesión finalizada.",
         "memoryCleared": "Memoria borrada, AI reiniciará la conversación"
       },
-      "aiThinking": "AI está pensando...",
+      "aiThinking": "La IA está pensando...",
       "aiReply": "[Respuesta AI]"
     },
     "input": {

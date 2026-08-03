@@ -2227,7 +2227,8 @@
         "sessionClosed": "Session ended. Agent {0} has completed the service.",
         "sessionClosedEmpty": "Session ended.",
         "memoryCleared": "Memory cleared, AI will restart the conversation"
-      }
+      },
+      "aiThinking": "AI is thinking..."
     },
     "input": {
       "placeholder": "Type a message...",

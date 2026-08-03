@@ -3103,7 +3103,8 @@
         "sessionClosed": "会话已结束。客服 {0} 已完成服务。",
         "sessionClosedEmpty": "会话已结束。",
         "memoryCleared": "记忆已清除，AI 将重新开始对话"
-      }
+      },
+      "aiThinking": "AI 正在思考..."
     },
     "input": {
       "placeholder": "输入消息...",

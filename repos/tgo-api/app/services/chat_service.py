@@ -171,7 +171,7 @@ async def forward_ai_event_to_wukongim(
                 channel_id=channel_id,
                 channel_type=channel_type,
                 client_msg_no=client_msg_no,
-                payload={"type": 100, "content": "AI 正在思考中..."},
+                payload={"type": 100, "content": "La IA está pensando..."},
             )
 
         elif event_type == "agent_content_chunk":
