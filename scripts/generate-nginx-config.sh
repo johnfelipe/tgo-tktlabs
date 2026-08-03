@@ -169,6 +169,12 @@ else
         proxy_redirect off;
     }
 
+    # Redirect /widget (no trailing slash) to /widget/ so the rewrite below
+    # never produces an empty URI
+    location = /widget {
+        return 302 /widget/$is_args$args;
+    }
+
     # Widget service (by domain or /widget path)
     # Match /widget, /widget/, /widget/xxx (query strings are handled automatically by nginx)
     location ~ ^/widget(/.*)?$ {
@@ -418,6 +424,12 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_redirect off;
+    }
+
+    # Redirect /widget (no trailing slash) to /widget/ so the rewrite below
+    # never produces an empty URI
+    location = /widget {
+        return 302 /widget/$is_args$args;
     }
 
     # Widget service (by /widget path)

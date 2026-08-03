@@ -1032,7 +1032,7 @@ const LLMNodeConfig: React.FC<{
               nodeId={nodeId}
               nodes={nodes}
               edges={edges}
-              placeholder="You are a helpful assistant..."
+              placeholder="Eres un asistente útil..."
               inputClassName="text-xs"
             />
           </div>
@@ -1047,7 +1047,7 @@ const LLMNodeConfig: React.FC<{
               nodeId={nodeId}
               nodes={nodes}
               edges={edges}
-              placeholder="Enter instructions for the LLM..."
+              placeholder="Escribe las instrucciones para el LLM..."
               inputClassName="font-medium text-xs"
             />
           </div>
