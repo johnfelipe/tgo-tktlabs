@@ -234,7 +234,12 @@ const AddModelModal: React.FC<AddModelModalProps> = ({ isOpen, onClose, provider
                       <div className="grid grid-cols-1 gap-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
                         {remoteModels
                           .filter(m => m.model_type === modelType)
-                          .filter(m => !modelId.trim() || m.id.toLowerCase().includes(modelId.toLowerCase()))
+                          .filter(m => {
+                            const query = modelId.trim().toLowerCase();
+                            if (!query) return true;
+                            return m.id.toLowerCase().includes(query)
+                              || (m.name || '').toLowerCase().includes(query);
+                          })
                           .map(m => {
                             const isSelected = selectedModels.some(sm => sm.id === m.id);
                             return (
@@ -247,8 +252,13 @@ const AddModelModal: React.FC<AddModelModalProps> = ({ isOpen, onClose, provider
                                     : 'bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700'
                                 }`}
                               >
-                                <span>{m.id}</span>
-                                {isSelected && <FiCheck className="w-4 h-4" />}
+                                <span className="min-w-0">
+                                  <span className="block truncate">{m.name || m.id}</span>
+                                  {m.name && m.name !== m.id && (
+                                    <span className="block text-[10px] font-medium opacity-70 truncate">{m.id}</span>
+                                  )}
+                                </span>
+                                {isSelected && <FiCheck className="w-4 h-4 flex-shrink-0" />}
                               </button>
                             );
                           })}
