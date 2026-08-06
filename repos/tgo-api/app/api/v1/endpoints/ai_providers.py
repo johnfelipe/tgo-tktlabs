@@ -95,6 +95,19 @@ def _resolve_base_url(provider: str, api_base_url: Optional[str]) -> Optional[st
     return _DEFAULT_BASE_URLS.get((provider or "").lower())
 
 
+AZURE_DEFAULT_API_VERSION = "2025-04-01-preview"
+
+
+def _azure_resource_root(base: str) -> str:
+    """Strip any /openai[/v1] suffix so only the resource endpoint remains."""
+    root = base.rstrip("/")
+    for suffix in ("/openai/v1", "/openai"):
+        if root.endswith(suffix):
+            root = root[: -len(suffix)]
+            break
+    return root.rstrip("/")
+
+
 def _build_test_request(item: AIProvider, plain_key: Optional[str]) -> tuple[str, str, dict]:
     """Return (method, url, headers) for a lightweight connectivity check.
     Raises HTTPException on unsupported provider or missing key.
@@ -138,9 +151,9 @@ def _build_test_request(item: AIProvider, plain_key: Optional[str]) -> tuple[str
     if provider in ("azure_openai", "azure-openai", "azure"):
         if not base:
             raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="api_base_url is required for Azure OpenAI")
-        root = base if "/openai" in base else f"{base}/openai"
-        api_version = (item.config or {}).get("api_version") or "2023-12-01-preview"
-        url = f"{root}/deployments?api-version={api_version}"
+        root = _azure_resource_root(base)
+        api_version = (item.config or {}).get("api_version") or AZURE_DEFAULT_API_VERSION
+        url = f"{root}/openai/models?api-version={api_version}"
         headers = {"api-key": plain_key}
         return ("GET", url, headers)
 
@@ -186,7 +199,25 @@ def _parse_remote_models(provider: str, data: Any) -> list[RemoteModelInfo]:
                     ))
     
     elif p in ("azure_openai", "azure-openai", "azure"):
-        # Azure style: { "value": [ { "id": "...", "model": "..." } ] }
+        # Model catalog style: { "data": [ { "id": "...", "capabilities": {...} } ] }
+        if isinstance(data, dict) and isinstance(data.get("data"), list):
+            for m in data["data"]:
+                if not isinstance(m, dict) or not m.get("id"):
+                    continue
+                if m.get("lifecycle_status") == "deprecated":
+                    continue
+                caps = m.get("capabilities") or {}
+                if not caps.get("inference", True):
+                    continue
+                if caps.get("embeddings"):
+                    mtype = "embedding"
+                elif caps.get("chat_completion"):
+                    mtype = "chat"
+                else:
+                    continue
+                models.append(RemoteModelInfo(id=m["id"], name=m["id"], model_type=mtype))
+
+        # Deployment style: { "value": [ { "id": "...", "model": "..." } ] }
         if isinstance(data, dict) and "value" in data:
             for m in data["value"]:
                 # Azure deployments often use 'id' or 'name' as the deployment name

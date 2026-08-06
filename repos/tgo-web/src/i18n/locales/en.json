@@ -586,7 +586,7 @@
         "azure": {
           "deployment": "Deployment name in Azure, different from model ID",
           "resource": "Azure resource name, e.g. your OpenAI service resource",
-          "apiVersion": "Azure OpenAI API version, e.g. 2024-02-15-preview"
+          "apiVersion": "Azure OpenAI API version, e.g. 2025-04-01-preview"
         },
         "modelsCustom": "If the list is empty or you can't find the model you need, you can manually enter a custom model name",
         "embeddingModel": "Enter the embedding model name, e.g. text-embedding-3-small, text-embedding-ada-002"

@@ -7,7 +7,7 @@ export type ProviderKind = 'openai' | 'openrouter' | 'azure' | 'qwen' | 'moonsho
 export interface AzureExtra {
   deployment?: string;
   resource?: string;
-  apiVersion?: string; // e.g. 2024-02-15-preview
+  apiVersion?: string; // e.g. 2025-04-01-preview
 }
 
 export interface ProviderParams {

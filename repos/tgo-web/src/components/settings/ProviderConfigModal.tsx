@@ -23,7 +23,7 @@ const emptyDraft = (defaultLabel: string): Draft => ({
   models: [],
   defaultModel: '',
   enabled: true,
-  params: { azure: { apiVersion: '2024-02-15-preview' } },
+  params: { azure: { apiVersion: '2025-04-01-preview' } },
 });
 
 const ProviderConfigModal: React.FC<ProviderConfigModalProps> = ({ isOpen, onClose, editingProvider }) => {

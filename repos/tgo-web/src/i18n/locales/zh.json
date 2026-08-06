@@ -586,7 +586,7 @@
         "azure": {
           "deployment": "Azure 中的部署名称，区别于模型 ID",
           "resource": "Azure 资源名称，例如 OpenAI 服务资源名",
-          "apiVersion": "Azure OpenAI API 版本号，如 2024-02-15-preview"
+          "apiVersion": "Azure OpenAI API 版本号，如 2025-04-01-preview"
         },
         "modelsCustom": "如果列表为空或未找到所需模型，您可以手动输入自定义模型名称",
         "embeddingModel": "输入嵌入模型的名称，如 text-embedding-3-small、text-embedding-ada-002"

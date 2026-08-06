@@ -27,6 +27,20 @@ def _map_kind_and_vendor(provider: str, config: Optional[dict] = None) -> tuple[
     return "openai_compatible", vendor_cfg or p or None
 
 
+def _resolve_base_url(provider: str, base_url: Optional[str]) -> Optional[str]:
+    """Azure resource endpoints need the /openai/v1 suffix to be OpenAI-compatible."""
+    if not base_url:
+        return base_url
+    if (provider or "").lower() not in {"azure_openai", "azure-openai", "azure"}:
+        return base_url
+    root = base_url.rstrip("/")
+    for suffix in ("/openai/v1", "/openai"):
+        if root.endswith(suffix):
+            root = root[: -len(suffix)]
+            break
+    return f"{root.rstrip('/')}/openai/v1"
+
+
 def _provider_to_upsert(item: AIProvider) -> dict[str, Any]:
     provider_kind, vendor = _map_kind_and_vendor(item.provider, item.config)
     org = None
@@ -60,7 +74,7 @@ def _provider_to_upsert(item: AIProvider) -> dict[str, Any]:
         "id": str(item.id),  # required by tgo-ai LLMProviderUpsert schema
         "provider_kind": provider_kind,
         "vendor": vendor,
-        "api_base_url": item.api_base_url,
+        "api_base_url": _resolve_base_url(item.provider, item.api_base_url),
         "default_model": item.default_model,
         "organization": org,
         "timeout": timeout,
