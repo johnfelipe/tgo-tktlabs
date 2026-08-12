@@ -193,6 +193,7 @@ def _convert_agent(
                         api_base_url=getattr(provider, "api_base_url", None),
                         api_key=api_key,
                         organization=getattr(provider, "organization", None),
+                        azure_deployment=getattr(provider, "azure_deployment", None),
                         timeout=getattr(provider, "timeout", None),
                     )
         except Exception as e:

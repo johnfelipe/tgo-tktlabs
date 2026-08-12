@@ -18,7 +18,9 @@ from openai import AsyncOpenAI
 from sqlalchemy import and_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.azure_openai import azure_deployment_or_model
 from app.core.logging import get_logger
+from app.core.model_params import requires_max_completion_tokens
 from app.exceptions import TGOAIServiceException
 from app.models.llm_provider import LLMProvider
 from app.models.tool import Tool
@@ -578,7 +580,7 @@ class ChatService:
         """Handle OpenAI/OpenAI-compatible chat completion."""
         try:
             client = self._create_openai_client(provider)
-            params = self._build_openai_params(request)
+            params = self._build_openai_params(request, provider)
             response = await client.chat.completions.create(**params)
 
             return ChatCompletionResponse(
@@ -619,7 +621,7 @@ class ChatService:
         """Handle OpenAI/OpenAI-compatible streaming chat completion."""
         try:
             client = self._create_openai_client(provider)
-            params = self._build_openai_params(request)
+            params = self._build_openai_params(request, provider)
             params["stream"] = True
 
             stream = await client.chat.completions.create(**params)
@@ -683,19 +685,33 @@ class ChatService:
             ))
         return result if result else None
 
-    def _build_openai_params(self, request: ChatCompletionRequest) -> Dict[str, Any]:
+    def _build_openai_params(
+        self,
+        request: ChatCompletionRequest,
+        provider: Optional[LLMProvider] = None,
+    ) -> Dict[str, Any]:
         """Build OpenAI API parameters from request."""
+        model = azure_deployment_or_model(
+            getattr(provider, "vendor", None),
+            getattr(provider, "azure_deployment", None),
+            request.model,
+        )
         params: Dict[str, Any] = {
-            "model": request.model,
+            "model": model,
             "messages": [self._format_openai_message(msg) for msg in request.messages],
         }
+        max_tokens_key = (
+            "max_completion_tokens"
+            if requires_max_completion_tokens(model, request.model)
+            else "max_tokens"
+        )
 
         # Map optional parameters
         optional_params = {
             "temperature": request.temperature,
             "top_p": request.top_p,
             "n": request.n,
-            "max_tokens": request.max_tokens,
+            max_tokens_key: request.max_tokens,
             "stop": request.stop,
             "presence_penalty": request.presence_penalty,
             "frequency_penalty": request.frequency_penalty,

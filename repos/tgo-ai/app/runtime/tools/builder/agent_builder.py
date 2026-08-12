@@ -26,7 +26,9 @@ from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
 
 from app.config import settings
+from app.core.azure_openai import azure_deployment_or_model
 from app.core.logging import get_logger
+from app.core.model_params import requires_max_completion_tokens
 from app.models.internal import Agent as InternalAgent
 from app.models.internal import AgentTool
 from app.models.tool import Tool as ToolModel
@@ -1594,8 +1596,9 @@ class AgentBuilder:
             raise InvalidConfigurationError("max_tokens must be positive", max_tokens=config.max_tokens)
 
         provider_kind = (creds.provider_kind or "").lower()
+        model_id = azure_deployment_or_model(creds.vendor, creds.azure_deployment, model_name)
         model_kwargs = {
-            "id": model_name,
+            "id": model_id,
             "api_key": api_key,
             "temperature": config.temperature,
             "max_tokens": config.max_tokens,
@@ -1603,6 +1606,8 @@ class AgentBuilder:
 
         try:
             if provider_kind in {"openai", "openai_compatible"}:
+                if requires_max_completion_tokens(model_id, model_name):
+                    model_kwargs["max_completion_tokens"] = model_kwargs.pop("max_tokens")
                 model_kwargs.update({
                     "role_map": {"system": "system", "user": "user", "assistant": "assistant", "tool": "tool", "model": "assistant"},
                     "base_url": creds.api_base_url,

@@ -30,6 +30,7 @@ class LLMProvider(BaseModel):
       - api_base_url: optional custom base URL (for compatible vendors)
       - api_key: API key secret (plain stored; do NOT log it)
       - organization: optional org/tenant id for some providers (OpenAI)
+      - azure_deployment: Azure OpenAI deployment name used instead of the model id
       - timeout: optional request timeout seconds
       - is_active: whether usable
       - synced_at: last sync timestamp from tgo-api
@@ -58,6 +59,7 @@ class LLMProvider(BaseModel):
     api_key: Mapped[Optional[str]] = mapped_column(String(500), nullable=True, comment="API key (do NOT log)")
     default_model: Mapped[Optional[str]] = mapped_column(String(100), nullable=True, comment="Default model identifier (e.g., gpt-4o, qwen-plus)")
     organization: Mapped[Optional[str]] = mapped_column(String(100), nullable=True, comment="Organization/tenant id")
+    azure_deployment: Mapped[Optional[str]] = mapped_column(String(100), nullable=True, comment="Azure OpenAI deployment name (replaces the model id on requests)")
     timeout: Mapped[Optional[float]] = mapped_column(Float, nullable=True, comment="Request timeout seconds")
 
     is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True, comment="Whether this provider is active")

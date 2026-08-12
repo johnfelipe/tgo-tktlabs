@@ -26,6 +26,7 @@ class LLMProviderBase(BaseModel):
     api_base_url: Optional[str] = Field(None, description="Custom API base URL for compatible vendors")
     default_model: Optional[str] = Field(None, description="Default model identifier (e.g., gpt-4o, qwen-plus)")
     organization: Optional[str] = Field(None, description="Organization/Tenant identifier")
+    azure_deployment: Optional[str] = Field(None, description="Azure OpenAI deployment name, used instead of the model id")
     timeout: Optional[float] = Field(None, description="Request timeout seconds")
     is_active: bool = Field(default=True, description="Whether provider is active")
 
@@ -72,6 +73,7 @@ class LLMProviderResponse(LLMProviderBase):
             api_base_url=m.api_base_url,
             default_model=m.default_model,
             organization=m.organization,
+            azure_deployment=m.azure_deployment,
             timeout=m.timeout,
             is_active=m.is_active,
             api_key_masked=mask_api_key(m.api_key),

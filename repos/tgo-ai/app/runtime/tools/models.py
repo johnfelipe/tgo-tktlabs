@@ -54,6 +54,10 @@ class LLMProviderCredentials(BaseModel):
     vendor: Optional[str] = Field(
         default=None, description="Vendor label (e.g., deepseek, openai, openrouter)"
     )
+    azure_deployment: Optional[str] = Field(
+        default=None,
+        description="Azure OpenAI deployment name, sent instead of the model id",
+    )
 
 class AgentConfig(BaseModel):
     """单个智能体的模型配置."""

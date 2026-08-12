@@ -45,9 +45,13 @@ def _provider_to_upsert(item: AIProvider) -> dict[str, Any]:
     provider_kind, vendor = _map_kind_and_vendor(item.provider, item.config)
     org = None
     timeout = None
+    azure_deployment = None
     if item.config and isinstance(item.config, dict):
         org = item.config.get("organization")
         timeout = item.config.get("timeout")
+        if (item.provider or "").lower() in {"azure_openai", "azure-openai", "azure"}:
+            deployment = item.config.get("deployment")
+            azure_deployment = str(deployment).strip() if deployment else None
     alias = (item.name or item.provider or "").strip()[:80]
     api_key_plain = decrypt_str(item.api_key) if item.api_key else None
     
@@ -77,6 +81,7 @@ def _provider_to_upsert(item: AIProvider) -> dict[str, Any]:
         "api_base_url": _resolve_base_url(item.provider, item.api_base_url),
         "default_model": item.default_model,
         "organization": org,
+        "azure_deployment": azure_deployment,
         "timeout": timeout,
         "is_active": bool(item.is_active),
         "project_id": str(item.project_id),

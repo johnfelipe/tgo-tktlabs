@@ -68,6 +68,7 @@ class LLMProviderService:
         api_key: Optional[str] = None,
         default_model: Optional[str] = None,
         organization: Optional[str] = None,
+        azure_deployment: Optional[str] = None,
         timeout: Optional[float] = None,
         is_active: bool = True,
     ) -> LLMProvider:
@@ -92,6 +93,7 @@ class LLMProviderService:
                 existing.api_key = api_key
             existing.default_model = default_model
             existing.organization = organization
+            existing.azure_deployment = azure_deployment
             existing.timeout = timeout
             existing.is_active = is_active
             existing.synced_at = now
@@ -110,6 +112,7 @@ class LLMProviderService:
             api_key=api_key,
             default_model=default_model,
             organization=organization,
+            azure_deployment=azure_deployment,
             timeout=timeout,
             is_active=is_active,
             synced_at=now,
@@ -154,6 +157,7 @@ class LLMProviderService:
                     api_key=payload.get("api_key"),
                     default_model=payload.get("default_model"),
                     organization=payload.get("organization"),
+                    azure_deployment=payload.get("azure_deployment"),
                     timeout=payload.get("timeout"),
                     is_active=payload.get("is_active", True),
                 )
