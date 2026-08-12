@@ -449,10 +449,12 @@
           transition: 'transform 300ms ease-out, opacity 200ms ease-out'
         });
 
-        // Icon/Avatar
-        if (payload.icon) {
+        // Icon/Avatar — only absolute http(s) URLs: a relative path would resolve
+        // against the host page (or file://) instead of the widget origin.
+        const iconUrl = typeof payload.icon === 'string' && /^https?:\/\//i.test(payload.icon) ? payload.icon : '';
+        if (iconUrl) {
           const icon = document.createElement('img');
-          icon.src = payload.icon;
+          icon.src = iconUrl;
           icon.alt = '';
           Object.assign(icon.style, {
             width: '32px',

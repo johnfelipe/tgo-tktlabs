@@ -6,7 +6,7 @@ import MessageList from './components/MessageList'
 import MessageInput from './components/MessageInput'
 import { ImagePreviewProvider } from './components/ImagePreview'
 import { useChatStore, usePlatformStore } from './store'
-import { resolveApiKey, resolveMode } from './utils/url'
+import { resolveApiKey, resolveMode, toAbsoluteUrl } from './utils/url'
 import { recordVisitorActivity } from './services/visitorActivity'
 import { ThemeProvider } from './contexts/ThemeContext'
 
@@ -90,7 +90,7 @@ export default function App(){
           payload: { 
             title: pConfig.widget_title || 'TKTLABS',
             body: content,
-            icon: pConfig.logo_url || undefined,
+            icon: toAbsoluteUrl(pConfig.logo_url),
             id: lastMsg.id
           } 
         }, '*')

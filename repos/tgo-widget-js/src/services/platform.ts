@@ -10,6 +10,7 @@ export type PlatformConfig = {
 export type PlatformInfo = {
   id?: string
   name?: string
+  logo_url?: string
   config?: PlatformConfig
   [k: string]: any
 }

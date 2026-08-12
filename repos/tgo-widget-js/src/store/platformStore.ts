@@ -117,8 +117,10 @@ export const usePlatformStore = create<PlatformState>((set, get) => ({
       const info = await fetchPlatformInfo({ apiBase, platformApiKey })
       const cfg = (info?.config ?? {}) as PlatformConfig
       console.log('[Platform] Loaded config:', cfg)
+      // logo_url is returned as a top-level field, not inside config
+      const logoUrl = typeof info?.logo_url === 'string' ? info.logo_url : undefined
       set(s => ({
-        config: { ...s.config, ...cfg },
+        config: { ...s.config, ...(logoUrl ? { logo_url: logoUrl } : {}), ...cfg },
       }))
 
       // Apply display_mode: if set, use it as default (unless user has explicitly toggled before)

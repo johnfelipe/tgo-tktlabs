@@ -60,6 +60,20 @@ export function requireApiKeyOrThrow(): string {
   return v
 }
 
+/**
+ * Resolve a possibly relative URL against the widget origin.
+ * Needed for values sent to the host page (e.g. toast icons): the host page can
+ * live on a different origin — or on file:// — where a relative path would break.
+ */
+export function toAbsoluteUrl(url?: string | null): string | undefined {
+  if (!url) return undefined
+  try {
+    return new URL(url, window.location.origin).toString()
+  } catch (_) {
+    return undefined
+  }
+}
+
 export type ThemeMode = 'light' | 'dark'
 
 /**
