@@ -94,6 +94,8 @@
     "respondDirectlyDesc": "Omitir la agregación de respuestas de miembros y devolver la respuesta directamente",
     "markdown": "Formato Markdown",
     "markdownDesc": "Usar Markdown para formatear el contenido de salida",
+    "useEmojis": "Usar emojis",
+    "useEmojisDesc": "Permitir que el modelo agregue emojis según el contenido de la respuesta",
     "addDatetime": "Agregar fecha y hora",
     "addDatetimeDesc": "Incluir la fecha y hora actual en el contexto",
     "numHistoryRuns": "Ejecuciones de sesión de historial",

@@ -517,6 +517,13 @@ UNEDITABLE_SYSTEM_PROMPT = (
 
 DEFAULT_SYSTEM_PROMPT = "You are a helpful assistant that has access to a variety of tools."
 
+EMOJI_SYSTEM_PROMPT = (
+    "\nSprinkle a few emojis through your answers to make them friendlier: pick them from the "
+    "meaning of what you are saying (a greeting, a warning, each item of a list) instead of "
+    "repeating the same ones, keep them out of code, tables and links, and drop them entirely "
+    "when the topic is sensitive."
+)
+
 
 class AgentBuilder:
     """Constructs Agno agents with optional RAG and MCP tooling."""
@@ -637,7 +644,7 @@ class AgentBuilder:
                 )
 
         model = self._initialize_model(config)
-        instructions = self._compose_system_prompt(config.system_prompt)
+        instructions = self._compose_system_prompt(config.system_prompt, config.use_emojis)
         enable_memory = request.enable_memory or bool(config.enable_memory)
 
         self._logger.debug(
@@ -711,16 +718,20 @@ class AgentBuilder:
     def _compose_system_prompt(
         self,
         configured_prompt: Optional[str],
+        use_emojis: Optional[bool] = None,
     ) -> str:
         """Compose the final system prompt with json-render schema.
 
         Args:
             configured_prompt: The base system prompt from configuration.
+            use_emojis: Whether the model should decorate answers with emojis.
 
         Returns:
             Composed system prompt string.
         """
         prompt = configured_prompt or DEFAULT_SYSTEM_PROMPT
+        if use_emojis:
+            prompt = f"{prompt}{EMOJI_SYSTEM_PROMPT}"
 
         try:
             json_render_mgr = JsonRenderSchemaManager()

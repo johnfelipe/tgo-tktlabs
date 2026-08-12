@@ -188,6 +188,7 @@ export class AIAgentsTransformUtils {
     const configObj: Record<string, any> = {
       profession: formData.profession,
       markdown: formData.markdown,
+      use_emojis: formData.use_emojis,
       add_datetime_to_context: formData.add_datetime_to_context,
       tool_call_limit: formData.tool_call_limit,
       num_history_runs: formData.num_history_runs,
@@ -253,6 +254,7 @@ export class AIAgentsTransformUtils {
       config: {
         profession: apiAgent.config?.profession,
         markdown: apiAgent.config?.markdown,
+        use_emojis: apiAgent.config?.use_emojis,
         add_datetime_to_context: apiAgent.config?.add_datetime_to_context,
         tool_call_limit: apiAgent.config?.tool_call_limit,
         num_history_runs: apiAgent.config?.num_history_runs,
@@ -348,6 +350,7 @@ export class AIAgentsTransformUtils {
       profession: agent.role,
       capabilities: agent.capabilities,
       markdown: agent.config?.markdown,
+      use_emojis: agent.config?.use_emojis,
       add_datetime_to_context: agent.config?.add_datetime_to_context,
       tool_call_limit: agent.config?.tool_call_limit,
       num_history_runs: agent.config?.num_history_runs,

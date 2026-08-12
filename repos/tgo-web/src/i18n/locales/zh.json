@@ -81,6 +81,8 @@
     "respondDirectlyDesc": "跳过成员回答汇总，直接返回回答",
     "markdown": "Markdown 格式",
     "markdownDesc": "使用 Markdown 格式化输出内容",
+    "useEmojis": "使用表情符号",
+    "useEmojisDesc": "让模型根据回复内容自动加入表情符号",
     "addDatetime": "添加日期时间",
     "addDatetimeDesc": "在上下文中包含当前日期时间",
     "numHistoryRuns": "历史会话轮数",

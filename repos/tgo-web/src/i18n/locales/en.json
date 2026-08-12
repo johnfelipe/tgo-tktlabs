@@ -81,6 +81,8 @@
     "respondDirectlyDesc": "Skip member answer aggregation and return the answer directly",
     "markdown": "Markdown Format",
     "markdownDesc": "Use Markdown to format output content",
+    "useEmojis": "Use emojis",
+    "useEmojisDesc": "Let the model add emojis that match what the answer says",
     "addDatetime": "Add Datetime",
     "addDatetimeDesc": "Include current date and time in the context",
     "numHistoryRuns": "History Session Runs",

@@ -720,5 +720,6 @@ class AgentServiceClient:
             rag=rag_config,
             workflow=workflow_config,
             enable_memory=combined_config.get("enable_memory"),
+            use_emojis=combined_config.get("use_emojis"),
             provider_credentials=provider_credentials,
         )

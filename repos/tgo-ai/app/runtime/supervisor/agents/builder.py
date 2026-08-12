@@ -105,6 +105,7 @@ class AgnoAgentBuilder:
             enable_memory=context.enable_memory,
             provider_credentials=context.agent.llm_provider_credentials,
             markdown=config.get("markdown"),
+            use_emojis=config.get("use_emojis"),
             add_datetime_to_context=config.get("add_datetime_to_context"),
             add_location_to_context=config.get("add_location_to_context"),
             timezone_identifier=config.get("timezone_identifier"),

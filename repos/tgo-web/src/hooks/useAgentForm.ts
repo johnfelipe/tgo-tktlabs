@@ -12,6 +12,7 @@ export interface AgentFormState {
   boundDeviceId: string;
   // 高级配置
   markdown?: boolean;
+  use_emojis?: boolean;
   add_datetime_to_context?: boolean;
   skills_enabled?: boolean;
   tool_call_limit?: number;
@@ -53,6 +54,7 @@ const defaultForm: AgentFormState = {
   workflows: [],
   boundDeviceId: '',
   markdown: true,
+  use_emojis: false,
   add_datetime_to_context: true,
   skills_enabled: true,
   tool_call_limit: 10,

@@ -41,6 +41,7 @@ export type PlatformAIMode = 'auto' | 'assist' | 'off';
 export interface AgentAdvancedConfig {
   profession?: string;               // 职业/角色 (UI 字段)
   markdown?: boolean;                // 是否使用 markdown 格式输出
+  use_emojis?: boolean;              // 是否让模型在回复中使用表情符号
   add_datetime_to_context?: boolean; // 是否添加日期时间到上下文
   tool_call_limit?: number;          // 单次运行工具调用次数限制
   num_history_runs?: number;         // 历史会话轮数限制
@@ -152,6 +153,7 @@ export interface CreateAgentFormData {
   boundDeviceId: string; // 绑定的设备ID（空字符串表示未绑定）
   // 高级配置
   markdown?: boolean;
+  use_emojis?: boolean;
   add_datetime_to_context?: boolean;
   skills_enabled?: boolean;
   show_tool_calls?: boolean;

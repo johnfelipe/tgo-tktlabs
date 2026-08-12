@@ -78,6 +78,7 @@ class AgentConfig(BaseModel):
 
     # 扩展配置参数
     markdown: Optional[bool] = Field(default=None, description="是否使用markdown格式输出")
+    use_emojis: Optional[bool] = Field(default=None, description="是否让模型在回复中使用表情符号")
     add_datetime_to_context: Optional[bool] = Field(default=None, description="是否添加日期时间到上下文")
     add_location_to_context: Optional[bool] = Field(default=None, description="是否添加位置信息到上下文")
     timezone_identifier: Optional[str] = Field(default=None, description="时区标识")

@@ -550,6 +550,18 @@ const CreateAgentModal: React.FC = () => {
                           />
                         </div>
 
+                        {/* Use Emojis */}
+                        <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-50 dark:border-gray-700">
+                          <div>
+                            <p className="text-sm font-bold text-gray-700 dark:text-gray-200">{t('config.useEmojis', '使用表情符号')}</p>
+                            <p className="text-xs text-gray-500">{t('config.useEmojisDesc', '让模型根据回复内容自动加入表情符号')}</p>
+                          </div>
+                          <Toggle
+                            checked={!!createAgentFormData.use_emojis}
+                            onChange={(checked) => handleInputChange('use_emojis', checked)}
+                          />
+                        </div>
+
                         {/* Add Datetime */}
                         <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-50 dark:border-gray-700">
                           <div>

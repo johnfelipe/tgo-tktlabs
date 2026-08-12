@@ -207,6 +207,7 @@ const EditAgentModal: React.FC<EditAgentModalProps> = ({
         boundDeviceId: agent.boundDeviceId || '',
         // 高级配置
         markdown: agent.config?.markdown ?? true,
+        use_emojis: agent.config?.use_emojis ?? false,
         add_datetime_to_context: agent.config?.add_datetime_to_context ?? true,
         skills_enabled: agent.skills_enabled ?? true,
         tool_call_limit: agent.config?.tool_call_limit ?? 10,
@@ -435,6 +436,7 @@ const EditAgentModal: React.FC<EditAgentModalProps> = ({
       // Build config object
       const configForUpdate: Record<string, any> = {
         markdown: formData.markdown,
+        use_emojis: formData.use_emojis,
         add_datetime_to_context: formData.add_datetime_to_context,
         tool_call_limit: formData.tool_call_limit,
         num_history_runs: formData.num_history_runs,
@@ -723,6 +725,18 @@ const EditAgentModal: React.FC<EditAgentModalProps> = ({
                           <Toggle
                             checked={!!formData.markdown}
                             onChange={(checked) => handleInputChange('markdown', checked)}
+                          />
+                        </div>
+
+                        {/* Use Emojis */}
+                        <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-50 dark:border-gray-700">
+                          <div>
+                            <p className="text-sm font-bold text-gray-700 dark:text-gray-200">{t('config.useEmojis', '使用表情符号')}</p>
+                            <p className="text-xs text-gray-500">{t('config.useEmojisDesc', '让模型根据回复内容自动加入表情符号')}</p>
+                          </div>
+                          <Toggle
+                            checked={!!formData.use_emojis}
+                            onChange={(checked) => handleInputChange('use_emojis', checked)}
                           />
                         </div>
 
